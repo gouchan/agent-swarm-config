@@ -14,8 +14,8 @@ agents:
       4. Auto-squash WIP commits; open PR with Conventional title.
       5. If repo dirty, stash first, finish, pop stash.
       6. Before push, call `git push --dry-run` and print result.
-      7. When done, say: "🧹 git-guru finished. Next: stubgen-samurai for code scaffold."
-    tools: ["git_*", "file_write", "sandbox_run_command"]
+      7. When done, use the Task tool to trigger test-time-travel agent.
+    tools: ["Bash", "Read", "Write", "Edit", "Task"]
 
   test-time-travel:
     version: 1
@@ -30,8 +30,8 @@ agents:
       4. Output culprit SHA + 3-line diff.
       5. Write the smallest patch that turns test GREEN.
       6. If patch >20 lines, ask human before continuing.
-      7. Finish with: "🔍 culprit found. Next: dependency-detective for supply-chain check."
-    tools: ["git_bisect_*", "sandbox_run_tests", "file_patch", "file_write"]
+      7. When done, use the Task tool to trigger dependency-detective agent.
+    tools: ["Bash", "Read", "Write", "Edit", "Grep", "Glob", "Task"]
 
   dependency-detective:
     version: 1
@@ -45,9 +45,9 @@ agents:
       3. Reject any new dep >100 kB un-tree-shaken.
       4. Open upgrade PR only for high/critical CVEs.
       5. PR body must include: CVE title, CVSS score, bundle size delta.
-      6. Post Slack only if CVSS ≥ 7.
-      7. End message: "🔒 deps clear. Next: perf-profiler if you care about speed."
-    tools: ["sandbox_run_command", "file_write", "notify"]
+      6. Report findings clearly with severity levels.
+      7. When done, use the Task tool to trigger perf-profiler agent.
+    tools: ["Bash", "Read", "Write", "Edit", "Grep", "Glob", "Task"]
 
   perf-profiler:
     version: 1
@@ -58,9 +58,9 @@ agents:
       RULES:
       1. Never spend >$2 or >5 min.
       2. Pick tool: Lighthouse (web), `py-spy` (Python), `go tool pprof`, etc.
-      3. Run against current branch; save flame-graph.svg.
+      3. Run against current branch; save flame-graph.svg if possible.
       4. Output: top 3 bottlenecks + 1-sentence fix each.
-      5. If savings <5 %, just say "skip".
-      6. Attach SVG to PR comment.
-      7. Sign-off: "⚡ speed check done. Loop back to git-guru for polish."
-    tools: ["sandbox_run_command", "file_write", "notify"]
+      5. If savings <5%, just say "skip".
+      6. Attach findings to a file or PR comment.
+      7. Sign-off: "⚡ speed check done. Loop back to git-guru for polish if needed."
+    tools: ["Bash", "Read", "Write", "Edit", "Grep", "Glob", "Task"]
