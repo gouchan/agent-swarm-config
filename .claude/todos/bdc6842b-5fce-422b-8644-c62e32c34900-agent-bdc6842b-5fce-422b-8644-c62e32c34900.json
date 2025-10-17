@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Check if gh CLI is installed",
+    "status": "completed",
+    "activeForm": "Checking if gh CLI is installed"
+  },
+  {
+    "content": "Install GitHub CLI",
+    "status": "completed",
+    "activeForm": "Installing GitHub CLI"
+  },
+  {
+    "content": "Create .gitignore for home directory repo",
+    "status": "completed",
+    "activeForm": "Creating .gitignore for home directory repo"
+  },
+  {
+    "content": "Create initial commit with agent configuration",
+    "status": "in_progress",
+    "activeForm": "Creating initial commit with agent configuration"
+  },
+  {
+    "content": "Check gh authentication status",
+    "status": "pending",
+    "activeForm": "Checking gh authentication status"
+  },
+  {
+    "content": "Create GitHub repository",
+    "status": "pending",
+    "activeForm": "Creating GitHub repository"
+  },
+  {
+    "content": "Push initial commit to GitHub",
+    "status": "pending",
+    "activeForm": "Pushing initial commit to GitHub"
+  }
+]

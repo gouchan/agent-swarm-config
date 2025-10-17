@@ -1,0 +1,91 @@
+# macOS System Files
+.DS_Store
+.CFUserTextEncoding
+.Trash/
+.localized
+
+# Application Support & Caches
+.cache/
+.config/
+Library/
+.local/
+
+# Adobe
+.adobe/
+
+# Development Tools & IDEs
+.cursor/
+.codeium/
+.vscode/
+.windsurf/
+.zen/
+.qoder/
+
+# Shell History & Config (keep versioned configs, ignore history)
+.bash_history
+.zsh_history
+.zsh_sessions/
+
+# Cloud Storage
+.dropbox/
+.dropbox_bi/
+Dropbox
+Creative Cloud Files*/
+
+# AI/ML Tools
+.lmstudio/
+.lmstudio-home-pointer
+.keras/
+.matplotlib/
+nltk_data/
+
+# Docker
+.docker/
+
+# Node/NPM
+node_modules/
+.npm/
+.npm-global/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.idlerc/
+
+# Personal Directories (mostly working projects)
+Desktop/
+Documents/
+Downloads/
+Movies/
+Music/
+Pictures/
+Public/
+Applications/
+
+# Projects (keep in separate repos)
+ZerePy/
+OpenManus/
+Channy-AI/
+CascadeProjects/
+eliza-starter/
+crypto-ai-hedge-fund/
+solana-trade-bot/
+bet-scan-scheduler/
+UnrealEngine/
+path/
+
+# Temporary/Test files
+no-free-lunch-*/
+
+# Keep these important config files
+!.gitconfig
+!.zshrc
+!.zprofile
+!.profile
+!.npmrc
+!.claude.json
+!.claude/
+!CLAUDE.md
+!package.json
+!package-lock.json
