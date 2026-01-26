@@ -190,3 +190,60 @@ Example: `architect-low` vs `architect` vs `architect-medium`
 - Node.js: `/usr/local/bin/node`
 - Python 3: `/opt/homebrew/bin/python3`
 - Firecrawl API: Configured in `.mcp.json`
+
+---
+
+## Deployment (Claude Agent SDK)
+
+The gauntlet can be deployed as autonomous agents using the Claude Agent SDK.
+
+### Installation
+```bash
+# TypeScript (installed globally)
+npm install -g @anthropic-ai/claude-agent-sdk
+
+# Set API key
+export ANTHROPIC_API_KEY=your-key-here
+```
+
+### Ready-to-Deploy Agents
+
+| Agent | Command | Description |
+|-------|---------|-------------|
+| **Security Scanner** | `npx ts-node deploy/examples/security-scanner.ts` | CVE scanning + code audit |
+| **App Builder** | `npx ts-node deploy/examples/app-builder.ts "description"` | Full autonomous app dev |
+| **Video Creator** | `npx ts-node deploy/examples/video-creator.ts "description"` | Remotion video generation |
+| **Scheduled Audit** | `npx ts-node deploy/examples/scheduled-audit.ts` | Daily codebase audits |
+
+### Quick Deploy Example
+
+```typescript
+import { query } from "@anthropic-ai/claude-agent-sdk";
+
+for await (const message of query({
+  prompt: "Build a React Native expense tracker",
+  options: {
+    allowedTools: ["Read", "Write", "Edit", "Bash", "Task"],
+    permissionMode: "acceptEdits",
+  }
+})) {
+  if ("result" in message) console.log(message.result);
+}
+```
+
+### Permission Modes
+
+| Mode | Use Case |
+|------|----------|
+| `bypassPermissions` | Read-only audits, analysis |
+| `acceptEdits` | Autonomous coding with file writes |
+| `default` | Interactive approval for each action |
+
+### Use Cases
+
+- **CI/CD Integration** - Run security scans on every PR
+- **Scheduled Tasks** - Daily audits, dependency updates
+- **API-Driven** - Trigger agents from webhooks
+- **Production Services** - Autonomous coding bots
+
+See `deploy/README.md` for full documentation.
