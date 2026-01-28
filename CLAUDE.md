@@ -12,6 +12,36 @@ An autonomous agent swarm for building iOS, desktop, and web applications with p
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
+---
+
+## 🚀 Install on a New Machine
+
+```bash
+# 1. Clone this repo
+git clone https://github.com/gouchan/agent-swarm-config.git
+cd agent-swarm-config
+
+# 2. Install the gauntlet to ~/.claude/
+mkdir -p ~/.claude/agents ~/.claude/skills ~/.claude/commands
+cp -r agents/* ~/.claude/agents/
+cp -r skills/* ~/.claude/skills/
+cp -r commands/* ~/.claude/commands/
+
+# 3. Set up MCP config (add your Firecrawl API key)
+cp .mcp.json.example .mcp.json
+# Edit .mcp.json and add your FIRECRAWL_API_KEY
+
+# 4. Install Agent SDK for deployment (optional)
+npm install -g @anthropic-ai/claude-agent-sdk
+
+# 5. Start Claude Code in this directory
+claude
+```
+
+**That's it.** Claude now has the full gauntlet: 46 agents, 85 skills, 42 commands.
+
+---
+
 ## Architecture
 
 ```
