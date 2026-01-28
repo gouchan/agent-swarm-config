@@ -78,6 +78,12 @@ path/
 # Temporary/Test files
 no-free-lunch-*/
 
+# Secrets - NEVER commit these
+.mcp.json
+.env
+.env.local
+*.secret
+
 # Keep these important config files
 !.gitconfig
 !.zshrc
