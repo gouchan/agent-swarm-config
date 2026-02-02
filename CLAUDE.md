@@ -74,6 +74,98 @@ claude
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
+## Session Start Checklist
+
+Every new session, before doing anything:
+
+1. Read `tasks/lessons.md` if it exists - don't repeat past mistakes
+2. Read `tasks/todo.md` if it exists - pick up where you left off
+3. Run `git status` to understand current branch and working state
+4. If resuming work: verify the last change still builds/passes before continuing
+
+---
+
+## Workflow Orchestration
+
+### 1. Plan Mode Default
+- Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions)
+- If something goes sideways, STOP and re-plan immediately (see Error Recovery below)
+- Use plan mode for verification steps, not just building
+- Write detailed specs upfront to reduce ambiguity
+
+### 2. Subagent Strategy
+- Use subagents liberally to keep main context window clean
+- Offload research, exploration, and parallel analysis to subagents
+- For complex problems, throw more compute at it via subagents
+- One task per subagent for focused execution
+
+### 3. Self-Improvement Loop
+- After ANY correction from the user: update `tasks/lessons.md` with the pattern
+- Write rules for yourself that prevent the same mistake
+- Ruthlessly iterate on these lessons until mistake rate drops
+- Review lessons at session start for relevant project
+
+### 4. Verification Before Done
+- Never mark a task complete without proving it works
+- Diff behavior between main and your changes when relevant
+- Ask yourself: "Would a staff engineer approve this?"
+- Run tests, check logs, demonstrate correctness
+
+### 5. Demand Elegance (Balanced)
+- For non-trivial changes: pause and ask "is there a more elegant way?"
+- If a fix feels hacky: "Knowing everything I know now, implement the elegant solution"
+- Skip this for simple, obvious fixes - don't over-engineer
+- Challenge your own work before presenting it
+
+### 6. Autonomous Bug Fixing
+- When given a bug report: just fix it. Don't ask for hand-holding
+- Point at logs, errors, failing tests - then resolve them
+- Zero context switching required from the user
+- Go fix failing CI tests without being told how
+
+### 7. Error Recovery
+When a fix attempt fails or makes things worse:
+1. **Stop.** Do not stack another fix on top of a failed fix
+2. **Revert** to the last known working state (`git stash` or `git checkout`)
+3. **Diagnose** the root cause - read the actual error, don't guess
+4. **Re-plan** with the new information - update `tasks/todo.md`
+5. **Execute** the new plan from clean state
+
+The anti-pattern to avoid: fix → breaks something → fix that → breaks something else → spiral. Two consecutive failed attempts = full stop and re-plan.
+
+---
+
+## Task Management Protocol
+
+1. **Plan First**: Write plan to `tasks/todo.md` with checkable items
+2. **Verify Plan**: Check in before starting implementation
+3. **Track Progress**: Mark items complete as you go
+4. **Explain Changes**: High-level summary at each step
+5. **Document Results**: Add review section to `tasks/todo.md`
+6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
+
+---
+
+## Core Principles
+
+- **Simplicity First**: The smallest change that solves the problem is the best change. If you're touching more than 3 files for a bugfix, question whether you're solving the right problem.
+- **No Laziness**: Find the root cause. `// TODO: fix later` is not acceptable. If you wouldn't put it in a PR review, don't write it.
+- **Minimal Impact**: Only touch what's necessary. Unrelated refactors, style changes, and "while I'm here" improvements go in separate commits or not at all.
+- **No Guessing**: If you're unsure about behavior, read the code or run it. Don't assume. Wrong assumptions compound.
+
+## Definition of Done
+
+| Task Type | Done When |
+|-----------|-----------|
+| **Bugfix** | Root cause identified, fix applied, test added that would have caught it, existing tests pass |
+| **Feature** | Implementation complete, tests written, builds clean, no regressions |
+| **Refactor** | Behavior unchanged (proven by tests), no new warnings, cleaner than before |
+| **Research** | Findings documented, recommendation given with tradeoffs, sources cited |
+
+If you can't check all boxes, it's not done - it's in progress.
+
+---
+
 ## Orchestration Modes
 
 | Command | What it does | Use when |
@@ -204,6 +296,29 @@ Many agents have tiered versions for cost/quality tradeoffs:
 - `-high` - Maximum quality, complex tasks
 
 Example: `architect-low` vs `architect` vs `architect-medium`
+
+## Project Structure Conventions
+
+Every project should include a `tasks/` directory at the root:
+
+```
+project-root/
+├── tasks/
+│   ├── todo.md          # Current plan with checkable items
+│   └── lessons.md       # Mistakes made, rules to prevent repeats
+├── src/                 # Source code, organized by domain
+├── config/              # Configuration separate from code
+├── tests/               # Test suite mirroring src/ structure
+└── ...
+```
+
+Structure principles:
+- **Config separate from code**: No hardcoded values - use config files or env vars
+- **Domain-based src/ layout**: Organize by feature/domain, not by file type
+- **Mirror tests to src**: `src/auth/login.ts` → `tests/auth/login.test.ts`
+- **tasks/ is mandatory**: Always maintain `todo.md` and `lessons.md`
+
+---
 
 ## File Locations
 
