@@ -33,6 +33,13 @@ async function main(): Promise<void> {
 
   process.on("SIGINT", shutdown);
   process.on("SIGTERM", shutdown);
+  process.on("unhandledRejection", (reason) => {
+    console.error("Unhandled rejection:", reason);
+  });
+  process.on("uncaughtException", (err) => {
+    console.error("Uncaught exception:", err);
+    shutdown();
+  });
 
   // Start polling
   console.log("Bot is running. Press Ctrl+C to stop.\n");
@@ -40,7 +47,7 @@ async function main(): Promise<void> {
   console.log(`  Polymarket: active`);
   console.log(`  X/Twitter: ${config.xBearerToken ? "active" : "inactive (set X_BEARER_TOKEN)"}`);
   console.log(`  AI Analysis: ${config.anthropicApiKey ? "active" : "inactive (set ANTHROPIC_API_KEY)"}`);
-  console.log(`  Alerts: ${config.alertChatId ? `active (chat: ${config.alertChatId})` : "inactive (set TELEGRAM_ALERT_CHAT_ID)"}`);
+  console.log(`  Alerts: ${config.alertChatId ? "active" : "inactive (set TELEGRAM_ALERT_CHAT_ID)"}`);
   console.log(`  Price polling: every ${config.pollIntervalMinutes}min`);
   console.log(`  Daily briefing: ${config.briefingHourUtc}:00 UTC\n`);
 

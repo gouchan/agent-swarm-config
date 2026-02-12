@@ -1,4 +1,7 @@
 import { config } from "../config.js";
+import { escapeHtml } from "../utils/format.js";
+
+const API_TIMEOUT_MS = 60000;
 
 /**
  * Analyze signal by cross-referencing Polymarket data with X/Twitter sentiment.
@@ -34,7 +37,10 @@ async function analyzeWithAgentSdk(
     throw new Error("@anthropic-ai/sdk not installed");
   });
 
-  const client = new Anthropic({ apiKey: config.anthropicApiKey });
+  const client = new Anthropic({
+    apiKey: config.anthropicApiKey,
+    timeout: API_TIMEOUT_MS,
+  });
 
   const prompt = `You are an alpha signal analyst. Analyze the divergence between prediction market pricing and social sentiment for the topic: "${topic}".
 
@@ -52,7 +58,9 @@ Provide a concise analysis (max 300 words) covering:
 4. **Direction**: Which way does the edge point? (bullish/bearish/neutral)
 5. **Risks**: What could invalidate this signal?
 
-Format your response with clear headers using these exact labels. Be direct and actionable.`;
+Format your response with clear headers using these exact labels. Be direct and actionable.
+
+Do NOT use any HTML tags in your response.`;
 
   const response = await client.messages.create({
     model: "claude-sonnet-4-5-20250929",
@@ -74,22 +82,22 @@ function localAnalysis(topic: string, marketSummary: string, tweetSummary: strin
 
   const lines: string[] = [];
 
-  lines.push(`<b>Narrative:</b> ${topic}`);
+  lines.push(`Narrative: ${topic}`);
 
   if (hasMarkets) {
-    lines.push(`\n<b>Markets:</b>\n${escapeHtml(marketSummary)}`);
+    lines.push(`\nMarkets:\n${marketSummary}`);
   } else {
-    lines.push("\n<b>Markets:</b> No direct market match found.");
+    lines.push("\nMarkets: No direct market match found.");
   }
 
   if (hasTweets) {
-    lines.push(`\n<b>Social Sentiment:</b>\n${escapeHtml(tweetSummary)}`);
+    lines.push(`\nSocial Sentiment:\n${tweetSummary}`);
   } else {
-    lines.push("\n<b>Social Sentiment:</b> No Twitter data available.");
+    lines.push("\nSocial Sentiment: No Twitter data available.");
   }
 
-  lines.push("\n<b>Conviction:</b> ⚠️ Local analysis only (set ANTHROPIC_API_KEY for AI analysis)");
-  lines.push("<b>Direction:</b> Insufficient data for directional call");
+  lines.push("\nConviction: ⚠️ Local analysis only (set ANTHROPIC_API_KEY for AI analysis)");
+  lines.push("Direction: Insufficient data for directional call");
 
   return lines.join("\n");
 }
@@ -99,12 +107,15 @@ export async function generateBriefing(
   tweetSummary: string
 ): Promise<string> {
   if (!config.anthropicApiKey) {
-    return `<b>Daily Briefing</b>\n\n<b>Top Movers:</b>\n${topMovers}\n\n<b>Social Chatter:</b>\n${tweetSummary}`;
+    return `Daily Briefing\n\nTop Movers:\n${escapeHtml(topMovers)}\n\nSocial Chatter:\n${escapeHtml(tweetSummary)}`;
   }
 
   try {
     const { Anthropic } = await import("@anthropic-ai/sdk" as string);
-    const client = new Anthropic({ apiKey: config.anthropicApiKey });
+    const client = new Anthropic({
+      apiKey: config.anthropicApiKey,
+      timeout: API_TIMEOUT_MS,
+    });
 
     const response = await client.messages.create({
       model: "claude-sonnet-4-5-20250929",
@@ -120,7 +131,9 @@ ${topMovers}
 ## X/Twitter Chatter
 ${tweetSummary}
 
-Format: Start with a 1-sentence headline, then cover top 3-5 stories with market odds and social context. End with "Watch today:" listing 2-3 markets to monitor.`,
+Format: Start with a 1-sentence headline, then cover top 3-5 stories with market odds and social context. End with "Watch today:" listing 2-3 markets to monitor.
+
+Do NOT use any HTML tags in your response.`,
         },
       ],
     });
@@ -130,10 +143,6 @@ Format: Start with a 1-sentence headline, then cover top 3-5 stories with market
       .map((b: any) => b.text)
       .join("\n");
   } catch (err) {
-    return `<b>Daily Briefing</b>\n\n${topMovers}\n\n${tweetSummary}`;
+    return `Daily Briefing\n\n${topMovers}\n\n${tweetSummary}`;
   }
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

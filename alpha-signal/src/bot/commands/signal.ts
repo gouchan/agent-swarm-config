@@ -3,6 +3,7 @@ import { searchMarkets, fetchMarkets } from "../../data/polymarket/client.js";
 import { parseOutcomePrices, formatVolume } from "../../data/polymarket/types.js";
 import { searchTwitter } from "../../data/twitter/client.js";
 import { analyzeSignal } from "../../analysis/agent-sdk.js";
+import { escapeHtml, sanitizeLlmOutput } from "../../utils/format.js";
 
 export async function signalCommand(ctx: Context): Promise<void> {
   const text = ctx.message?.text ?? "";
@@ -13,7 +14,10 @@ export async function signalCommand(ctx: Context): Promise<void> {
     return;
   }
 
-  const thinking = await ctx.reply(`⚡ Analyzing signal for "${topic}"...\n\nFetching market data and social sentiment...`);
+  const chatId = ctx.chat?.id;
+  if (!chatId) return;
+
+  const thinking = await ctx.reply(`⚡ Analyzing signal for "${escapeHtml(topic)}"...\n\nFetching market data and social sentiment...`);
 
   try {
     // Fetch Polymarket and Twitter data in parallel
@@ -29,10 +33,10 @@ export async function signalCommand(ctx: Context): Promise<void> {
 
     // Update thinking message
     await ctx.api.editMessageText(
-      ctx.chat!.id,
+      chatId,
       thinking.message_id,
-      `⚡ Analyzing signal for "${topic}"...\n\n✅ Market data: ${marketData.length} markets\n${twitterData ? `✅ X data: ${twitterData.tweets.length} tweets` : "⚠️ X data unavailable"}\n\n🧠 Running AI analysis...`
-    );
+      `⚡ Analyzing signal for "${escapeHtml(topic)}"...\n\n✅ Market data: ${marketData.length} markets\n${twitterData ? `✅ X data: ${twitterData.tweets.length} tweets` : "⚠️ X data unavailable"}\n\n🧠 Running AI analysis...`
+    ).catch(() => {});
 
     // Build market summary for the prompt
     const marketSummary = marketData
@@ -52,30 +56,27 @@ export async function signalCommand(ctx: Context): Promise<void> {
 
     // Run AI analysis
     const analysis = await analyzeSignal(topic, marketSummary, tweetSummary);
+    const safeAnalysis = sanitizeLlmOutput(analysis);
 
     // Format result
     const result = [
       `<b>⚡ Alpha Signal: "${escapeHtml(topic)}"</b>`,
       "",
-      analysis,
+      safeAnalysis,
       "",
       `<i>📊 ${marketData.length} markets | 🐦 ${twitterData?.tweets.length ?? 0} tweets analyzed</i>`,
     ].join("\n");
 
-    await ctx.api.editMessageText(ctx.chat!.id, thinking.message_id, result, {
+    await ctx.api.editMessageText(chatId, thinking.message_id, result, {
       parse_mode: "HTML",
       link_preview_options: { is_disabled: true },
-    });
+    }).catch(() => {});
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     await ctx.api.editMessageText(
-      ctx.chat!.id,
+      chatId,
       thinking.message_id,
-      `Signal analysis failed: ${message}\n\nEnsure ANTHROPIC_API_KEY is set for AI analysis.`
-    );
+      `Signal analysis failed: ${escapeHtml(message)}\n\nEnsure ANTHROPIC_API_KEY is set for AI analysis.`
+    ).catch(() => {});
   }
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

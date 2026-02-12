@@ -1,7 +1,10 @@
 import type { Context } from "grammy";
 import { fetchMarketById } from "../../data/polymarket/client.js";
 import { parseOutcomePrices } from "../../data/polymarket/types.js";
-import { addToWatchlist, removeFromWatchlist, getWatchlist } from "../../state/store.js";
+import { addToWatchlist, removeFromWatchlist } from "../../state/store.js";
+import { escapeHtml } from "../../utils/format.js";
+
+const MARKET_ID_PATTERN = /^[a-zA-Z0-9_-]+$/;
 
 export async function watchCommand(ctx: Context): Promise<void> {
   const text = ctx.message?.text ?? "";
@@ -16,12 +19,18 @@ export async function watchCommand(ctx: Context): Promise<void> {
   }
 
   const marketId = args[0];
-  const chatId = String(ctx.chat?.id);
+  const chatId = String(ctx.chat?.id ?? "");
+  if (!chatId) return;
+
+  if (!MARKET_ID_PATTERN.test(marketId)) {
+    await ctx.reply("Invalid market ID format.");
+    return;
+  }
 
   try {
     const market = await fetchMarketById(marketId);
     if (!market) {
-      await ctx.reply(`Market <code>${marketId}</code> not found.`, { parse_mode: "HTML" });
+      await ctx.reply(`Market <code>${escapeHtml(marketId)}</code> not found.`, { parse_mode: "HTML" });
       return;
     }
 
@@ -48,21 +57,23 @@ export async function watchCommand(ctx: Context): Promise<void> {
 export async function unwatchCommand(ctx: Context): Promise<void> {
   const text = ctx.message?.text ?? "";
   const marketId = text.split(/\s+/)[1];
-  const chatId = String(ctx.chat?.id);
+  const chatId = String(ctx.chat?.id ?? "");
+  if (!chatId) return;
 
   if (!marketId) {
     await ctx.reply("Usage: /unwatch <market_id>");
     return;
   }
 
+  if (!MARKET_ID_PATTERN.test(marketId)) {
+    await ctx.reply("Invalid market ID format.");
+    return;
+  }
+
   const removed = removeFromWatchlist(chatId, marketId);
   if (removed) {
-    await ctx.reply(`Removed market <code>${marketId}</code> from watchlist.`, { parse_mode: "HTML" });
+    await ctx.reply(`Removed market <code>${escapeHtml(marketId)}</code> from watchlist.`, { parse_mode: "HTML" });
   } else {
     await ctx.reply("Market not found in your watchlist.");
   }
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

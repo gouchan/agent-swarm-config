@@ -4,6 +4,7 @@ import { searchTwitter } from "../data/twitter/client.js";
 import { generateBriefing } from "../analysis/agent-sdk.js";
 import { sendAlert } from "./dispatcher.js";
 import { config } from "../config.js";
+import { sanitizeLlmOutput } from "../utils/format.js";
 
 export async function sendDailyBriefing(): Promise<void> {
   if (!config.alertChatId) {
@@ -38,6 +39,7 @@ export async function sendDailyBriefing(): Promise<void> {
     }
 
     const briefing = await generateBriefing(topMovers, tweetSummary);
+    const safeBriefing = sanitizeLlmOutput(briefing);
 
     const date = new Date().toLocaleDateString("en-US", {
       weekday: "long",
@@ -46,7 +48,7 @@ export async function sendDailyBriefing(): Promise<void> {
       day: "numeric",
     });
 
-    const message = `<b>📰 Daily Briefing - ${date}</b>\n\n${briefing}`;
+    const message = `<b>📰 Daily Briefing - ${date}</b>\n\n${safeBriefing}`;
 
     await sendAlert(config.alertChatId, message);
     console.log("Daily briefing sent.");

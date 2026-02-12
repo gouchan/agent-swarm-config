@@ -2,9 +2,12 @@ import type { Context } from "grammy";
 import { fetchMarketById } from "../../data/polymarket/client.js";
 import { parseOutcomePrices, formatVolume } from "../../data/polymarket/types.js";
 import { getWatchlist } from "../../state/store.js";
+import { escapeHtml } from "../../utils/format.js";
 
 export async function portfolioCommand(ctx: Context): Promise<void> {
-  const chatId = String(ctx.chat?.id);
+  const chatId = String(ctx.chat?.id ?? "");
+  if (!chatId) return;
+
   const watchlist = getWatchlist(chatId);
 
   if (watchlist.length === 0) {
@@ -41,7 +44,7 @@ export async function portfolioCommand(ctx: Context): Promise<void> {
           `${emoji} <b>${i + 1}. ${escapeHtml(market.question)}</b>`,
           `   YES: ${entryYes.toFixed(0)}% → ${currentYes.toFixed(0)}% (${deltaStr}%)`,
           `   Vol: ${formatVolume(market.volumeNum ?? market.volume)}`,
-          `   /unwatch <code>${market.id}</code>`,
+          `   /unwatch <code>${escapeHtml(market.id)}</code>`,
         ].join("\n")
       );
     }
@@ -51,8 +54,4 @@ export async function portfolioCommand(ctx: Context): Promise<void> {
     console.error("portfolio command error:", err);
     await ctx.reply("Failed to fetch portfolio. Try again.");
   }
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

@@ -10,6 +10,9 @@ import {
 } from "../state/store.js";
 import { broadcastAlert } from "./dispatcher.js";
 import { config } from "../config.js";
+import { escapeHtml } from "../utils/format.js";
+
+const MAX_SNAPSHOT_AGE_MS = 2 * 60 * 60 * 1000;
 
 export async function checkPriceMovements(): Promise<void> {
   const marketIds = getAllWatchedMarketIds();
@@ -34,6 +37,9 @@ export async function checkPriceMovements(): Promise<void> {
       // Check for significant movement (compare with 1hr ago)
       const hourAgo = getPriceNHoursAgo(marketId, 1);
       if (!hourAgo) continue;
+
+      // Guard: don't use snapshots that are too old
+      if (Date.now() - hourAgo.timestamp > MAX_SNAPSHOT_AGE_MS) continue;
 
       const deltaYes = Math.abs((prices.yes - hourAgo.yesPrice) * 100);
 
@@ -74,8 +80,4 @@ export async function checkPriceMovements(): Promise<void> {
       console.error(`Price monitor error for ${marketId}:`, err);
     }
   }
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

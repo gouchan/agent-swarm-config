@@ -9,9 +9,10 @@ import { signalCommand } from "./commands/signal.js";
 export function createBot(): Bot {
   const bot = new Bot(config.telegramBotToken);
 
-  // Error handler
+  // Error handler - log full context for debugging
   bot.catch((err) => {
-    console.error("Bot error:", err.message);
+    console.error("Bot error:", err.error);
+    console.error("Update that caused error:", JSON.stringify(err.ctx?.update?.update_id));
   });
 
   // Commands
@@ -42,13 +43,13 @@ export function createBot(): Bot {
         "",
         "/markets - Browse top prediction markets",
         "/signal &lt;topic&gt; - Cross-reference markets with social sentiment",
-        "/watch &lt;id&gt; - Track a market (get alerts on >5% moves)",
+        "/watch &lt;id&gt; - Track a market (get alerts on &gt;5% moves)",
         "/unwatch &lt;id&gt; - Remove from watchlist",
         "/portfolio - View all watched markets",
         "/research &lt;query&gt; - Deep Twitter research",
         "",
         "<b>Automated Alerts:</b>",
-        "- Price moves >5% in 1hr on watched markets",
+        "- Price moves &gt;5% in 1hr on watched markets",
         "- Daily briefing at 8am UTC",
       ].join("\n"),
       { parse_mode: "HTML" }

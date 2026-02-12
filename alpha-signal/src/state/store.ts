@@ -1,7 +1,7 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from "node:fs";
 import { join } from "node:path";
 import { config } from "../config.js";
-import type { AppState, UserWatchlist, WatchedMarket, PriceSnapshot, AlertRecord } from "./types.js";
+import type { UserWatchlist, WatchedMarket, PriceSnapshot, AlertRecord } from "./types.js";
 
 const stateDir = config.stateDir;
 
@@ -22,7 +22,10 @@ function readJson<T>(filename: string, fallback: T): T {
 
 function writeJson(filename: string, data: unknown): void {
   ensureDir();
-  writeFileSync(join(stateDir, filename), JSON.stringify(data, null, 2));
+  const path = join(stateDir, filename);
+  const tmpPath = path + ".tmp";
+  writeFileSync(tmpPath, JSON.stringify(data, null, 2));
+  renameSync(tmpPath, path);
 }
 
 // Watchlist operations
@@ -96,12 +99,14 @@ export function getLatestPrice(marketId: string): PriceSnapshot | null {
 export function getPriceNHoursAgo(marketId: string, hours: number): PriceSnapshot | null {
   const history = getPriceHistory(marketId);
   const targetTime = Date.now() - hours * 60 * 60 * 1000;
+  const maxDrift = hours * 60 * 60 * 1000; // Don't return snapshots further than the window
+
   // Find closest snapshot to target time
   let closest: PriceSnapshot | null = null;
   let closestDiff = Infinity;
   for (const snap of history) {
     const diff = Math.abs(snap.timestamp - targetTime);
-    if (diff < closestDiff) {
+    if (diff < closestDiff && diff <= maxDrift) {
       closestDiff = diff;
       closest = snap;
     }
