@@ -1,0 +1,900 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ============================================================================
+# ripper — Automated DVD ripping tool
+# Wraps HandBrakeCLI with sane defaults for lightest file weight + great quality
+# ============================================================================
+
+VERSION="1.0.0"
+LOCK_FILE="/tmp/ripper.lock"
+TRAP_SET=false
+
+# --------------------------------------------------------------------------
+# Default config (overridden by ~/.ripperrc)
+# --------------------------------------------------------------------------
+OUTPUT_DIR="$HOME/Downloads/Handbrake Rips"
+QUALITY=20
+ENCODER="x265"
+ENCODER_PRESET="medium"
+AUDIO_CODEC="aac"
+AUDIO_BITRATE="128"
+AUDIO_MIXDOWN="stereo"
+FORMAT="av_mp4"
+FILE_EXT="mp4"
+AUTO_EJECT=true
+MIN_TITLE_DURATION=120
+SUBTITLE_LANG="eng"
+BURN_SUBTITLES=false
+
+# --------------------------------------------------------------------------
+# Colors
+# --------------------------------------------------------------------------
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+DIM='\033[2m'
+NC='\033[0m'
+
+# --------------------------------------------------------------------------
+# Helpers
+# --------------------------------------------------------------------------
+info()  { echo -e "${BLUE}[info]${NC}    $*"; }
+ok()    { echo -e "${GREEN}[ok]${NC}      $*"; }
+warn()  { echo -e "${YELLOW}[warn]${NC}    $*"; }
+err()   { echo -e "${RED}[error]${NC}   $*" >&2; }
+step()  { echo -e "${CYAN}[step]${NC}    ${BOLD}$*${NC}"; }
+dim()   { echo -e "${DIM}$*${NC}"; }
+
+# --------------------------------------------------------------------------
+# Cleanup on exit
+# --------------------------------------------------------------------------
+cleanup() {
+    local exit_code=$?
+    if [[ -f "$LOCK_FILE" ]] && [[ "$(cat "$LOCK_FILE" 2>/dev/null)" == "$$" ]]; then
+        rm -f "$LOCK_FILE"
+    fi
+    # Clean up temp file if encoding was interrupted
+    if [[ -n "${TEMP_OUTPUT:-}" ]] && [[ -f "$TEMP_OUTPUT" ]]; then
+        warn "Interrupted — removing incomplete file: $(basename "$TEMP_OUTPUT")"
+        rm -f "$TEMP_OUTPUT"
+    fi
+    if [[ $exit_code -ne 0 ]] && [[ $exit_code -ne 130 ]]; then
+        err "Exited with code $exit_code"
+    fi
+}
+
+setup_trap() {
+    if [[ "$TRAP_SET" == false ]]; then
+        trap cleanup EXIT INT TERM
+        TRAP_SET=true
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Lock file (prevent concurrent runs)
+# --------------------------------------------------------------------------
+acquire_lock() {
+    if [[ -f "$LOCK_FILE" ]]; then
+        local other_pid
+        other_pid=$(cat "$LOCK_FILE" 2>/dev/null || echo "")
+        if [[ -n "$other_pid" ]] && kill -0 "$other_pid" 2>/dev/null; then
+            err "Another ripper instance is running (PID $other_pid)"
+            err "If this is wrong, remove $LOCK_FILE"
+            exit 1
+        else
+            warn "Stale lock file found — cleaning up"
+            rm -f "$LOCK_FILE"
+        fi
+    fi
+    echo $$ > "$LOCK_FILE"
+}
+
+# --------------------------------------------------------------------------
+# Load config
+# --------------------------------------------------------------------------
+load_config() {
+    local config_file="$HOME/.ripperrc"
+    if [[ -f "$config_file" ]]; then
+        # shellcheck source=/dev/null
+        source "$config_file"
+        dim "Loaded config from $config_file"
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Detect DVD drive
+# --------------------------------------------------------------------------
+detect_disc() {
+    local disc_path=""
+
+    # Check for mounted DVD volumes on macOS
+    for vol in /Volumes/*/; do
+        if [[ -d "${vol}VIDEO_TS" ]] || [[ -d "${vol}video_ts" ]]; then
+            disc_path="$vol"
+            break
+        fi
+    done
+
+    # Also check common device paths
+    if [[ -z "$disc_path" ]]; then
+        # Try /dev/disk entries via diskutil
+        local disk_info
+        disk_info=$(diskutil list 2>/dev/null | grep -i "DVD\|CD\|optical" || true)
+        if [[ -n "$disk_info" ]]; then
+            # Try to find the mounted volume from optical media
+            local dev
+            dev=$(echo "$disk_info" | grep -oE '/dev/disk[0-9]+' | head -1 || true)
+            if [[ -n "$dev" ]]; then
+                local mount_point
+                mount_point=$(diskutil info "$dev" 2>/dev/null | grep "Mount Point" | sed 's/.*: *//' || true)
+                if [[ -n "$mount_point" ]] && [[ -d "$mount_point" ]]; then
+                    disc_path="$mount_point"
+                fi
+            fi
+        fi
+    fi
+
+    if [[ -z "$disc_path" ]]; then
+        err "No DVD disc found. Insert a DVD and try again."
+        exit 1
+    fi
+
+    # Remove trailing slash for consistency
+    disc_path="${disc_path%/}"
+    echo "$disc_path"
+}
+
+# --------------------------------------------------------------------------
+# Scan disc for titles
+# --------------------------------------------------------------------------
+scan_titles() {
+    local source="$1"
+    local scan_output
+    local scan_log="${LOG_DIR}/scan_$(date +%Y%m%d_%H%M%S).log"
+
+    step "Scanning disc..."
+    scan_output=$(HandBrakeCLI -i "$source" -t 0 --min-duration "$MIN_TITLE_DURATION" 2>&1) || true
+    echo "$scan_output" > "$scan_log"
+
+    # Extract title info: title number, duration
+    local titles=()
+    local durations=()
+    local current_title=""
+    local current_duration=""
+
+    while IFS= read -r line; do
+        if [[ "$line" =~ \+\ title\ ([0-9]+): ]]; then
+            if [[ -n "$current_title" ]] && [[ -n "$current_duration" ]]; then
+                titles+=("$current_title")
+                durations+=("$current_duration")
+            fi
+            current_title="${BASH_REMATCH[1]}"
+            current_duration=""
+        elif [[ "$line" =~ \+\ duration:\ ([0-9]+):([0-9]+):([0-9]+) ]]; then
+            current_duration="${BASH_REMATCH[1]}:${BASH_REMATCH[2]}:${BASH_REMATCH[3]}"
+        fi
+    done <<< "$scan_output"
+
+    # Don't forget the last title
+    if [[ -n "$current_title" ]] && [[ -n "$current_duration" ]]; then
+        titles+=("$current_title")
+        durations+=("$current_duration")
+    fi
+
+    if [[ ${#titles[@]} -eq 0 ]]; then
+        err "No titles found on disc (min duration: ${MIN_TITLE_DURATION}s)"
+        err "Check scan log: $scan_log"
+        exit 1
+    fi
+
+    # Print title table
+    echo ""
+    printf "  ${BOLD}%-8s %-12s${NC}\n" "Title" "Duration"
+    printf "  %-8s %-12s\n" "-----" "--------"
+    for i in "${!titles[@]}"; do
+        printf "  %-8s %-12s\n" "${titles[$i]}" "${durations[$i]}"
+    done
+    echo ""
+
+    # Export for use by caller
+    SCAN_TITLES=("${titles[@]}")
+    SCAN_DURATIONS=("${durations[@]}")
+}
+
+# --------------------------------------------------------------------------
+# Find main feature (longest title)
+# --------------------------------------------------------------------------
+find_main_feature() {
+    local max_seconds=0
+    local main_title=""
+
+    for i in "${!SCAN_TITLES[@]}"; do
+        local dur="${SCAN_DURATIONS[$i]}"
+        local h m s
+        IFS=: read -r h m s <<< "$dur"
+        local total=$(( 10#$h * 3600 + 10#$m * 60 + 10#$s ))
+        if (( total > max_seconds )); then
+            max_seconds=$total
+            main_title="${SCAN_TITLES[$i]}"
+        fi
+    done
+
+    echo "$main_title"
+}
+
+# --------------------------------------------------------------------------
+# Duration string to human readable
+# --------------------------------------------------------------------------
+duration_human() {
+    local dur="$1"
+    local h m s
+    IFS=: read -r h m s <<< "$dur"
+    h=$((10#$h))
+    m=$((10#$m))
+    if (( h > 0 )); then
+        echo "${h}h ${m}m"
+    else
+        echo "${m}m"
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Check disk space
+# --------------------------------------------------------------------------
+check_disk_space() {
+    local dest_dir="$1"
+    local available_kb
+    available_kb=$(df -k "$dest_dir" | tail -1 | awk '{print $4}')
+    local available_gb=$(( available_kb / 1024 / 1024 ))
+
+    if (( available_gb < 5 )); then
+        err "Only ${available_gb}GB free in $(dirname "$dest_dir")"
+        err "Need at least 5GB free. Clear some space and try again."
+        exit 1
+    fi
+
+    if (( available_gb < 10 )); then
+        warn "Low disk space: ${available_gb}GB free"
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Prompt with default
+# --------------------------------------------------------------------------
+prompt() {
+    local message="$1"
+    local default="${2:-}"
+    local result
+
+    if [[ -n "$default" ]]; then
+        read -r -p "$(echo -e "${CYAN}[input]${NC}   $message ${DIM}[$default]${NC}: ")" result
+        echo "${result:-$default}"
+    else
+        read -r -p "$(echo -e "${CYAN}[input]${NC}   $message: ")" result
+        echo "$result"
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Confirm (Y/n)
+# --------------------------------------------------------------------------
+confirm() {
+    local message="$1"
+    local reply
+    read -r -p "$(echo -e "${CYAN}[confirm]${NC} $message ${DIM}[Y/n]${NC}: ")" reply
+    [[ -z "$reply" || "$reply" =~ ^[Yy] ]]
+}
+
+# --------------------------------------------------------------------------
+# Encode a single title
+# --------------------------------------------------------------------------
+encode_title() {
+    local source="$1"
+    local title_num="$2"
+    local output_path="$3"
+    local log_file="$4"
+
+    local output_dir
+    output_dir=$(dirname "$output_path")
+    mkdir -p "$output_dir"
+
+    # Atomic write: encode to temp, move on success
+    TEMP_OUTPUT="${output_path}.tmp.${FILE_EXT}"
+
+    # Check if output already exists
+    if [[ -f "$output_path" ]]; then
+        warn "File already exists: $(basename "$output_path")"
+        if ! confirm "Overwrite?"; then
+            info "Skipping."
+            return 0
+        fi
+    fi
+
+    # Build HandBrakeCLI command
+    local cmd=(
+        HandBrakeCLI
+        -i "$source"
+        -o "$TEMP_OUTPUT"
+        -t "$title_num"
+        -f "$FORMAT"
+        -e "$ENCODER"
+        --encoder-preset "$ENCODER_PRESET"
+        -q "$QUALITY"
+        -E "$AUDIO_CODEC"
+        -B "$AUDIO_BITRATE"
+        --mixdown "$AUDIO_MIXDOWN"
+        --all-audio
+        --loose-anamorphic
+        --keep-display-aspect
+        --decomb
+    )
+
+    # Add subtitle options
+    if [[ "$BURN_SUBTITLES" == true ]]; then
+        cmd+=(--subtitle-lang-list "$SUBTITLE_LANG" --subtitle-burned)
+    fi
+
+    info "Encoding title $title_num → $(basename "$output_path")"
+    dim "Log: $log_file"
+    echo ""
+
+    # Run encode with progress display
+    local start_time
+    start_time=$(date +%s)
+
+    "${cmd[@]}" 2>&1 | tee "$log_file" | while IFS= read -r line; do
+        # Parse progress from HandBrakeCLI output
+        if [[ "$line" =~ Encoding:.*,\ ([0-9]+\.[0-9]+)\ % ]]; then
+            local pct="${BASH_REMATCH[1]}"
+            local pct_int="${pct%.*}"
+            local now
+            now=$(date +%s)
+            local elapsed=$(( now - start_time ))
+
+            # Calculate ETA
+            local eta_str="--"
+            if (( pct_int > 0 )); then
+                local total_est=$(( elapsed * 100 / pct_int ))
+                local remaining=$(( total_est - elapsed ))
+                if (( remaining > 60 )); then
+                    eta_str="$((remaining / 60))m $((remaining % 60))s"
+                else
+                    eta_str="${remaining}s"
+                fi
+            fi
+
+            # Progress bar
+            local bar_width=30
+            local filled=$(( pct_int * bar_width / 100 ))
+            local empty=$(( bar_width - filled ))
+            local bar=""
+            for ((b=0; b<filled; b++)); do bar+="█"; done
+            for ((b=0; b<empty; b++)); do bar+="░"; done
+
+            printf "\r  ${GREEN}${bar}${NC} %5.1f%% | ETA: %-10s" "$pct" "$eta_str"
+        fi
+    done
+
+    local encode_exit=${PIPESTATUS[0]}
+    echo "" # newline after progress bar
+
+    if [[ $encode_exit -ne 0 ]]; then
+        err "Encoding failed for title $title_num (exit code $encode_exit)"
+        err "Check log: $log_file"
+        rm -f "$TEMP_OUTPUT"
+        TEMP_OUTPUT=""
+        return 1
+    fi
+
+    # Verify output file exists and has reasonable size (>1MB)
+    if [[ ! -f "$TEMP_OUTPUT" ]]; then
+        err "Output file was not created"
+        return 1
+    fi
+
+    local file_size
+    file_size=$(stat -f%z "$TEMP_OUTPUT" 2>/dev/null || stat -c%s "$TEMP_OUTPUT" 2>/dev/null || echo "0")
+    if (( file_size < 1048576 )); then
+        err "Output file suspiciously small ($(( file_size / 1024 ))KB) — likely failed"
+        rm -f "$TEMP_OUTPUT"
+        TEMP_OUTPUT=""
+        return 1
+    fi
+
+    # Atomic move to final destination
+    mv "$TEMP_OUTPUT" "$output_path"
+    TEMP_OUTPUT=""
+
+    # File size in human readable
+    local size_mb=$(( file_size / 1048576 ))
+    local size_str
+    if (( size_mb > 1024 )); then
+        size_str="$(echo "scale=2; $size_mb / 1024" | bc)GB"
+    else
+        size_str="${size_mb}MB"
+    fi
+
+    ok "Saved: $(basename "$output_path") ($size_str)"
+}
+
+# --------------------------------------------------------------------------
+# Movie mode
+# --------------------------------------------------------------------------
+rip_movie() {
+    local source="$1"
+
+    scan_titles "$source"
+
+    local main_title
+    main_title=$(find_main_feature)
+
+    # Find duration of main feature for display
+    local main_duration=""
+    for i in "${!SCAN_TITLES[@]}"; do
+        if [[ "${SCAN_TITLES[$i]}" == "$main_title" ]]; then
+            main_duration="${SCAN_DURATIONS[$i]}"
+            break
+        fi
+    done
+
+    info "Main feature: Title $main_title ($(duration_human "$main_duration"))"
+    echo ""
+
+    # Get movie name
+    local disc_name=""
+    disc_name=$(basename "$source" | sed 's/_/ /g')
+    local movie_name
+    movie_name=$(prompt "Movie name" "$disc_name")
+
+    # Sanitize filename
+    movie_name=$(echo "$movie_name" | sed 's/[/:*?"<>|\\]//g')
+
+    local output_dir="${OUTPUT_DIR}/Movies"
+    local output_path="${output_dir}/${movie_name}.${FILE_EXT}"
+    local log_file="${LOG_DIR}/$(echo "$movie_name" | tr ' ' '_')_$(date +%Y%m%d_%H%M%S).log"
+
+    check_disk_space "$OUTPUT_DIR"
+
+    echo ""
+    step "Encoding: ${BOLD}${movie_name}${NC}"
+    dim "  Source:  $source (Title $main_title)"
+    dim "  Output:  $output_path"
+    dim "  Encoder: $ENCODER @ RF $QUALITY ($ENCODER_PRESET)"
+    echo ""
+
+    if ! confirm "Start encoding?"; then
+        info "Cancelled."
+        exit 0
+    fi
+
+    echo ""
+    encode_title "$source" "$main_title" "$output_path" "$log_file"
+}
+
+# --------------------------------------------------------------------------
+# TV show mode
+# --------------------------------------------------------------------------
+rip_tv() {
+    local source="$1"
+    local show_name="$2"
+    local season="$3"
+
+    scan_titles "$source"
+
+    local num_titles=${#SCAN_TITLES[@]}
+    info "Found $num_titles title(s) on disc"
+
+    # Determine episode range
+    local start_ep
+    start_ep=$(prompt "Starting episode number" "1")
+    local end_ep
+    end_ep=$(prompt "Ending episode number" "$num_titles")
+
+    # Validate
+    if ! [[ "$start_ep" =~ ^[0-9]+$ ]] || ! [[ "$end_ep" =~ ^[0-9]+$ ]]; then
+        err "Episode numbers must be numeric"
+        exit 1
+    fi
+
+    local total_eps=$(( end_ep - start_ep + 1 ))
+    if (( total_eps < 1 || total_eps > num_titles )); then
+        err "Invalid episode range ($start_ep-$end_ep for $num_titles titles)"
+        exit 1
+    fi
+
+    # Sanitize show name
+    show_name=$(echo "$show_name" | sed 's/[/:*?"<>|\\]//g')
+    local season_padded
+    season_padded=$(printf "%02d" "$season")
+
+    local output_dir="${OUTPUT_DIR}/TV Shows/${show_name}/Season ${season}"
+    mkdir -p "$output_dir"
+
+    check_disk_space "$OUTPUT_DIR"
+
+    echo ""
+    step "TV Rip: ${BOLD}${show_name}${NC} — Season $season, Episodes $start_ep-$end_ep"
+    dim "  Output: $output_dir/"
+    dim "  Encoder: $ENCODER @ RF $QUALITY ($ENCODER_PRESET)"
+    echo ""
+
+    # Show episode mapping
+    printf "  ${BOLD}%-10s %-10s %-15s${NC}\n" "Episode" "Title" "Duration"
+    printf "  %-10s %-10s %-15s\n" "-------" "-----" "--------"
+    for (( ep=start_ep; ep<=end_ep; ep++ )); do
+        local idx=$(( ep - start_ep ))
+        if (( idx < num_titles )); then
+            local ep_padded
+            ep_padded=$(printf "S%02dE%02d" "$season" "$ep")
+            printf "  %-10s %-10s %-15s\n" "$ep_padded" "${SCAN_TITLES[$idx]}" "${SCAN_DURATIONS[$idx]}"
+        fi
+    done
+    echo ""
+
+    if ! confirm "Start encoding $total_eps episodes?"; then
+        info "Cancelled."
+        exit 0
+    fi
+
+    echo ""
+    local success=0
+    local failed=0
+
+    for (( ep=start_ep; ep<=end_ep; ep++ )); do
+        local idx=$(( ep - start_ep ))
+        if (( idx >= num_titles )); then
+            warn "No more titles on disc — stopping at episode $((ep - 1))"
+            break
+        fi
+
+        local title_num="${SCAN_TITLES[$idx]}"
+        local ep_padded
+        ep_padded=$(printf "S%02dE%02d" "$season" "$ep")
+        local filename="${show_name} - ${ep_padded}.${FILE_EXT}"
+        local output_path="${output_dir}/${filename}"
+        local log_file="${LOG_DIR}/${show_name}_${ep_padded}_$(date +%Y%m%d_%H%M%S).log"
+
+        echo ""
+        step "Episode $ep of $end_ep — $ep_padded (Title $title_num)"
+
+        if encode_title "$source" "$title_num" "$output_path" "$log_file"; then
+            (( success++ ))
+        else
+            (( failed++ ))
+            warn "Failed to encode $ep_padded — continuing with next episode"
+        fi
+    done
+
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    ok "$success episodes encoded successfully"
+    if (( failed > 0 )); then
+        warn "$failed episodes failed — check logs in ${LOG_DIR}/"
+    fi
+    info "Output: $output_dir/"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+}
+
+# --------------------------------------------------------------------------
+# Preflight checks
+# --------------------------------------------------------------------------
+preflight() {
+    local errors=0
+
+    # Check HandBrakeCLI
+    if command -v HandBrakeCLI &>/dev/null; then
+        ok "HandBrakeCLI found"
+    else
+        err "HandBrakeCLI not found — install with: brew install handbrake"
+        (( errors++ ))
+    fi
+
+    # Check libdvdcss
+    local dvdcss_path="/usr/local/lib/libdvdcss.2.dylib"
+    if [[ -f "$dvdcss_path" ]]; then
+        ok "libdvdcss found"
+    elif [[ -f "/opt/homebrew/lib/libdvdcss.2.dylib" ]]; then
+        ok "libdvdcss found (Apple Silicon path)"
+    else
+        err "libdvdcss not found — install with: brew install libdvdcss"
+        (( errors++ ))
+    fi
+
+    if (( errors > 0 )); then
+        echo ""
+        err "$errors dependency issue(s) — fix them and try again"
+        exit 1
+    fi
+}
+
+# --------------------------------------------------------------------------
+# Settings editor
+# --------------------------------------------------------------------------
+show_settings() {
+    local config_file="$HOME/.ripperrc"
+
+    if [[ ! -f "$config_file" ]]; then
+        create_default_config
+    fi
+
+    echo ""
+    echo -e "${BOLD}Current Settings${NC} ($config_file)"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    while IFS= read -r line; do
+        if [[ "$line" =~ ^#.* ]]; then
+            echo -e "  ${DIM}$line${NC}"
+        elif [[ "$line" =~ ^[A-Z_]+=.* ]]; then
+            local key="${line%%=*}"
+            local val="${line#*=}"
+            printf "  ${CYAN}%-22s${NC} = %s\n" "$key" "$val"
+        elif [[ -z "$line" ]]; then
+            echo ""
+        fi
+    done < "$config_file"
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    info "Edit directly: ${BOLD}nano $config_file${NC}"
+    info "Or run: ${BOLD}ripper --settings edit${NC}"
+}
+
+edit_settings() {
+    local config_file="$HOME/.ripperrc"
+    if [[ ! -f "$config_file" ]]; then
+        create_default_config
+    fi
+    "${EDITOR:-nano}" "$config_file"
+    ok "Settings saved."
+}
+
+create_default_config() {
+    local config_file="$HOME/.ripperrc"
+    cat > "$config_file" << 'CONF'
+# ============================================================================
+# ripper configuration
+# Edit these values to customize your ripping defaults
+# ============================================================================
+
+# Output directory (movies go in Movies/, TV shows in TV Shows/)
+OUTPUT_DIR="$HOME/Downloads/Handbrake Rips"
+
+# Video quality — RF value (lower = better quality, bigger file)
+# DVD sweet spot: 18-24. Recommended: 20
+QUALITY=20
+
+# Video encoder: x265 (smallest files) or x264 (fastest, more compatible)
+ENCODER="x265"
+
+# Encoder speed: ultrafast, veryfast, fast, medium, slow, veryslow
+# Slower = smaller file + better quality, but takes longer
+ENCODER_PRESET="medium"
+
+# Audio codec and bitrate
+AUDIO_CODEC="aac"
+AUDIO_BITRATE="128"
+AUDIO_MIXDOWN="stereo"
+
+# Container format (av_mp4 or av_mkv)
+FORMAT="av_mp4"
+FILE_EXT="mp4"
+
+# Auto-eject disc when done
+AUTO_EJECT=true
+
+# Minimum title duration in seconds (skip short titles like menus)
+MIN_TITLE_DURATION=120
+
+# Subtitle language (ISO 639-2 code)
+SUBTITLE_LANG="eng"
+
+# Burn subtitles into video (true/false)
+# true  = hardcoded into video, always visible
+# false = no subtitles burned (you can add soft subs in your player)
+BURN_SUBTITLES=false
+CONF
+
+    ok "Created config: $config_file"
+}
+
+# --------------------------------------------------------------------------
+# Usage
+# --------------------------------------------------------------------------
+usage() {
+    echo ""
+    echo -e "${BOLD}ripper${NC} v${VERSION} — Automated DVD ripper"
+    echo ""
+    echo -e "${BOLD}USAGE${NC}"
+    echo "  ripper                           Rip main feature as movie"
+    echo "  ripper --tv \"Show Name\" -s 1     Rip TV show (season 1)"
+    echo "  ripper --scan                    Scan disc titles only"
+    echo "  ripper --settings                Show current settings"
+    echo "  ripper --settings edit           Edit settings file"
+    echo "  ripper --preflight               Check dependencies"
+    echo ""
+    echo -e "${BOLD}OPTIONS${NC}"
+    echo "  --tv <name>       TV show mode with show name"
+    echo "  -s, --season <n>  Season number (used with --tv)"
+    echo "  --scan             Scan disc and list titles"
+    echo "  --settings [edit]  View or edit configuration"
+    echo "  --preflight        Run dependency checks"
+    echo "  --source <path>    Override disc path (e.g. ISO file)"
+    echo "  --title <n>        Encode specific title number"
+    echo "  --quality <n>      Override RF quality value"
+    echo "  --no-eject         Don't eject disc when done"
+    echo "  -h, --help         Show this help"
+    echo "  -v, --version      Show version"
+    echo ""
+    echo -e "${BOLD}EXAMPLES${NC}"
+    echo "  ripper                                    # Insert DVD, rip movie"
+    echo "  ripper --tv \"Breaking Bad\" -s 1           # Rip season 1 episodes"
+    echo "  ripper --source /path/to/movie.iso        # Rip from ISO file"
+    echo "  ripper --scan                             # Preview disc contents"
+    echo "  ripper --quality 18                       # Higher quality rip"
+    echo ""
+    echo -e "${BOLD}FILES${NC}"
+    echo "  ~/.ripperrc                               Config file"
+    echo "  ~/Downloads/Handbrake Rips/Movies/        Movie output"
+    echo "  ~/Downloads/Handbrake Rips/TV Shows/      TV output"
+    echo "  ~/Downloads/Handbrake Rips/.logs/         Encode logs"
+    echo ""
+}
+
+# --------------------------------------------------------------------------
+# Main
+# --------------------------------------------------------------------------
+main() {
+    local mode="movie"
+    local show_name=""
+    local season=1
+    local source_override=""
+    local title_override=""
+    local quality_override=""
+    local no_eject=false
+    local scan_only=false
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -h|--help)
+                usage
+                exit 0
+                ;;
+            -v|--version)
+                echo "ripper v${VERSION}"
+                exit 0
+                ;;
+            --tv)
+                mode="tv"
+                show_name="${2:-}"
+                if [[ -z "$show_name" ]]; then
+                    err "--tv requires a show name"
+                    exit 1
+                fi
+                shift 2
+                ;;
+            -s|--season)
+                season="${2:-1}"
+                shift 2
+                ;;
+            --scan)
+                scan_only=true
+                shift
+                ;;
+            --settings)
+                if [[ "${2:-}" == "edit" ]]; then
+                    edit_settings
+                else
+                    show_settings
+                fi
+                exit 0
+                ;;
+            --preflight)
+                preflight
+                exit 0
+                ;;
+            --source)
+                source_override="${2:-}"
+                shift 2
+                ;;
+            --title)
+                title_override="${2:-}"
+                shift 2
+                ;;
+            --quality)
+                quality_override="${2:-}"
+                shift 2
+                ;;
+            --no-eject)
+                no_eject=true
+                shift
+                ;;
+            *)
+                err "Unknown option: $1"
+                usage
+                exit 1
+                ;;
+        esac
+    done
+
+    # Setup
+    setup_trap
+    load_config
+
+    # Apply overrides
+    if [[ -n "$quality_override" ]]; then
+        QUALITY="$quality_override"
+    fi
+    if [[ "$no_eject" == true ]]; then
+        AUTO_EJECT=false
+    fi
+
+    # Create output directories
+    mkdir -p "${OUTPUT_DIR}/Movies"
+    mkdir -p "${OUTPUT_DIR}/TV Shows"
+    LOG_DIR="${OUTPUT_DIR}/.logs"
+    mkdir -p "$LOG_DIR"
+
+    # Preflight
+    echo ""
+    echo -e "${BOLD}ripper${NC} v${VERSION}"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    preflight
+
+    # Detect or use provided source
+    local source
+    if [[ -n "$source_override" ]]; then
+        if [[ ! -e "$source_override" ]]; then
+            err "Source not found: $source_override"
+            exit 1
+        fi
+        source="$source_override"
+        ok "Source: $source"
+    else
+        source=$(detect_disc)
+        ok "Disc found: $source"
+    fi
+
+    # Acquire lock
+    acquire_lock
+
+    # Scan only mode
+    if [[ "$scan_only" == true ]]; then
+        scan_titles "$source"
+        local main
+        main=$(find_main_feature)
+        info "Main feature is likely Title $main"
+        exit 0
+    fi
+
+    # Handle specific title override
+    if [[ -n "$title_override" ]]; then
+        local movie_name
+        movie_name=$(prompt "Output filename (no extension)")
+        movie_name=$(echo "$movie_name" | sed 's/[/:*?"<>|\\]//g')
+        local output_path="${OUTPUT_DIR}/Movies/${movie_name}.${FILE_EXT}"
+        local log_file="${LOG_DIR}/${movie_name}_$(date +%Y%m%d_%H%M%S).log"
+        check_disk_space "$OUTPUT_DIR"
+        encode_title "$source" "$title_override" "$output_path" "$log_file"
+    elif [[ "$mode" == "tv" ]]; then
+        rip_tv "$source" "$show_name" "$season"
+    else
+        rip_movie "$source"
+    fi
+
+    # Auto-eject
+    if [[ "$AUTO_EJECT" == true ]] && [[ -z "$source_override" ]]; then
+        info "Ejecting disc..."
+        drutil eject 2>/dev/null || diskutil eject "$source" 2>/dev/null || true
+        ok "Disc ejected"
+    fi
+
+    echo ""
+    ok "All done."
+}
+
+main "$@"
