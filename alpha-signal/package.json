@@ -1,0 +1,24 @@
+{
+  "name": "alpha-signal",
+  "version": "0.1.0",
+  "description": "Prediction market intelligence bot - Polymarket + X/Twitter sentiment",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "test:polymarket": "tsx src/data/polymarket/client.ts"
+  },
+  "dependencies": {
+    "grammy": "^1.31.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
