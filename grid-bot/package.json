@@ -1,0 +1,35 @@
+{
+  "name": "phantom-grid-bot",
+  "version": "0.1.0",
+  "description": "Multi-agent adaptive grid trading bot for Solana",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:logs": "tsx src/index.ts --no-dashboard",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "backtest": "tsx src/agents/optimizer/backtester.ts",
+    "keygen": "tsx src/utils/keygen.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.0",
+    "@solana/spl-token": "^0.4.0",
+    "ioredis": "^5.4.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "dotenv": "^16.4.0",
+    "axios": "^1.7.0",
+    "bs58": "^6.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0",
+    "@types/node-telegram-bot-api": "^0.64.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
+  }
+}

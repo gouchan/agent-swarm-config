@@ -69,8 +69,8 @@ claude
 │  │ /research    │ │ /build-fix   │ │ animations   │ │ /c4          │   │
 │  └──────────────┘ └──────────────┘ └──────────────┘ └──────────────┘   │
 ├─────────────────────────────────────────────────────────────────────────┤
-│                         MCP SERVERS (5)                                  │
-│  Firecrawl │ Roblox Studio │ Chrome │ Notion │ Stripe                   │
+│                         MCP SERVERS (6)                                  │
+│  Firecrawl │ Roblox Studio │ Chrome │ Notion │ Stripe │ Phantom Docs    │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -144,6 +144,9 @@ claude
 - `/security-review` - Security analysis
 - `/git-master` - Git operations
 
+### Web3 / Trading
+- `/phantom` - Phantom wallet integration (Solana, EVM, Portal, tx signing)
+
 ### Video (Remotion)
 - `/remotion` - Programmatic video creation
   - 31 rule files: animations, transitions, captions, audio, 3D, charts
@@ -172,6 +175,7 @@ claude
 | **Chrome** | Browser automation, screenshots, form filling |
 | **Notion** | Documentation, databases, pages |
 | **Stripe** | Payments, subscriptions, invoices |
+| **Phantom Docs** | Phantom wallet SDK docs — wallet connect, tx signing, multi-chain, Portal |
 
 ## Quick Start
 

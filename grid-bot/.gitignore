@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.save
+.env.local
+keypair.json
+data/historical/*.json
+data/logs/*.log
+*.tsbuildinfo
