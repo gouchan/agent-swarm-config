@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@100..900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-[#F7F7F7] text-neutral-800 font-sans antialiased;
+  }
+
+  .khmer-text {
+    font-family: 'Noto Sans Khmer', sans-serif;
+  }
+}
+
+@layer components {
+  /* 3D press button effect (Duolingo signature) */
+  .btn-3d {
+    @apply border-b-4 transition-all duration-75;
+  }
+  .btn-3d:active {
+    @apply border-b-2 translate-y-[2px];
+  }
+
+  /* Answer card variants */
+  .card-unselected {
+    @apply border-slate-200 bg-white hover:bg-slate-50 cursor-pointer;
+  }
+  .card-selected {
+    @apply border-sky-400 bg-sky-50 cursor-pointer;
+  }
+  .card-correct {
+    @apply border-green-400 bg-green-50 cursor-default;
+  }
+  .card-wrong {
+    @apply border-rose-400 bg-rose-50 cursor-default;
+  }
+}
+
+@layer utilities {
+  .text-khmer {
+    font-family: 'Noto Sans Khmer', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+  .text-khmer-lg {
+    font-family: 'Noto Sans Khmer', sans-serif;
+    font-size: 1.75rem;
+    line-height: 2;
+  }
+  .text-khmer-xl {
+    font-family: 'Noto Sans Khmer', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+}
