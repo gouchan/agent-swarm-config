@@ -13,6 +13,7 @@ interface ResultScreenProps {
   correctCount: number;
   onContinue: () => void;
   moduleVocabIds?: string[];
+  mode?: "normal" | "legendary";
 }
 
 export function ResultScreen({
@@ -22,7 +23,9 @@ export function ResultScreen({
   correctCount,
   onContinue,
   moduleVocabIds,
+  mode = "normal",
 }: ResultScreenProps) {
+  const isLegendary = mode === "legendary";
   const accuracy =
     totalChallenges > 0
       ? Math.round((correctCount / totalChallenges) * 100)
@@ -43,7 +46,14 @@ export function ResultScreen({
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4">
-      <ConfettiBurst />
+      <ConfettiBurst
+        numberOfPieces={isLegendary ? 400 : 200}
+        colors={isLegendary
+          ? ["#F59E0B", "#D97706", "#FBBF24", "#FCD34D", "#C0C0C0", "#FFD700"]
+          : undefined
+        }
+        duration={isLegendary ? 5000 : 3000}
+      />
 
       <motion.div
         className="flex flex-col items-center text-center"
@@ -51,6 +61,20 @@ export function ResultScreen({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
+        {/* Legendary banner */}
+        {isLegendary && (
+          <motion.div
+            className="mb-4 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 px-6 py-2 shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
+          >
+            <span className="text-lg font-extrabold text-amber-900 tracking-wide">
+              LEGENDARY COMPLETE!
+            </span>
+          </motion.div>
+        )}
+
         {/* Trophy */}
         <motion.span
           className="text-7xl"
@@ -58,11 +82,11 @@ export function ResultScreen({
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
         >
-          🏆
+          {isLegendary ? "\u{1F451}" : "\u{1F3C6}"}
         </motion.span>
 
         <h1 className="mt-4 text-3xl font-extrabold text-gray-800">
-          Lesson Complete!
+          {isLegendary ? "Legendary Complete!" : "Lesson Complete!"}
         </h1>
 
         {/* Stats Grid */}

@@ -4,6 +4,8 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { MobileHeader } from "@/components/layout/mobile-header";
 import { LessonPath } from "@/components/home/lesson-path";
 import { XPWidget } from "@/components/home/xp-widget";
+import { DidYouKnow } from "@/components/ui/did-you-know";
+import { TranslateWidget } from "@/components/layout/translate-widget";
 import { useGameStore } from "@/store/game-store";
 import { modules } from "@/data/modules";
 import { useEffect } from "react";
@@ -57,6 +59,7 @@ export default function HomePage() {
               completedModules={completedModules}
               currentModuleIndex={currentModuleIndex}
             />
+            <DidYouKnow className="mt-6 max-w-md mx-auto" />
           </div>
 
           {/* Desktop Right Sidebar */}
@@ -64,11 +67,14 @@ export default function HomePage() {
             <div className="sticky top-8 space-y-4">
               <XPWidget />
               <DailyGoalCard />
-              <AboutKhmerCard />
+              <DidYouKnow />
             </div>
           </div>
         </div>
       </main>
+
+      {/* Floating translate widget — available on all home views */}
+      <TranslateWidget />
     </div>
   );
 }
@@ -103,20 +109,3 @@ function DailyGoalCard() {
   );
 }
 
-function AboutKhmerCard() {
-  return (
-    <div className="bg-white rounded-2xl border-2 border-slate-200 p-4">
-      <h3 className="font-bold text-slate-700 mb-2 flex items-center gap-2">
-        <span>📖</span> Did you know?
-      </h3>
-      <p className="text-sm text-slate-600 leading-relaxed">
-        Khmer script is one of the oldest writing systems in Southeast Asia,
-        dating back to the 7th century AD. Cambodia&apos;s Angkor Wat temples
-        are inscribed with this beautiful script.
-      </p>
-      <p className="text-xs text-slate-400 mt-2">
-        ~16 million speakers worldwide
-      </p>
-    </div>
-  );
-}

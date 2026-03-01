@@ -11,7 +11,7 @@ interface ChallengeCardProps {
   romanized?: string;
   illustration?: string;   // Emoji illustration
   selected: boolean;
-  status: "none" | "correct" | "wrong";
+  status: "none" | "correct" | "wrong" | "try-again";
   onClick: () => void;
   keyboardHint?: string;   // "1", "2", "3", "4"
   showIllustration?: boolean;
@@ -28,12 +28,16 @@ export function ChallengeCard({
   keyboardHint,
   showIllustration = true,
 }: ChallengeCardProps) {
+  // try-again is NOT disabled — user can still select another card
   const isDisabled = status === "correct" || status === "wrong";
+  const isTryAgain = status === "try-again";
 
   const borderColor = isDisabled
     ? status === "correct"
       ? "border-green-400"
       : "border-rose-400"
+    : isTryAgain
+    ? "border-amber-400"
     : selected
     ? "border-[#1CB0F6]"
     : "border-slate-200 hover:border-slate-300";
@@ -42,6 +46,8 @@ export function ChallengeCard({
     ? status === "correct"
       ? "bg-green-50"
       : "bg-rose-50"
+    : isTryAgain
+    ? "bg-amber-50"
     : selected
     ? "bg-[#DDF4FF]"
     : "bg-white hover:bg-slate-50";
@@ -50,6 +56,8 @@ export function ChallengeCard({
     ? status === "correct"
       ? "text-green-700"
       : "text-rose-700"
+    : isTryAgain
+    ? "text-amber-700"
     : selected
     ? "text-[#1CB0F6]"
     : "text-slate-700";
@@ -58,6 +66,8 @@ export function ChallengeCard({
     ? status === "correct"
       ? "bg-green-100"
       : "bg-rose-100"
+    : isTryAgain
+    ? "bg-amber-100"
     : selected
     ? "bg-[#BEE9FF]"
     : "bg-slate-100";
@@ -85,8 +95,12 @@ export function ChallengeCard({
       )}
       whileTap={isDisabled ? {} : { scale: 0.98 }}
       initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
+      animate={
+        isTryAgain
+          ? { opacity: 1, y: 0, x: [0, -6, 6, -4, 4, -2, 2, 0] }
+          : { opacity: 1, y: 0, x: 0 }
+      }
+      transition={{ duration: isTryAgain ? 0.45 : 0.2 }}
     >
       {/* Main content row */}
       <div className="flex items-center gap-3">
@@ -135,6 +149,8 @@ export function ChallengeCard({
             <span className="text-xl">
               {status === "correct" ? "✓" : "✗"}
             </span>
+          ) : isTryAgain ? (
+            <span className="text-xl">⚠️</span>
           ) : (
             <button
               onClick={handleAudio}

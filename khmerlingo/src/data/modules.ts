@@ -238,6 +238,29 @@ export const modules: Module[] = [
         ],
         vocabId: 'greet-12',
       },
+      {
+        id: 'greet-c9',
+        type: 'CONVERSATIONAL',
+        questionText: 'Type "Hello (formal)" in Khmer',
+        correctAnswer: 'ជំរាបសួរ',
+        options: [
+          { id: 'greet-c9-a', text: 'ជំរាបសួរ', isCorrect: true },
+        ],
+        hint: 'jum reap sour',
+        vocabId: 'greet-1',
+      },
+      {
+        id: 'greet-c10',
+        type: 'CONVERSATIONAL',
+        questionText: 'Type "Thank you" in Khmer',
+        correctAnswer: 'អរគុណ',
+        options: [
+          { id: 'greet-c10-a', text: 'អរគុណ', isCorrect: true },
+          { id: 'greet-c10-b', text: 'អរគុណច្រើន', isCorrect: true },
+        ],
+        hint: 'or kun',
+        vocabId: 'greet-5',
+      },
     ],
   },
 
@@ -887,6 +910,17 @@ export const modules: Module[] = [
         ],
         hint: 'Literally "cow breast water"',
         vocabId: 'food-10',
+      },
+      {
+        id: 'food-c8',
+        type: 'CONVERSATIONAL',
+        questionText: 'Type "Rice" in Khmer',
+        correctAnswer: 'បាយ',
+        options: [
+          { id: 'food-c8-a', text: 'បាយ', isCorrect: true },
+        ],
+        hint: 'baay',
+        vocabId: 'food-1',
       },
     ],
   },
@@ -2219,6 +2253,137 @@ export const modules: Module[] = [
         ],
         vocabId: 'phrase-9',
       },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────
+  // SIDEQUEST 1: Cambodia's Cities (ទីក្រុង) — cultural geography
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'cities',
+    title: "Cambodia's Cities",
+    titleKhmer: 'ទីក្រុង',
+    description: "Explore Cambodia's major cities and their Khmer names",
+    icon: '🏛️',
+    color: 'bg-purple-500',
+    borderColor: 'border-purple-600',
+    order: 11,
+    type: 'sidequest',
+    vocabulary: [
+      { id: 'city-1', khmer: 'ភ្នំពេញ', english: 'Phnom Penh', romanized: 'phnom penh', partOfSpeech: 'noun', imageEmoji: '🏙️', exampleEnglish: 'Capital city of Cambodia, on the Mekong River.' },
+      { id: 'city-2', khmer: 'សៀមរាប', english: 'Siem Reap', romanized: 'siem reap', partOfSpeech: 'noun', imageEmoji: '🛕', exampleEnglish: 'Gateway city to Angkor Wat temples.' },
+      { id: 'city-3', khmer: 'ព្រះសីហនុ', english: 'Sihanoukville', romanized: 'preah sihanouk', partOfSpeech: 'noun', imageEmoji: '🏖️', exampleEnglish: "Cambodia's main beach resort city." },
+      { id: 'city-4', khmer: 'បាត់ដំបង', english: 'Battambang', romanized: 'bat dambang', partOfSpeech: 'noun', imageEmoji: '🎨', exampleEnglish: "Cambodia's second largest city, known for arts and culture." },
+      { id: 'city-5', khmer: 'កំពត', english: 'Kampot', romanized: 'kampot', partOfSpeech: 'noun', imageEmoji: '🌶️', exampleEnglish: 'Famous for its pepper and French colonial architecture.' },
+      { id: 'city-6', khmer: 'ក្រចេះ', english: 'Kratie', romanized: 'kratié', partOfSpeech: 'noun', imageEmoji: '🐬', exampleEnglish: 'Known for rare Irrawaddy river dolphins in the Mekong.' },
+    ],
+    challenges: [
+      { id: 'city-c1', type: 'SELECT', questionText: 'ភ្នំពេញ is the capital of Cambodia. What does "Phnom" mean?', questionKhmer: 'ភ្នំពេញ', correctAnswer: 'Hill / Mountain', options: [{ id: 'city-c1-a', text: 'River', isCorrect: false }, { id: 'city-c1-b', text: 'Hill / Mountain', isCorrect: true }, { id: 'city-c1-c', text: 'Palace', isCorrect: false }, { id: 'city-c1-d', text: 'Temple', isCorrect: false }], hint: 'Think of Angkor, built on high ground.', vocabId: 'city-1' },
+      { id: 'city-c2', type: 'SELECT', questionText: 'Which city is the gateway to Angkor Wat?', correctAnswer: 'Siem Reap', options: [{ id: 'city-c2-a', text: 'Phnom Penh', isCorrect: false }, { id: 'city-c2-b', text: 'Kampot', isCorrect: false }, { id: 'city-c2-c', text: 'Siem Reap', isCorrect: true }, { id: 'city-c2-d', text: 'Kratie', isCorrect: false }], hint: 'This city\'s name means "Siam defeated."', vocabId: 'city-2' },
+      { id: 'city-c3', type: 'SELECT', questionText: 'What does "Siem Reap" (សៀមរាប) literally mean?', correctAnswer: 'Siam defeated', options: [{ id: 'city-c3-a', text: 'Land of temples', isCorrect: false }, { id: 'city-c3-b', text: 'Siam defeated', isCorrect: true }, { id: 'city-c3-c', text: 'Great lake city', isCorrect: false }, { id: 'city-c3-d', text: 'Royal river', isCorrect: false }], hint: 'Siem = Siam (Thailand), Reap = defeated.', vocabId: 'city-2' },
+      { id: 'city-c4', type: 'SELECT', questionText: 'Which Cambodian city is famous for its white-sand beaches?', correctAnswer: 'Sihanoukville', options: [{ id: 'city-c4-a', text: 'Battambang', isCorrect: false }, { id: 'city-c4-b', text: 'Siem Reap', isCorrect: false }, { id: 'city-c4-c', text: 'Kampot', isCorrect: false }, { id: 'city-c4-d', text: 'Sihanoukville', isCorrect: true }], hint: 'Named after King Norodom Sihanouk.', vocabId: 'city-3' },
+      { id: 'city-c5', type: 'SELECT', questionText: 'What is Kampot (កំពត) famously known for producing?', correctAnswer: 'Pepper', options: [{ id: 'city-c5-a', text: 'Silk', isCorrect: false }, { id: 'city-c5-b', text: 'Pepper', isCorrect: true }, { id: 'city-c5-c', text: 'Coffee', isCorrect: false }, { id: 'city-c5-d', text: 'Rice wine', isCorrect: false }], hint: 'Kampot pepper is famous worldwide — even Gordon Ramsay uses it.', vocabId: 'city-5' },
+      { id: 'city-c6', type: 'SELECT', questionText: 'Which city would you visit to see Irrawaddy river dolphins?', correctAnswer: 'Kratie', options: [{ id: 'city-c6-a', text: 'Phnom Penh', isCorrect: false }, { id: 'city-c6-b', text: 'Battambang', isCorrect: false }, { id: 'city-c6-c', text: 'Kratie', isCorrect: true }, { id: 'city-c6-d', text: 'Siem Reap', isCorrect: false }], hint: 'This city is on the Mekong River in eastern Cambodia.', vocabId: 'city-6' },
+      { id: 'city-c7', type: 'ASSIST', questionText: 'How do you write "Phnom Penh" in Khmer?', correctAnswer: 'ភ្នំពេញ', options: [{ id: 'city-c7-a', text: 'ភ្នំពេញ', isCorrect: true }, { id: 'city-c7-b', text: 'សៀមរាប', isCorrect: false }, { id: 'city-c7-c', text: 'ព្រះសីហនុ', isCorrect: false }, { id: 'city-c7-d', text: 'កំពត', isCorrect: false }], vocabId: 'city-1' },
+      { id: 'city-c8', type: 'SELECT', questionText: 'What does "Battambang" (បាត់ដំបង) mean in Khmer legend?', correctAnswer: 'Lost magic staff', options: [{ id: 'city-c8-a', text: 'Great river city', isCorrect: false }, { id: 'city-c8-b', text: 'Lost magic staff', isCorrect: true }, { id: 'city-c8-c', text: 'Place of warriors', isCorrect: false }, { id: 'city-c8-d', text: 'Hill of flowers', isCorrect: false }], hint: 'Legend says a peasant stole a magic staff from a king here.', vocabId: 'city-4' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SIDEQUEST 2: Angkor & Khmer History (អង្គរ)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'angkor',
+    title: 'Angkor & History',
+    titleKhmer: 'អង្គរ',
+    description: 'Discover the ancient Khmer Empire and Angkor Wat',
+    icon: '🛕',
+    color: 'bg-amber-600',
+    borderColor: 'border-amber-700',
+    order: 12,
+    type: 'sidequest',
+    vocabulary: [
+      { id: 'angkor-1', khmer: 'អង្គរវត្ត', english: 'Angkor Wat', romanized: 'angkor vat', partOfSpeech: 'noun', imageEmoji: '🛕', exampleEnglish: "World's largest religious monument, built in the 12th century." },
+      { id: 'angkor-2', khmer: 'អង្គរធំ', english: 'Angkor Thom', romanized: 'angkor thom', partOfSpeech: 'noun', imageEmoji: '🏯', exampleEnglish: 'The "Great City" — last capital of the Khmer Empire.' },
+      { id: 'angkor-3', khmer: 'អាណាចក្រខ្មែរ', english: 'Khmer Empire', romanized: 'ana chak khmer', partOfSpeech: 'noun', imageEmoji: '👑', exampleEnglish: 'Ruled Southeast Asia from 802–1431 CE.' },
+      { id: 'angkor-4', khmer: 'ទន្លេសាប', english: 'Tonle Sap Lake', romanized: 'tonle sap', partOfSpeech: 'noun', imageEmoji: '🌊', exampleEnglish: "Southeast Asia's largest freshwater lake, reverses flow seasonally." },
+      { id: 'angkor-5', khmer: 'ជ័យវរ្ម័នទី ៧', english: 'Jayavarman VII', romanized: 'jayavarman dti pram pii', partOfSpeech: 'noun', imageEmoji: '🗿', exampleEnglish: "Greatest Khmer king — built Angkor Thom and Ta Prohm." },
+      { id: 'angkor-6', khmer: 'ទិវាឯករាជ្យ', english: 'Independence Day', romanized: 'tivea aekkareach', partOfSpeech: 'noun', imageEmoji: '🇰🇭', exampleEnglish: 'November 9, 1953 — Cambodia gained independence from France.' },
+    ],
+    challenges: [
+      { id: 'angkor-c1', type: 'SELECT', questionText: 'Angkor Wat (អង្គរវត្ត) is the world\'s largest what?', questionKhmer: 'អង្គរវត្ត', correctAnswer: 'Religious monument', options: [{ id: 'angkor-c1-a', text: 'Palace', isCorrect: false }, { id: 'angkor-c1-b', text: 'Religious monument', isCorrect: true }, { id: 'angkor-c1-c', text: 'Market', isCorrect: false }, { id: 'angkor-c1-d', text: 'City wall', isCorrect: false }], hint: 'It appears on the Cambodian national flag.', vocabId: 'angkor-1' },
+      { id: 'angkor-c2', type: 'SELECT', questionText: 'What does "Angkor Thom" (អង្គរធំ) mean?', questionKhmer: 'អង្គរធំ', correctAnswer: 'Great City', options: [{ id: 'angkor-c2-a', text: 'Temple Mountain', isCorrect: false }, { id: 'angkor-c2-b', text: 'Sacred Water', isCorrect: false }, { id: 'angkor-c2-c', text: 'Great City', isCorrect: true }, { id: 'angkor-c2-d', text: 'Land of Gods', isCorrect: false }], hint: '"Thom" in Khmer means big/great.', vocabId: 'angkor-2' },
+      { id: 'angkor-c3', type: 'SELECT', questionText: 'When did the Khmer Empire (អាណាចក្រខ្មែរ) reach its peak?', correctAnswer: '802–1431 CE', options: [{ id: 'angkor-c3-a', text: '200–500 CE', isCorrect: false }, { id: 'angkor-c3-b', text: '1500–1800 CE', isCorrect: false }, { id: 'angkor-c3-c', text: '802–1431 CE', isCorrect: true }, { id: 'angkor-c3-d', text: '100 BCE–200 CE', isCorrect: false }], hint: 'It started when Jayavarman II unified Cambodia.', vocabId: 'angkor-3' },
+      { id: 'angkor-c4', type: 'SELECT', questionText: 'What is special about Tonle Sap Lake (ទន្លេសាប)?', correctAnswer: 'Its river reverses direction seasonally', options: [{ id: 'angkor-c4-a', text: 'It is saltwater', isCorrect: false }, { id: 'angkor-c4-b', text: 'It never floods', isCorrect: false }, { id: 'angkor-c4-c', text: 'Its river reverses direction seasonally', isCorrect: true }, { id: 'angkor-c4-d', text: 'It is underground', isCorrect: false }], hint: 'During monsoon season, the Mekong pushes water back into this lake.', vocabId: 'angkor-4' },
+      { id: 'angkor-c5', type: 'SELECT', questionText: 'Which king built Angkor Thom and Ta Prohm?', correctAnswer: 'Jayavarman VII', options: [{ id: 'angkor-c5-a', text: 'Jayavarman II', isCorrect: false }, { id: 'angkor-c5-b', text: 'Suryavarman II', isCorrect: false }, { id: 'angkor-c5-c', text: 'Jayavarman VII', isCorrect: true }, { id: 'angkor-c5-d', text: 'Norodom Sihanouk', isCorrect: false }], hint: 'He was a Buddhist king who ruled from 1181–1218 CE.', vocabId: 'angkor-5' },
+      { id: 'angkor-c6', type: 'SELECT', questionText: 'When did Cambodia gain independence? (ទិវាឯករាជ្យ)', correctAnswer: 'November 9, 1953', options: [{ id: 'angkor-c6-a', text: 'July 4, 1776', isCorrect: false }, { id: 'angkor-c6-b', text: 'November 9, 1953', isCorrect: true }, { id: 'angkor-c6-c', text: 'January 7, 1979', isCorrect: false }, { id: 'angkor-c6-d', text: 'August 15, 1945', isCorrect: false }], hint: 'Cambodia gained independence from France under King Sihanouk.', vocabId: 'angkor-6' },
+      { id: 'angkor-c7', type: 'SELECT', questionText: 'The Bayon temple in Angkor Thom has 216 stone faces. Who do they represent?', correctAnswer: 'Avalokitesvara (a bodhisattva)', options: [{ id: 'angkor-c7-a', text: 'Jayavarman VII himself', isCorrect: false }, { id: 'angkor-c7-b', text: 'The Hindu god Vishnu', isCorrect: false }, { id: 'angkor-c7-c', text: 'Avalokitesvara (a bodhisattva)', isCorrect: true }, { id: 'angkor-c7-d', text: 'The four cardinal directions', isCorrect: false }], hint: 'The Bayon reflects the Buddhist influence of Jayavarman VII.', vocabId: 'angkor-2' },
+      { id: 'angkor-c8', type: 'SELECT', questionText: 'Which country colonized Cambodia before independence?', correctAnswer: 'France', options: [{ id: 'angkor-c8-a', text: 'Britain', isCorrect: false }, { id: 'angkor-c8-b', text: 'Portugal', isCorrect: false }, { id: 'angkor-c8-c', text: 'Japan', isCorrect: false }, { id: 'angkor-c8-d', text: 'France', isCorrect: true }], hint: 'Cambodia was part of French Indochina — that\'s why Cambodian baguettes exist!', vocabId: 'angkor-6' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SIDEQUEST 3: Festivals & Traditions (ពិធីបុណ្យ)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'festivals',
+    title: 'Festivals & Traditions',
+    titleKhmer: 'ពិធីបុណ្យ',
+    description: 'Learn about Cambodian festivals, customs, and cultural symbols',
+    icon: '🎊',
+    color: 'bg-pink-500',
+    borderColor: 'border-pink-600',
+    order: 13,
+    type: 'sidequest',
+    vocabulary: [
+      { id: 'fest-1', khmer: 'ចូលឆ្នាំខ្មែរ', english: 'Khmer New Year', romanized: 'chol chnam khmer', partOfSpeech: 'noun', imageEmoji: '🎆', exampleEnglish: 'Celebrated April 13–15, marking the end of harvest season.' },
+      { id: 'fest-2', khmer: 'បុណ្យភ្ជុំបិណ្ឌ', english: 'Pchum Ben (Ancestors Day)', romanized: 'bony phjum ben', partOfSpeech: 'noun', imageEmoji: '🙏', exampleEnglish: '15-day Buddhist festival honoring deceased ancestors.' },
+      { id: 'fest-3', khmer: 'បុណ្យអុំទូក', english: 'Water Festival (Boat Racing)', romanized: 'bony om touk', partOfSpeech: 'noun', imageEmoji: '🚣', exampleEnglish: '3-day festival with boat races on the Tonle Sap river.' },
+      { id: 'fest-4', khmer: 'រំវង់អប្សរា', english: 'Apsara Dance', romanized: 'rum vong apsara', partOfSpeech: 'noun', imageEmoji: '💃', exampleEnglish: 'Classical Khmer dance — UNESCO Intangible Cultural Heritage.' },
+      { id: 'fest-5', khmer: 'ក្រមារ', english: 'Krama (traditional scarf)', romanized: 'kramar', partOfSpeech: 'noun', imageEmoji: '🧣', exampleEnglish: 'Iconic checkered cloth used as hat, bag, hammock, and more.' },
+      { id: 'fest-6', khmer: 'ព្រះពុទ្ធសាសនា', english: 'Buddhism', romanized: 'preah put sasana', partOfSpeech: 'noun', imageEmoji: '☸️', exampleEnglish: "Theravada Buddhism — state religion, practiced by 95% of Cambodians." },
+    ],
+    challenges: [
+      { id: 'fest-c1', type: 'SELECT', questionText: 'When is Khmer New Year (ចូលឆ្នាំខ្មែរ) celebrated?', questionKhmer: 'ចូលឆ្នាំខ្មែរ', correctAnswer: 'April 13–15', options: [{ id: 'fest-c1-a', text: 'January 1', isCorrect: false }, { id: 'fest-c1-b', text: 'April 13–15', isCorrect: true }, { id: 'fest-c1-c', text: 'October 31', isCorrect: false }, { id: 'fest-c1-d', text: 'December 25', isCorrect: false }], hint: 'It marks the end of the harvest season and start of the hot season.', vocabId: 'fest-1' },
+      { id: 'fest-c2', type: 'SELECT', questionText: 'What is Pchum Ben (បុណ្យភ្ជុំបិណ្ឌ)?', questionKhmer: 'បុណ្យភ្ជុំបិណ្ឌ', correctAnswer: "A Buddhist festival honoring ancestors", options: [{ id: 'fest-c2-a', text: 'A harvest celebration', isCorrect: false }, { id: 'fest-c2-b', text: 'A Buddhist festival honoring ancestors', isCorrect: true }, { id: 'fest-c2-c', text: 'A wedding tradition', isCorrect: false }, { id: 'fest-c2-d', text: 'A boat racing event', isCorrect: false }], hint: 'Cambodians believe the spirits of the deceased return during this 15-day period.', vocabId: 'fest-2' },
+      { id: 'fest-c3', type: 'SELECT', questionText: 'What does the Water Festival (បុណ្យអុំទូក) celebrate?', correctAnswer: 'The reversal of the Tonle Sap river current', options: [{ id: 'fest-c3-a', text: 'The end of the rainy season', isCorrect: false }, { id: 'fest-c3-b', text: "Cambodia's independence", isCorrect: false }, { id: 'fest-c3-c', text: 'The reversal of the Tonle Sap river current', isCorrect: true }, { id: 'fest-c3-d', text: 'The rice harvest', isCorrect: false }], hint: 'Tonle Sap is the only river in the world that reverses its flow seasonally.', vocabId: 'fest-3' },
+      { id: 'fest-c4', type: 'SELECT', questionText: 'Apsara dance (រំវង់អប្សរា) is recognized by which international organization?', correctAnswer: 'UNESCO', options: [{ id: 'fest-c4-a', text: 'UNICEF', isCorrect: false }, { id: 'fest-c4-b', text: 'UNESCO', isCorrect: true }, { id: 'fest-c4-c', text: 'WHO', isCorrect: false }, { id: 'fest-c4-d', text: 'World Bank', isCorrect: false }], hint: 'It is listed as Intangible Cultural Heritage — like flamenco or opera.', vocabId: 'fest-4' },
+      { id: 'fest-c5', type: 'SELECT', questionText: 'The krama (ក្រមារ) is a traditional Cambodian what?', questionKhmer: 'ក្រមារ', correctAnswer: 'Checkered cloth / scarf', options: [{ id: 'fest-c5-a', text: 'Wooden instrument', isCorrect: false }, { id: 'fest-c5-b', text: 'Checkered cloth / scarf', isCorrect: true }, { id: 'fest-c5-c', text: 'Clay cooking pot', isCorrect: false }, { id: 'fest-c5-d', text: 'Silk garment', isCorrect: false }], hint: 'Cambodians use it as a hat, bag, hammock, and even a baby carrier.', vocabId: 'fest-5' },
+      { id: 'fest-c6', type: 'SELECT', questionText: 'What percentage of Cambodians practice Buddhism?', correctAnswer: 'About 95%', options: [{ id: 'fest-c6-a', text: 'About 30%', isCorrect: false }, { id: 'fest-c6-b', text: 'About 60%', isCorrect: false }, { id: 'fest-c6-c', text: 'About 95%', isCorrect: true }, { id: 'fest-c6-d', text: 'About 50%', isCorrect: false }], hint: 'Theravada Buddhism is the state religion of Cambodia.', vocabId: 'fest-6' },
+      { id: 'fest-c7', type: 'ASSIST', questionText: 'Which Khmer word means "Khmer New Year"?', correctAnswer: 'ចូលឆ្នាំខ្មែរ', options: [{ id: 'fest-c7-a', text: 'ចូលឆ្នាំខ្មែរ', isCorrect: true }, { id: 'fest-c7-b', text: 'បុណ្យភ្ជុំបិណ្ឌ', isCorrect: false }, { id: 'fest-c7-c', text: 'រំវង់អប្សរា', isCorrect: false }, { id: 'fest-c7-d', text: 'ក្រមារ', isCorrect: false }], vocabId: 'fest-1' },
+      { id: 'fest-c8', type: 'SELECT', questionText: 'Which classical dance depicts heavenly dancers seen in Angkor carvings?', correctAnswer: 'Apsara dance', options: [{ id: 'fest-c8-a', text: 'Shadow puppetry', isCorrect: false }, { id: 'fest-c8-b', text: 'Apsara dance', isCorrect: true }, { id: 'fest-c8-c', text: 'Lakhon Khol', isCorrect: false }, { id: 'fest-c8-d', text: 'Pinpeat music', isCorrect: false }], hint: 'These celestial women are carved thousands of times across Angkor Wat walls.', vocabId: 'fest-4' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SIDEQUEST 4: Cambodian Food & Culture (អាហារខ្មែរ)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'khmer-food',
+    title: 'Cambodian Food',
+    titleKhmer: 'អាហារខ្មែរ',
+    description: 'Explore the flavors and dishes of Cambodian cuisine',
+    icon: '🍜',
+    color: 'bg-orange-500',
+    borderColor: 'border-orange-600',
+    order: 14,
+    type: 'sidequest',
+    vocabulary: [
+      { id: 'kfood-1', khmer: 'អាម៉ុក', english: 'Amok', romanized: 'a-mok', partOfSpeech: 'noun', imageEmoji: '🍛', exampleEnglish: "Cambodia's national dish — coconut fish curry steamed in banana leaf." },
+      { id: 'kfood-2', khmer: 'លុកឡាក់', english: 'Lok Lak', romanized: 'lok lak', partOfSpeech: 'noun', imageEmoji: '🥩', exampleEnglish: 'Stir-fried beef cubes with lime-pepper dipping sauce.' },
+      { id: 'kfood-3', khmer: 'ប្រហុក', english: 'Prahok', romanized: 'pra-hok', partOfSpeech: 'noun', imageEmoji: '🐟', exampleEnglish: 'Fermented fish paste — the "cheese of Cambodia," core to Khmer cooking.' },
+      { id: 'kfood-4', khmer: 'នំបុ័ង', english: 'Num Pang (baguette)', romanized: 'num pang', partOfSpeech: 'noun', imageEmoji: '🥖', exampleEnglish: 'Cambodian sandwich baguette — a French colonial legacy.' },
+      { id: 'kfood-5', khmer: 'បាយសាច់ជ្រូក', english: 'Bai Sach Chrouk', romanized: 'bai sach jrouk', partOfSpeech: 'noun', imageEmoji: '🍚', exampleEnglish: 'Grilled pork over rice — the most popular Cambodian breakfast.' },
+      { id: 'kfood-6', khmer: 'ស្ករត្នោត', english: 'Palm Sugar', romanized: 'skor tnot', partOfSpeech: 'noun', imageEmoji: '🌴', exampleEnglish: 'The sugar palm (ត្នោត) is Cambodia\'s national tree — the whole tree is used.' },
+    ],
+    challenges: [
+      { id: 'kfood-c1', type: 'SELECT', questionText: 'What is Cambodia\'s national dish?', correctAnswer: 'Amok (អាម៉ុក)', options: [{ id: 'kfood-c1-a', text: 'Lok Lak', isCorrect: false }, { id: 'kfood-c1-b', text: 'Prahok', isCorrect: false }, { id: 'kfood-c1-c', text: 'Amok (អាម៉ុក)', isCorrect: true }, { id: 'kfood-c1-d', text: 'Num Pang', isCorrect: false }], hint: 'It is steamed in a banana leaf — you can see it at any Cambodian restaurant.', vocabId: 'kfood-1' },
+      { id: 'kfood-c2', type: 'SELECT', questionText: 'Amok (អាម៉ុក) is made with what main ingredient?', questionKhmer: 'អាម៉ុក', correctAnswer: 'Fish in coconut curry', options: [{ id: 'kfood-c2-a', text: 'Pork in broth', isCorrect: false }, { id: 'kfood-c2-b', text: 'Beef in black pepper sauce', isCorrect: false }, { id: 'kfood-c2-c', text: 'Fish in coconut curry', isCorrect: true }, { id: 'kfood-c2-d', text: 'Chicken in lemongrass', isCorrect: false }], hint: 'The base is coconut milk with kroeung (lemongrass paste).', vocabId: 'kfood-1' },
+      { id: 'kfood-c3', type: 'SELECT', questionText: 'Prahok (ប្រហុក) is sometimes called the "cheese of Cambodia." What is it?', questionKhmer: 'ប្រហុក', correctAnswer: 'Fermented fish paste', options: [{ id: 'kfood-c3-a', text: 'Coconut cream', isCorrect: false }, { id: 'kfood-c3-b', text: 'Fermented fish paste', isCorrect: true }, { id: 'kfood-c3-c', text: 'Chili oil', isCorrect: false }, { id: 'kfood-c3-d', text: 'Rice vinegar', isCorrect: false }], hint: 'Like cheese, the smell is strong but the taste is deeply savory.', vocabId: 'kfood-3' },
+      { id: 'kfood-c4', type: 'SELECT', questionText: 'The Cambodian baguette (នំបុ័ង) is a legacy of which colonial power?', questionKhmer: 'នំបុ័ង', correctAnswer: 'France', options: [{ id: 'kfood-c4-a', text: 'Japan', isCorrect: false }, { id: 'kfood-c4-b', text: 'China', isCorrect: false }, { id: 'kfood-c4-c', text: 'France', isCorrect: true }, { id: 'kfood-c4-d', text: 'Britain', isCorrect: false }], hint: 'Cambodia was French Indochina — French bread culture stuck.', vocabId: 'kfood-4' },
+      { id: 'kfood-c5', type: 'SELECT', questionText: 'What is the most popular Cambodian breakfast dish?', correctAnswer: 'Bai Sach Chrouk (grilled pork rice)', options: [{ id: 'kfood-c5-a', text: 'Amok', isCorrect: false }, { id: 'kfood-c5-b', text: 'Bai Sach Chrouk (grilled pork rice)', isCorrect: true }, { id: 'kfood-c5-c', text: 'Num Pang', isCorrect: false }, { id: 'kfood-c5-d', text: 'Lok Lak', isCorrect: false }], hint: '"Bai" means rice, "Sach" means meat, "Chrouk" means pork.', vocabId: 'kfood-5' },
+      { id: 'kfood-c6', type: 'SELECT', questionText: 'What is the national tree of Cambodia, used for palm sugar?', correctAnswer: 'Sugar palm (ត្នោត)', options: [{ id: 'kfood-c6-a', text: 'Coconut palm', isCorrect: false }, { id: 'kfood-c6-b', text: 'Mango tree', isCorrect: false }, { id: 'kfood-c6-c', text: 'Sugar palm (ត្នោត)', isCorrect: true }, { id: 'kfood-c6-d', text: 'Jackfruit tree', isCorrect: false }], hint: 'Every part of this tree is used — fruit, sap, leaves, and trunk.', vocabId: 'kfood-6' },
+      { id: 'kfood-c7', type: 'SELECT', questionText: 'Lok Lak (លុកឡាក់) is served with what unique dipping sauce?', questionKhmer: 'លុកឡាក់', correctAnswer: 'Lime juice and black pepper', options: [{ id: 'kfood-c7-a', text: 'Fish sauce and sugar', isCorrect: false }, { id: 'kfood-c7-b', text: 'Lime juice and black pepper', isCorrect: true }, { id: 'kfood-c7-c', text: 'Soy sauce and ginger', isCorrect: false }, { id: 'kfood-c7-d', text: 'Coconut cream and chili', isCorrect: false }], hint: 'Kampot pepper (from southern Cambodia) is the key ingredient.', vocabId: 'kfood-2' },
+      { id: 'kfood-c8', type: 'ASSIST', questionText: 'Which Khmer word means "Amok" (national dish)?', correctAnswer: 'អាម៉ុក', options: [{ id: 'kfood-c8-a', text: 'ប្រហុក', isCorrect: false }, { id: 'kfood-c8-b', text: 'លុកឡាក់', isCorrect: false }, { id: 'kfood-c8-c', text: 'អាម៉ុក', isCorrect: true }, { id: 'kfood-c8-d', text: 'នំបុ័ង', isCorrect: false }], vocabId: 'kfood-1' },
     ],
   },
 ];

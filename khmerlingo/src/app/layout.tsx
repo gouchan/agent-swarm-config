@@ -23,7 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body
+        className={`${inter.variable} font-sans`}
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
