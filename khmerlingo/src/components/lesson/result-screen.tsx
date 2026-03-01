@@ -1,8 +1,10 @@
 "use client";
 
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ConfettiBurst } from "@/components/ui/confetti-burst";
+import { culturalContext } from "@/data/cultural-context";
 
 interface ResultScreenProps {
   xpEarned: number;
@@ -10,6 +12,7 @@ interface ResultScreenProps {
   totalChallenges: number;
   correctCount: number;
   onContinue: () => void;
+  moduleVocabIds?: string[];
 }
 
 export function ResultScreen({
@@ -18,11 +21,25 @@ export function ResultScreen({
   totalChallenges,
   correctCount,
   onContinue,
+  moduleVocabIds,
 }: ResultScreenProps) {
   const accuracy =
     totalChallenges > 0
       ? Math.round((correctCount / totalChallenges) * 100)
       : 0;
+
+  // Pick up to 3 random fun facts from this module's vocabulary
+  const funFacts = useMemo(() => {
+    if (!moduleVocabIds) return [];
+    const facts: { vocabId: string; fact: string }[] = [];
+    for (const id of moduleVocabIds) {
+      const ctx = culturalContext[id];
+      if (ctx?.funFact) facts.push({ vocabId: id, fact: ctx.funFact });
+    }
+    // Shuffle and pick 3
+    const shuffled = facts.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 3);
+  }, [moduleVocabIds]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4">
@@ -115,12 +132,36 @@ export function ResultScreen({
           </motion.div>
         </div>
 
+        {/* Fun Facts Panel */}
+        {funFacts.length > 0 && (
+          <motion.div
+            className="mt-6 w-full max-w-sm rounded-2xl border-2 border-yellow-200 bg-yellow-50 p-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <h3 className="flex items-center gap-1.5 text-sm font-extrabold text-yellow-800 mb-3">
+              <span>✨</span> Did You Know?
+            </h3>
+            <ul className="space-y-2">
+              {funFacts.map((f) => (
+                <li
+                  key={f.vocabId}
+                  className="text-xs text-yellow-900 leading-relaxed pl-4 relative before:content-['🔹'] before:absolute before:left-0 before:top-0"
+                >
+                  {f.fact}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+
         {/* Continue Button */}
         <motion.div
-          className="mt-8 w-full max-w-sm"
+          className="mt-6 w-full max-w-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.8 }}
         >
           <Button
             variant="default"

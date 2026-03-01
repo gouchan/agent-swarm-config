@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGameStore } from "@/store/game-store";
@@ -8,6 +8,9 @@ import { LessonHeader } from "./lesson-header";
 import { Challenge } from "./challenge";
 import { LessonFooter } from "./lesson-footer";
 import { ResultScreen } from "./result-screen";
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
+import { playCorrectSound, playWrongSound, preloadAudio } from "@/lib/audio";
+import { culturalContext } from "@/data/cultural-context";
 import type { Module } from "@/data/types";
 
 interface QuizProps {
@@ -37,6 +40,42 @@ export function Quiz({ module }: QuizProps) {
       ? Math.round((currentIndex / totalChallenges) * 100)
       : 0;
 
+  // ── Derive vocab item for current challenge ───────────────────────────────
+  const currentVocabItem = currentChallenge
+    ? module.vocabulary.find((v) => v.id === currentChallenge.vocabId) ?? null
+    : null;
+
+  // ── Cultural context lookup ───────────────────────────────────────────────
+  const vocabContext = currentChallenge
+    ? (culturalContext[currentChallenge.vocabId] ?? null)
+    : null;
+
+  // ── Build option illustrations for ASSIST/SELECT challenges ──────────────
+  // For ASSIST: options have Khmer text → match to vocab by khmer field
+  // For SELECT: options have English text → match to vocab by english field
+  const optionIllustrations: Record<string, string> = {};
+  const optionRomanized: Record<string, string> = {};
+  if (currentChallenge) {
+    const isAssist = currentChallenge.type === "ASSIST";
+    currentChallenge.options.forEach((opt) => {
+      const vocabMatch = isAssist
+        ? module.vocabulary.find((v) => v.khmer === opt.text)
+        : module.vocabulary.find((v) => v.english === opt.text);
+      if (vocabMatch?.imageEmoji) {
+        optionIllustrations[opt.id] = vocabMatch.imageEmoji;
+      }
+      if (vocabMatch?.romanized && isAssist) {
+        optionRomanized[opt.id] = vocabMatch.romanized;
+      }
+    });
+  }
+
+  // ── Preload audio for vocabulary in this module ───────────────────────────
+  useEffect(() => {
+    const englishTexts = module.vocabulary.map((v) => v.english);
+    preloadAudio(englishTexts);
+  }, [module.vocabulary]);
+
   const handleSelect = useCallback(
     (optionId: string) => {
       if (status !== "none") return;
@@ -58,9 +97,11 @@ export function Quiz({ module }: QuizProps) {
       setCorrectCount((prev) => prev + 1);
       addXP(XP_PER_CORRECT);
       setXpEarned((prev) => prev + XP_PER_CORRECT);
+      playCorrectSound();
     } else {
       setStatus("wrong");
       loseHeart();
+      playWrongSound();
     }
   }, [selectedOptionId, currentChallenge, addXP, loseHeart]);
 
@@ -78,6 +119,26 @@ export function Quiz({ module }: QuizProps) {
     setSelectedOptionId(null);
     setStatus("none");
   }, [currentIndex, totalChallenges, completeModule, module.id, updateStreak]);
+
+  // Index-based select for keyboard shortcuts (1-4 keys)
+  const handleSelectByIndex = useCallback(
+    (index: number) => {
+      if (!currentChallenge || status !== "none") return;
+      const option = currentChallenge.options[index];
+      if (option) setSelectedOptionId(option.id);
+    },
+    [currentChallenge, status]
+  );
+
+  // Wire keyboard shortcuts — must come after handleCheck/handleNext are defined
+  useKeyboardShortcuts({
+    numOptions: currentChallenge?.options.length ?? 0,
+    onSelect: handleSelectByIndex,
+    onCheck: handleCheck,
+    onNext: handleNext,
+    status,
+    disabled: !selectedOptionId,
+  });
 
   const handleClose = useCallback(() => {
     router.push("/");
@@ -123,11 +184,12 @@ export function Quiz({ module }: QuizProps) {
         totalChallenges={totalChallenges}
         correctCount={correctCount}
         onContinue={handleContinueHome}
+        moduleVocabIds={module.vocabulary.map((v) => v.id)}
       />
     );
   }
 
-  // Find correct answer text for footer
+  // Correct answer enrichment for footer
   const correctOption = currentChallenge?.options.find((o) => o.isCorrect);
 
   return (
@@ -156,6 +218,8 @@ export function Quiz({ module }: QuizProps) {
                 selectedOptionId={selectedOptionId}
                 status={status}
                 onSelect={handleSelect}
+                optionIllustrations={optionIllustrations}
+                optionRomanized={optionRomanized}
               />
             </motion.div>
           )}
@@ -168,7 +232,11 @@ export function Quiz({ module }: QuizProps) {
         onCheck={handleCheck}
         onNext={handleNext}
         disabled={!selectedOptionId}
-        correctAnswer={correctOption?.text}
+        correctAnswer={currentVocabItem?.english ?? correctOption?.text}
+        correctKhmer={currentVocabItem?.khmer}
+        correctRomanized={currentVocabItem?.romanized}
+        correctIllustration={currentVocabItem?.imageEmoji}
+        vocabContext={vocabContext}
       />
     </div>
   );

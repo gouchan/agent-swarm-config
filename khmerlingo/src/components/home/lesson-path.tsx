@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Lock, Check } from "lucide-react";
+import { Lock, Check, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Module } from "@/data/types";
 
@@ -94,6 +94,18 @@ export function LessonPath({
                   >
                     {module.title}
                   </p>
+
+                  {/* Flashcard study link */}
+                  {(isCompleted || isCurrent) && (
+                    <Link
+                      href={`/flashcards/${module.id}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-1 flex items-center justify-center gap-1 text-[10px] font-bold text-slate-400 hover:text-[#1CB0F6] transition-colors"
+                    >
+                      <BookOpen size={10} />
+                      Study Cards
+                    </Link>
+                  )}
                 </Link>
               ) : (
                 <div>
