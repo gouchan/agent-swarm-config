@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Lock, Check, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,8 @@ export function LessonPath({
   completedModules,
   currentModuleIndex,
 }: LessonPathProps) {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col items-center py-8">
       {modules.map((module, index) => {
@@ -121,14 +124,18 @@ export function LessonPath({
 
                   {/* Flashcard study link — only for vocabulary modules */}
                   {module.type !== "sidequest" && (isCompleted || isCurrent) && (
-                    <Link
-                      href={`/flashcards/${module.id}`}
-                      onClick={(e) => e.stopPropagation()}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        router.push(`/flashcards/${module.id}`);
+                      }}
                       className="mt-1 flex items-center justify-center gap-1 text-[10px] font-bold text-slate-400 hover:text-[#1CB0F6] transition-colors"
                     >
                       <BookOpen size={10} />
                       Study Cards
-                    </Link>
+                    </button>
                   )}
                 </Link>
               ) : (

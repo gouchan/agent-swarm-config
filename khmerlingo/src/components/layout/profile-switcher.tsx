@@ -4,14 +4,80 @@ import { useState, useRef, useEffect } from "react";
 import { useProfileStore, Profile } from "@/store/profile-store";
 import { cn } from "@/lib/utils";
 
-// 24 emoji avatars in 3 categories
-const AVATAR_OPTIONS = [
-  // People
-  "🧑", "👩", "👨", "🧒", "👧", "🧓", "👴", "👵",
-  // Animals
-  "🐶", "🐱", "🐭", "🦊", "🐻", "🐼", "🐸", "🦁",
-  // Fun / Objects
-  "🌟", "🎮", "📚", "🏆", "🎯", "🦋", "🌺", "🎭",
+// ── Rich categorized emoji avatars ──────────────────────────────────────────
+const AVATAR_CATEGORIES = [
+  {
+    label: "😊",
+    title: "Smileys",
+    emojis: [
+      "😀", "😃", "😄", "😁", "😆", "🥹", "😅", "🤣",
+      "😊", "😇", "🙂", "😉", "😍", "🥰", "😘", "😎",
+      "🤩", "🥳", "😏", "🤗", "🤔", "🫡", "🤭", "😶‍🌫️",
+    ],
+  },
+  {
+    label: "🧑",
+    title: "People",
+    emojis: [
+      "🧑", "👩", "👨", "🧒", "👧", "👦", "🧒", "🧓",
+      "👴", "👵", "🧑‍🎓", "🧑‍🎤", "🧑‍🍳", "🧑‍🚀", "🧑‍🎨", "🦸",
+      "🧙", "🧚", "🧛", "🧜", "🧝", "🧞", "🥷", "🧑‍🏫",
+    ],
+  },
+  {
+    label: "🐾",
+    title: "Animals",
+    emojis: [
+      "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
+      "🐸", "🦁", "🐯", "🐮", "🐷", "🐵", "🦄", "🐝",
+      "🦋", "🐙", "🐬", "🦈", "🐧", "🦉", "🦜", "🐲",
+    ],
+  },
+  {
+    label: "🍕",
+    title: "Food",
+    emojis: [
+      "🍕", "🍔", "🍟", "🌮", "🍣", "🍜", "🍩", "🧁",
+      "🍰", "🍦", "🍓", "🍉", "🥑", "🍋", "🥭", "🍇",
+      "🫐", "🥥", "🍪", "🧋", "☕", "🍵", "🧃", "🍱",
+    ],
+  },
+  {
+    label: "⚽",
+    title: "Sports",
+    emojis: [
+      "⚽", "🏀", "🏈", "⚾", "🎾", "🏐", "🏉", "🥊",
+      "🏄", "🚴", "🏊", "🤸", "⛷️", "🏋️", "🎯", "🎳",
+      "🏆", "🥇", "🎖️", "🏅", "🎪", "🎸", "🎮", "🎲",
+    ],
+  },
+  {
+    label: "🌿",
+    title: "Nature",
+    emojis: [
+      "🌸", "🌺", "🌻", "🌹", "🌷", "🌿", "🍀", "🌴",
+      "🌈", "⭐", "🌙", "☀️", "🔥", "💧", "❄️", "🌊",
+      "🌍", "🏔️", "🏝️", "🌵", "🍄", "🦀", "🐚", "🪸",
+    ],
+  },
+  {
+    label: "🇰🇭",
+    title: "Cambodia",
+    emojis: [
+      "🇰🇭", "🏛️", "🛕", "🪷", "🐘", "🌾", "🥥", "🍌",
+      "🎋", "🪭", "🪘", "🛶", "🧘", "🪬", "📿", "🎑",
+      "🏮", "🪻", "🦚", "🐍", "🐊", "🌅", "⛩️", "🧧",
+    ],
+  },
+  {
+    label: "✨",
+    title: "Fun",
+    emojis: [
+      "✨", "💫", "🌟", "⚡", "💥", "🎉", "🎊", "🎈",
+      "💎", "👑", "🎭", "🎪", "🚀", "🛸", "🌈", "🦄",
+      "👻", "🤖", "👽", "💀", "🎃", "🧿", "💝", "🫧",
+    ],
+  },
 ];
 
 function AvatarPicker({
@@ -26,6 +92,7 @@ function AvatarPicker({
   onClose: () => void;
 }) {
   const { updateProfileAvatar } = useProfileStore();
+  const [activeCategory, setActiveCategory] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   // Close on outside click
@@ -39,39 +106,99 @@ function AvatarPicker({
     return () => document.removeEventListener("mousedown", handleClick);
   }, [onClose]);
 
+  // Close on Escape
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [onClose]);
+
   function handleSelect(emoji: string) {
     updateProfileAvatar(profileId, emoji);
     onClose();
   }
 
+  const category = AVATAR_CATEGORIES[activeCategory];
+
   return (
     <div
       ref={ref}
-      className="absolute z-50 top-full mt-1 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-2"
-      style={{ width: 156 }}
+      className="absolute z-50 top-full mt-2 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl border-2 border-gray-200 overflow-hidden"
+      style={{ width: 260 }}
+      onClick={(e) => e.stopPropagation()}
     >
-      <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400 text-center mb-1.5">
-        Choose Avatar
-      </p>
-      <div className="grid grid-cols-6 gap-0.5">
-        {AVATAR_OPTIONS.map((emoji) => (
+      {/* Header */}
+      <div className="px-3 pt-3 pb-1.5">
+        <p className="text-xs font-extrabold text-gray-700 text-center">
+          Pick Your Avatar
+        </p>
+        <p className="text-[9px] text-gray-400 text-center mt-0.5">
+          Express yourself!
+        </p>
+      </div>
+
+      {/* Category tabs */}
+      <div className="flex gap-0.5 px-2 pb-1.5 overflow-x-auto scrollbar-hide">
+        {AVATAR_CATEGORIES.map((cat, i) => (
           <button
-            key={emoji}
-            onClick={() => handleSelect(emoji)}
+            key={cat.title}
+            onClick={() => setActiveCategory(i)}
             className={cn(
-              "flex items-center justify-center h-6 w-6 rounded-md text-sm transition-all hover:scale-110 active:scale-95",
-              emoji === currentAvatar ? "bg-gray-100 ring-2" : "hover:bg-gray-50"
+              "flex flex-col items-center gap-0.5 rounded-lg px-1.5 py-1 transition-all flex-shrink-0 min-w-[30px]",
+              i === activeCategory
+                ? "bg-gray-100"
+                : "hover:bg-gray-50"
             )}
             style={
-              emoji === currentAvatar
-                ? { boxShadow: `0 0 0 2px ${profileColor}` }
+              i === activeCategory
+                ? { boxShadow: `0 2px 0 0 ${profileColor}` }
                 : undefined
             }
-            title={emoji}
+            title={cat.title}
           >
-            {emoji}
+            <span className="text-sm leading-none">{cat.label}</span>
           </button>
         ))}
+      </div>
+
+      {/* Category title */}
+      <div className="px-3 py-1">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+          {category.title}
+        </p>
+      </div>
+
+      {/* Emoji grid */}
+      <div className="px-2 pb-2 max-h-[160px] overflow-y-auto">
+        <div className="grid grid-cols-8 gap-0.5">
+          {category.emojis.map((emoji, idx) => (
+            <button
+              key={`${emoji}-${idx}`}
+              onClick={() => handleSelect(emoji)}
+              className={cn(
+                "flex items-center justify-center h-7 w-7 rounded-lg text-base transition-all hover:scale-125 active:scale-95 hover:bg-gray-100",
+                emoji === currentAvatar && "bg-gray-100 ring-2 ring-offset-1"
+              )}
+              style={
+                emoji === currentAvatar
+                  ? { boxShadow: `0 0 0 2px ${profileColor}` }
+                  : undefined
+              }
+              title={emoji}
+            >
+              {emoji}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer hint */}
+      <div className="border-t border-gray-100 px-3 py-1.5 bg-gray-50/50">
+        <p className="text-[9px] text-gray-400 text-center">
+          Current: {currentAvatar} • Press Esc to close
+        </p>
       </div>
     </div>
   );

@@ -18,10 +18,10 @@ interface ProfileState {
 }
 
 const defaultProfiles: Profile[] = [
-  { id: "profile-1", name: "Player 1", avatar: "🧑", color: "#58CC02" },
-  { id: "profile-2", name: "Player 2", avatar: "👩", color: "#1CB0F6" },
-  { id: "profile-3", name: "Player 3", avatar: "👨", color: "#FAA918" },
-  { id: "profile-4", name: "Player 4", avatar: "🧒", color: "#E53838" },
+  { id: "profile-1", name: "Player 1", avatar: "🦊", color: "#58CC02" },
+  { id: "profile-2", name: "Player 2", avatar: "🐬", color: "#1CB0F6" },
+  { id: "profile-3", name: "Player 3", avatar: "🌟", color: "#FAA918" },
+  { id: "profile-4", name: "Player 4", avatar: "🐲", color: "#E53838" },
 ];
 
 // The key used by Zustand persist in game-store.ts
