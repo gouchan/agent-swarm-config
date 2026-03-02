@@ -89,6 +89,7 @@ function ChatInterface({
   scenario: ConversationScenario;
   onBack: () => void;
 }) {
+  const MAX_RETRIES_PER_TURN = 3;
   const { addXP, updateStreak } = useGameStore();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [turnIndex, setTurnIndex] = useState(0);
@@ -97,6 +98,7 @@ function ChatInterface({
   const [isComplete, setIsComplete] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
   const [userTurnCount, setUserTurnCount] = useState(0);
+  const [retriesLeft, setRetriesLeft] = useState(MAX_RETRIES_PER_TURN);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = useCallback(() => {
@@ -172,6 +174,7 @@ function ChatInterface({
           acceptedAnswers: currentTurn.acceptedAnswers ?? [],
         }),
       });
+      if (!res.ok) throw new Error(`Grade API ${res.status}`);
       const data = await res.json();
 
       const status: MessageStatus = data.correct
@@ -192,6 +195,8 @@ function ChatInterface({
       setUserTurnCount((prev) => prev + 1);
 
       if (data.correct) {
+        // Reset retries for next turn
+        setRetriesLeft(MAX_RETRIES_PER_TURN);
         // Advance to next turns
         const nextIdx = turnIndex + 1;
         if (nextIdx >= scenario.turns.length) {
@@ -213,14 +218,47 @@ function ChatInterface({
           setTimeout(() => playNextBotTurns(nextIdx), 800);
         }
       } else {
-        // Show hint
-        if (currentTurn.hint) {
+        const newRetries = retriesLeft - 1;
+        setRetriesLeft(newRetries);
+
+        if (newRetries <= 0) {
+          // Out of retries — show correct answer and advance
           setMessages((prev) => [
             ...prev,
             {
-              id: `hint-${turnIndex}`,
+              id: `answer-${turnIndex}`,
               speaker: "system",
-              english: `Hint: ${currentTurn.hint}`,
+              english: `Correct answer: ${currentTurn.khmer} (${currentTurn.romanized})`,
+              status: "info",
+            },
+          ]);
+          setRetriesLeft(MAX_RETRIES_PER_TURN);
+          const nextIdx = turnIndex + 1;
+          if (nextIdx >= scenario.turns.length) {
+            setIsComplete(true);
+            addXP(Math.max(5, Math.floor(scenario.xpReward / 2))); // partial XP
+            updateStreak();
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: "complete",
+                speaker: "system",
+                english: `Conversation complete! +${Math.max(5, Math.floor(scenario.xpReward / 2))} XP earned.`,
+                status: "correct",
+              },
+            ]);
+          } else {
+            setTimeout(() => playNextBotTurns(nextIdx), 800);
+          }
+        } else {
+          // Show hint and retries remaining
+          const hintMsg = currentTurn.hint ? `Hint: ${currentTurn.hint}` : "Try again!";
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: `hint-${turnIndex}-${newRetries}`,
+              speaker: "system",
+              english: `${hintMsg} (${newRetries} ${newRetries === 1 ? "try" : "tries"} left)`,
               status: "info",
             },
           ]);
@@ -229,7 +267,7 @@ function ChatInterface({
     } catch {
       setMessages((prev) =>
         prev.map((m) =>
-          m.id === userMsg.id ? { ...m, status: "wrong", feedback: "Grading error" } : m
+          m.id === userMsg.id ? { ...m, status: "wrong", feedback: "Grading error — try again" } : m
         )
       );
     } finally {
@@ -412,6 +450,7 @@ function ChatInterface({
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Type in Khmer..."
+              maxLength={200}
               disabled={isGrading}
               className="flex-1 rounded-xl border-2 border-gray-200 px-4 py-2.5 text-base font-medium text-gray-800 placeholder:text-gray-300 focus:border-[#1CB0F6] focus:outline-none focus:ring-2 focus:ring-[#1CB0F6]/20 transition-colors disabled:opacity-50"
               style={{ fontFamily: "'Noto Sans Khmer', sans-serif" }}

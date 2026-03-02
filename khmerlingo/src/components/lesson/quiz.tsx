@@ -61,6 +61,7 @@ export function Quiz({ module, mode }: QuizProps) {
   // Timer state (legendary mode)
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerStartedRef = useRef(false);
   const statusRef = useRef(status);
   statusRef.current = status;
 
@@ -145,6 +146,7 @@ export function Quiz({ module, mode }: QuizProps) {
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
+    timerStartedRef.current = false;
 
     if (mode !== "legendary" || showBonusRound) {
       setTimeLeft(0);
@@ -158,16 +160,13 @@ export function Quiz({ module, mode }: QuizProps) {
 
     const duration = getTimerDuration(currentChallenge.type);
     setTimeLeft(duration);
+    timerStartedRef.current = true;
 
     timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           if (timerRef.current) clearInterval(timerRef.current);
           timerRef.current = null;
-          // Timeout — auto-fail
-          setStatus("wrong");
-          loseHeart();
-          playWrongSound();
           return 0;
         }
         return prev - 1;
@@ -179,14 +178,26 @@ export function Quiz({ module, mode }: QuizProps) {
         clearInterval(timerRef.current);
         timerRef.current = null;
       }
+      timerStartedRef.current = false;
     };
   }, [currentIndex, mode, showBonusRound]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Handle timer expiry — separated from countdown to avoid side effects in state updater
+  useEffect(() => {
+    if (timeLeft === 0 && timerStartedRef.current && statusRef.current === "none") {
+      timerStartedRef.current = false;
+      setStatus("wrong");
+      loseHeart();
+      playWrongSound();
+    }
+  }, [timeLeft, loseHeart]);
 
   // Clear timer when status changes away from 'none'
   useEffect(() => {
     if (status !== "none" && timerRef.current) {
       clearInterval(timerRef.current);
       timerRef.current = null;
+      timerStartedRef.current = false;
     }
   }, [status]);
 
@@ -220,7 +231,8 @@ export function Quiz({ module, mode }: QuizProps) {
   );
 
   const handleCheck = useCallback(async () => {
-    if (status !== "none") return;
+    // Use ref to prevent race condition with timer timeout
+    if (statusRef.current !== "none") return;
 
     // ── Bonus round check ──
     if (showBonusRound && bonusChallenge) {
@@ -259,6 +271,7 @@ export function Quiz({ module, mode }: QuizProps) {
             acceptedAnswers,
           }),
         });
+        if (!res.ok) throw new Error(`Grade API ${res.status}`);
         const data = await res.json();
         setGradeScore(data.score);
 
@@ -354,7 +367,6 @@ export function Quiz({ module, mode }: QuizProps) {
   }, [
     selectedOptionId,
     currentChallenge,
-    status,
     attemptsLeft,
     addXP,
     loseHeart,
@@ -524,8 +536,8 @@ export function Quiz({ module, mode }: QuizProps) {
         onClose={handleClose}
       />
 
-      {/* Challenge */}
-      <div className="flex flex-1 items-center justify-center pb-24">
+      {/* Challenge — extra bottom padding for fixed footer which can be tall when showing context */}
+      <div className="flex flex-1 items-center justify-center pb-32 md:pb-40">
         <AnimatePresence mode="wait">
           {/* Bonus Round UI */}
           {showBonusRound && bonusChallenge && (

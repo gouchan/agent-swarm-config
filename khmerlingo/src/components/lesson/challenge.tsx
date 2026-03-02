@@ -186,16 +186,18 @@ export function Challenge({
               >
                 <span className="text-xs font-mono text-current opacity-50 mr-1">{index + 1}</span>
                 {option.text}
-                <button
+                <span
+                  role="button"
+                  tabIndex={-1}
                   onClick={(e) => {
                     e.stopPropagation();
                     speakKhmer(option.text);
                   }}
-                  className="p-0.5 rounded-md hover:bg-black/5 transition-colors flex-shrink-0"
+                  className="p-0.5 rounded-md hover:bg-black/5 transition-colors flex-shrink-0 cursor-pointer"
                   title="Hear pronunciation"
                 >
                   <Volume2 className="h-3.5 w-3.5" />
-                </button>
+                </span>
               </motion.button>
             );
           })}
@@ -243,16 +245,18 @@ export function Challenge({
                   style={{ fontFamily: "'Noto Sans Khmer', sans-serif" }}
                 >
                   {item.text}
-                  <button
+                  <span
+                    role="button"
+                    tabIndex={-1}
                     onClick={(e) => {
                       e.stopPropagation();
                       speakKhmer(item.text);
                     }}
-                    className="p-0.5 rounded-md hover:bg-black/5 transition-colors flex-shrink-0"
+                    className="p-0.5 rounded-md hover:bg-black/5 transition-colors flex-shrink-0 cursor-pointer"
                     title="Hear pronunciation"
                   >
                     <Volume2 className="h-3 w-3 opacity-60" />
-                  </button>
+                  </span>
                   {status === "correct" && <Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" />}
                   {status === "wrong" && isPaired && !isCorrectPaired && <X className="h-3.5 w-3.5 text-red-600 flex-shrink-0" />}
                   {status === "wrong" && isCorrectPaired && <Check className="h-3.5 w-3.5 text-green-600 flex-shrink-0" />}
@@ -374,6 +378,7 @@ export function Challenge({
               value={conversationalInput}
               onChange={(e) => onConversationalInputChange?.(e.target.value)}
               placeholder="Type your answer in Khmer..."
+              maxLength={200}
               disabled={status === "correct" || status === "wrong"}
               className={cn(
                 "w-full min-h-[100px] resize-none rounded-2xl border-2 px-4 py-3 text-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#1CB0F6]/40",

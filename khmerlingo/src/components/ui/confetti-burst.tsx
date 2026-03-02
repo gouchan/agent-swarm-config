@@ -12,10 +12,7 @@ interface ConfettiBurstProps {
 export function ConfettiBurst({ duration = 3000, numberOfPieces = 200, colors }: ConfettiBurstProps) {
   const confettiColors = colors ?? ["#58CC02", "#1CB0F6", "#FAA918", "#E53838", "#8549BA"];
   const [isRunning, setIsRunning] = useState(true);
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== "undefined" ? window.innerWidth : 800,
-    height: typeof window !== "undefined" ? window.innerHeight : 600,
-  });
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const handleResize = () => {

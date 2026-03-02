@@ -173,8 +173,8 @@ export default function LeaderboardPage() {
           {sorted.map((profile, index) => {
             const isMe = profile.profileId === activeProfileId;
             const score = tab.getValue(profile);
-            const maxScore = tab.getValue(sorted[0]) || 1;
-            const pct = Math.max(8, (score / maxScore) * 100);
+            const topScore = sorted.length > 0 ? (tab.getValue(sorted[0]) || 1) : 1;
+            const pct = Math.max(8, (score / topScore) * 100);
 
             return (
               <motion.div
