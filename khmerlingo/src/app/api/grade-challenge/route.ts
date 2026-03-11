@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getIP } from "@/lib/rate-limit";
+
+const MAX_ANSWER_LENGTH = 500;
+const MAX_ACCEPTED_ANSWERS = 20;
 
 /**
  * Grades a conversational challenge response using fuzzy matching.
@@ -53,12 +57,25 @@ interface GradeResponse {
 }
 
 export async function POST(req: NextRequest) {
+  // Rate limit: 120 grade requests per minute per IP
+  if (!rateLimit(getIP(req), 120, 60_000)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   try {
     const body = (await req.json()) as GradeRequest;
     const { userAnswer, correctAnswer, acceptedAnswers = [] } = body;
 
     if (!userAnswer || !correctAnswer) {
       return NextResponse.json({ error: "Missing userAnswer or correctAnswer" }, { status: 400 });
+    }
+
+    if (userAnswer.length > MAX_ANSWER_LENGTH || correctAnswer.length > MAX_ANSWER_LENGTH) {
+      return NextResponse.json({ error: "Input too long" }, { status: 400 });
+    }
+
+    if (acceptedAnswers.length > MAX_ACCEPTED_ANSWERS) {
+      return NextResponse.json({ error: "Too many accepted answers" }, { status: 400 });
     }
 
     const normalizedUser = normalize(userAnswer);

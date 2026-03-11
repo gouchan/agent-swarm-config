@@ -37,7 +37,7 @@ const freshGameData = {
   hearts: 5,
   maxHearts: 5,
   streak: 0,
-  gems: 0,
+  gems: 200,
   completedModules: [] as string[],
   legendaryModules: [] as string[],
   moduleProgress: {} as Record<string, number>,
@@ -69,10 +69,26 @@ export const useProfileStore = create<ProfileState>()(
             try {
               const parsed = JSON.parse(savedJSON);
               // parsed has { state: {...}, version: 0 } shape from Zustand persist
-              if (parsed.state) {
-                useGameStore.setState(parsed.state);
-                // Also write to the main key so persist picks it up
-                localStorage.setItem(GAME_STORE_KEY, savedJSON);
+              // Validate shape before merging — reject tampered / corrupt data
+              const s = parsed?.state;
+              if (s && typeof s === "object") {
+                const safeState = {
+                  xp: typeof s.xp === "number" && s.xp >= 0 ? s.xp : 0,
+                  hearts: typeof s.hearts === "number" ? Math.min(Math.max(0, s.hearts), 5) : 5,
+                  maxHearts: typeof s.maxHearts === "number" ? s.maxHearts : 5,
+                  streak: typeof s.streak === "number" && s.streak >= 0 ? s.streak : 0,
+                  gems: typeof s.gems === "number" && s.gems >= 0 ? s.gems : 0,
+                  completedModules: Array.isArray(s.completedModules) ? s.completedModules.filter((m: unknown) => typeof m === "string") : [],
+                  legendaryModules: Array.isArray(s.legendaryModules) ? s.legendaryModules.filter((m: unknown) => typeof m === "string") : [],
+                  moduleProgress: s.moduleProgress && typeof s.moduleProgress === "object" && !Array.isArray(s.moduleProgress) ? s.moduleProgress : {},
+                  badges: Array.isArray(s.badges) ? s.badges.filter((b: unknown) => typeof b === "string") : [],
+                  lastPlayedDate: typeof s.lastPlayedDate === "string" || s.lastPlayedDate === null ? s.lastPlayedDate : null,
+                };
+                useGameStore.setState(safeState);
+                const safeJSON = JSON.stringify({ state: safeState, version: 0 });
+                localStorage.setItem(GAME_STORE_KEY, safeJSON);
+              } else {
+                useGameStore.setState(freshGameData);
               }
             } catch {
               // Corrupt data — reset to fresh

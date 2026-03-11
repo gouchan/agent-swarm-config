@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Languages, ArrowLeftRight, X, Loader2 } from "lucide-react";
 
@@ -14,6 +14,13 @@ export function TranslateWidget() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cleanup debounce timer on unmount to prevent state updates on unmounted component
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const to: Lang = from === "en" ? "km" : "en";
 
@@ -121,6 +128,7 @@ export function TranslateWidget() {
                 placeholder={from === "en" ? "Type English..." : "សរសេរជាភាសាខ្មែរ..."}
                 value={inputText}
                 onChange={(e) => handleInput(e.target.value)}
+                maxLength={500}
                 style={from === "km" ? { fontFamily: "'Noto Sans Khmer', sans-serif" } : {}}
               />
 

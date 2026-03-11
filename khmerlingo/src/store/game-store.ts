@@ -43,7 +43,7 @@ export const useGameStore = create<GameState>()(
       hearts: 5,
       maxHearts: 5,
       streak: 0,
-      gems: 0,
+      gems: 200,
       completedModules: [],
       legendaryModules: [],
       moduleProgress: {},

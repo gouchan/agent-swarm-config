@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getIP } from "@/lib/rate-limit";
 
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? "21m00Tcm4TlvDq8ikWAM";
@@ -6,6 +7,9 @@ const MODEL_ID = "eleven_multilingual_v2";
 
 // In-memory cache: text → Blob  (resets on server restart)
 const audioCache = new Map<string, Blob>();
+let cacheSizeBytes = 0;
+const MAX_CACHE_BYTES = 50 * 1024 * 1024; // 50 MB ceiling
+const MAX_TEXT_LENGTH = 500;
 
 const audioHeaders = {
   "Content-Type": "audio/mpeg",
@@ -13,10 +17,22 @@ const audioHeaders = {
 };
 
 export async function POST(req: NextRequest) {
+  // Rate limit: 30 TTS requests per minute per IP
+  if (!rateLimit(getIP(req), 30, 60_000)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { text } = await req.json();
 
   if (!text || typeof text !== "string") {
     return NextResponse.json({ error: "text required" }, { status: 400 });
+  }
+
+  if (text.length > MAX_TEXT_LENGTH) {
+    return NextResponse.json(
+      { error: `Text too long (max ${MAX_TEXT_LENGTH} chars)` },
+      { status: 400 }
+    );
   }
 
   const cacheKey = text.trim().toLowerCase();
@@ -28,10 +44,7 @@ export async function POST(req: NextRequest) {
   }
 
   if (!ELEVENLABS_API_KEY) {
-    return NextResponse.json(
-      { error: "ELEVENLABS_API_KEY not configured" },
-      { status: 503 }
-    );
+    return NextResponse.json({ error: "TTS service unavailable" }, { status: 503 });
   }
 
   try {
@@ -68,12 +81,16 @@ export async function POST(req: NextRequest) {
 
     const blob = await upstream.blob();
 
-    // Cache (limit to 200 entries)
-    if (audioCache.size >= 200) {
+    // Byte-based cache eviction — evict oldest until under the limit
+    while (cacheSizeBytes + blob.size > MAX_CACHE_BYTES && audioCache.size > 0) {
       const oldestKey = audioCache.keys().next().value;
-      if (oldestKey) audioCache.delete(oldestKey);
+      if (oldestKey) {
+        cacheSizeBytes -= audioCache.get(oldestKey)!.size;
+        audioCache.delete(oldestKey);
+      }
     }
     audioCache.set(cacheKey, blob);
+    cacheSizeBytes += blob.size;
 
     return new Response(blob, { headers: audioHeaders });
   } catch (err) {
