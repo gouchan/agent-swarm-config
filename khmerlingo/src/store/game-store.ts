@@ -8,6 +8,7 @@ interface GameState {
   streak: number;
   gems: number; // "riels"
   completedModules: string[];
+  legendaryModules: string[]; // modules completed in legendary mode
   moduleProgress: Record<string, number>; // moduleId -> challenge index
   badges: string[];
   lastPlayedDate: string | null;
@@ -17,6 +18,7 @@ interface GameState {
   loseHeart: () => void;
   gainHeart: () => void;
   completeModule: (moduleId: string) => void;
+  completeLegendaryModule: (moduleId: string) => void;
   setModuleProgress: (moduleId: string, progress: number) => void;
   awardBadge: (badgeId: string) => void;
   updateStreak: () => void;
@@ -41,8 +43,9 @@ export const useGameStore = create<GameState>()(
       hearts: 5,
       maxHearts: 5,
       streak: 0,
-      gems: 0,
+      gems: 200,
       completedModules: [],
+      legendaryModules: [],
       moduleProgress: {},
       badges: [],
       lastPlayedDate: null,
@@ -79,6 +82,16 @@ export const useGameStore = create<GameState>()(
           completedModules: newCompletedModules,
           badges: newBadges,
         });
+      },
+
+      completeLegendaryModule: (moduleId: string) => {
+        const state = get();
+        if (state.legendaryModules.includes(moduleId)) return;
+        const badgeId = `legendary-${moduleId}`;
+        set((s) => ({
+          legendaryModules: [...s.legendaryModules, moduleId],
+          badges: s.badges.includes(badgeId) ? s.badges : [...s.badges, badgeId],
+        }));
       },
 
       setModuleProgress: (moduleId: string, progress: number) => {

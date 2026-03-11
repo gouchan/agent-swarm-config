@@ -6,6 +6,7 @@ import { useGameStore } from "@/store/game-store";
 import { BADGES } from "@/data/types";
 import { modules } from "@/data/modules";
 import { getLevelFromXP, getXPForNextLevel } from "@/lib/utils";
+import { DidYouKnow } from "@/components/ui/did-you-know";
 
 export default function ProfilePage() {
   const { xp, hearts, streak, gems, completedModules, badges } =
@@ -34,6 +35,9 @@ export default function ProfilePage() {
       </div>
 
       <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+        {/* Did You Know */}
+        <DidYouKnow className="mb-6" />
+
         {/* Level Card */}
         <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
           <div className="flex items-center gap-4 mb-4">

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, User } from "lucide-react";
+import { BookOpen, User, Trophy, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useGameStore } from "@/store/game-store";
 import { formatXP } from "@/lib/utils";
+import { ProfileSwitcher } from "./profile-switcher";
 
 interface NavItemProps {
   href: string;
@@ -45,6 +46,9 @@ export function Sidebar() {
         <span className="text-xl font-extrabold text-gray-800">KhmerLingo</span>
       </div>
 
+      {/* Profile Switcher */}
+      <ProfileSwitcher />
+
       {/* Navigation */}
       <nav className="flex flex-1 flex-col gap-1 p-4">
         <NavItem
@@ -58,6 +62,18 @@ export function Sidebar() {
           icon={<User size={24} />}
           label="Profile"
           active={pathname === "/profile"}
+        />
+        <NavItem
+          href="/leaderboard"
+          icon={<Trophy size={24} />}
+          label="Leaderboard"
+          active={pathname === "/leaderboard"}
+        />
+        <NavItem
+          href="/practice"
+          icon={<MessageSquare size={24} />}
+          label="Practice"
+          active={pathname === "/practice"}
         />
       </nav>
 

@@ -1,4 +1,4 @@
-export type ExerciseType = 'SELECT' | 'ASSIST' | 'MATCH' | 'FILL_BLANK';
+export type ExerciseType = 'SELECT' | 'ASSIST' | 'MATCH' | 'FILL_BLANK' | 'CONVERSATIONAL';
 
 export interface VocabItem {
   id: string;
@@ -28,6 +28,8 @@ export interface Challenge {
   vocabId: string;               // Links to VocabItem
 }
 
+export type ModuleType = 'vocabulary' | 'sidequest';
+
 export interface Module {
   id: string;
   title: string;                 // English title
@@ -37,6 +39,7 @@ export interface Module {
   color: string;                 // Tailwind color class (e.g., 'bg-green-500')
   borderColor: string;           // Tailwind border class
   order: number;                 // Position in skill tree
+  type?: ModuleType;             // 'vocabulary' (default) | 'sidequest'
   vocabulary: VocabItem[];
   challenges: Challenge[];
 }

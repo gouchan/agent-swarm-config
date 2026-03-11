@@ -7,7 +7,7 @@ interface Options {
   onSelect: (index: number) => void;
   onCheck: () => void;
   onNext: () => void;
-  status: "none" | "correct" | "wrong";
+  status: "none" | "try-again" | "correct" | "wrong";
   disabled: boolean;
 }
 
@@ -34,10 +34,10 @@ export function useKeyboardShortcuts({
       )
         return;
 
-      // Number keys 1–4
+      // Number keys 1–4 — allow selection during none and try-again
       if (e.key >= "1" && e.key <= "4") {
         const idx = parseInt(e.key) - 1;
-        if (idx < numOptions && status === "none") {
+        if (idx < numOptions && (status === "none" || status === "try-again")) {
           onSelect(idx);
         }
         return;
@@ -46,11 +46,12 @@ export function useKeyboardShortcuts({
       // Enter / Space
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        if (status !== "none") {
+        if (status === "correct" || status === "wrong") {
           onNext();
-        } else if (!disabled) {
+        } else if (status === "none" && !disabled) {
           onCheck();
         }
+        // During try-again: Enter does nothing — user must re-select first
         return;
       }
     }

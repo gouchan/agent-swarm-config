@@ -385,6 +385,19 @@ cp .mcp.json.example .mcp.json
 
 ---
 
+## Showcase Projects
+
+Projects built entirely with The Gauntlet:
+
+### [KhmerLingo](khmerlingo/) — Duolingo for Khmer
+The first gamified Khmer language learning app. Built with `/autopilot` orchestration.
+- 10 modules, 120+ vocabulary, 5 exercise types (SELECT, ASSIST, MATCH, FILL_BLANK, CONVERSATIONAL)
+- Legendary timed mode with 2x XP, conversation practice chat, family leaderboard
+- Fuzzy Levenshtein grading API, ElevenLabs TTS, cultural context for every word
+- Next.js 14 + TypeScript + Tailwind + Framer Motion + Zustand
+
+---
+
 ## License
 
 UNLICENSED — Private project

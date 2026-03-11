@@ -90,18 +90,28 @@ function playUrl(url: string): void {
   el.play().catch((e) => console.warn("Audio play error:", e));
 }
 
-// Sound effects
-let correctAudio: HTMLAudioElement | null = null;
-let wrongAudio: HTMLAudioElement | null = null;
+// Sound effects — reuse a single AudioContext to avoid memory leaks
+let audioCtx: AudioContext | null = null;
+
+function getAudioContext(): AudioContext | null {
+  try {
+    if (!audioCtx || audioCtx.state === "closed") {
+      audioCtx = new (window.AudioContext ||
+        (window as unknown as { webkitAudioContext: typeof AudioContext })
+          .webkitAudioContext)();
+    }
+    // Resume if suspended (browser autoplay policy)
+    if (audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  } catch {
+    return null;
+  }
+}
 
 export function playCorrectSound(): void {
   if (typeof window === "undefined") return;
-  if (!correctAudio) {
-    correctAudio = new Audio();
-    // Generate a quick cheerful tone via Web Audio
-    playTone(880, 0.12, "sine", 0.25);
-    return;
-  }
   playTone(880, 0.12, "sine", 0.25);
 }
 
@@ -116,10 +126,10 @@ function playTone(
   type: OscillatorType,
   volume: number
 ): void {
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
   try {
-    const ctx = new (window.AudioContext ||
-      (window as unknown as { webkitAudioContext: typeof AudioContext })
-        .webkitAudioContext)();
     const oscillator = ctx.createOscillator();
     const gainNode = ctx.createGain();
 
@@ -134,6 +144,12 @@ function playTone(
 
     oscillator.start(ctx.currentTime);
     oscillator.stop(ctx.currentTime + duration);
+
+    // Clean up nodes after playback
+    oscillator.onended = () => {
+      oscillator.disconnect();
+      gainNode.disconnect();
+    };
   } catch {
     // Audio not available
   }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Lock, Check, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,8 @@ export function LessonPath({
   completedModules,
   currentModuleIndex,
 }: LessonPathProps) {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col items-center py-8">
       {modules.map((module, index) => {
@@ -24,15 +27,15 @@ export function LessonPath({
         const isUnlocked = index <= currentModuleIndex || isCompleted;
         const isCurrent = index === currentModuleIndex && !isCompleted;
 
-        // Zigzag: alternate left/right offset
+        // Zigzag: alternate left/right offset (reduced for mobile safety)
         const offsetX =
           index % 4 === 0
             ? 0
             : index % 4 === 1
-            ? 60
+            ? 48
             : index % 4 === 2
             ? 0
-            : -60;
+            : -48;
 
         return (
           <div key={module.id} className="flex flex-col items-center">
@@ -55,10 +58,23 @@ export function LessonPath({
             >
               {isUnlocked ? (
                 <Link href={`/learn/${module.id}`}>
+                  {/* Sidequest label badge */}
+                  {module.type === "sidequest" && (
+                    <p className="text-center text-[9px] font-extrabold uppercase tracking-widest text-amber-500 mb-1">
+                      ⭐ Sidequest
+                    </p>
+                  )}
+
                   <div
                     className={cn(
                       "relative flex h-[72px] w-[72px] items-center justify-center rounded-full border-b-4 transition-transform hover:scale-110 active:translate-y-[2px] active:border-b-2",
-                      isCompleted
+                      module.type === "sidequest"
+                        ? isCompleted
+                          ? "border-b-amber-600 bg-amber-500"
+                          : isCurrent
+                          ? "border-b-purple-600 bg-purple-500 ring-4 ring-purple-400/30"
+                          : "border-b-amber-600 bg-amber-500"
+                        : isCompleted
                         ? "border-b-[#45A002] bg-[#58CC02]"
                         : isCurrent
                         ? "border-b-[#1899D6] bg-[#1CB0F6] ring-4 ring-[#1CB0F6]/30"
@@ -74,7 +90,12 @@ export function LessonPath({
                     {/* Current indicator pulse */}
                     {isCurrent && (
                       <motion.div
-                        className="absolute -inset-2 rounded-full border-4 border-[#1CB0F6]"
+                        className={cn(
+                          "absolute -inset-2 rounded-full border-4",
+                          module.type === "sidequest"
+                            ? "border-purple-400"
+                            : "border-[#1CB0F6]"
+                        )}
                         animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0, 0.6] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
@@ -85,7 +106,13 @@ export function LessonPath({
                   <p
                     className={cn(
                       "mt-2 text-center text-xs font-bold",
-                      isCompleted
+                      module.type === "sidequest"
+                        ? isCompleted
+                          ? "text-amber-600"
+                          : isCurrent
+                          ? "text-purple-600"
+                          : "text-amber-500"
+                        : isCompleted
                         ? "text-[#58CC02]"
                         : isCurrent
                         ? "text-[#1CB0F6]"
@@ -95,16 +122,20 @@ export function LessonPath({
                     {module.title}
                   </p>
 
-                  {/* Flashcard study link */}
-                  {(isCompleted || isCurrent) && (
-                    <Link
-                      href={`/flashcards/${module.id}`}
-                      onClick={(e) => e.stopPropagation()}
+                  {/* Flashcard study link — only for vocabulary modules */}
+                  {module.type !== "sidequest" && (isCompleted || isCurrent) && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        router.push(`/flashcards/${module.id}`);
+                      }}
                       className="mt-1 flex items-center justify-center gap-1 text-[10px] font-bold text-slate-400 hover:text-[#1CB0F6] transition-colors"
                     >
                       <BookOpen size={10} />
                       Study Cards
-                    </Link>
+                    </button>
                   )}
                 </Link>
               ) : (

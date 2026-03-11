@@ -788,6 +788,338 @@ export const culturalContext: Record<string, VocabContext> = {
       'phrase-11': "តិច = few/little (small amount); ច្រើន = many/much (large amount). They are antonyms.",
     },
   },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SIDEQUEST: Cambodia's Cities
+  // ═══════════════════════════════════════════════════════════════════════
+
+  'city-1': {
+    culturalNote: "Phnom Penh (ភ្នំពេញ) means 'Hill of Penh.' Legend says a woman named Daun Penh found four Buddha statues in a Koki tree floating down the Mekong. She built a hill (phnom) to house them — that hill became the city's origin.",
+    mnemonic: "Phnom = Hill, Penh = the woman's name. 'The hill Penh built.'",
+    funFact: "The Mekong, Bassac, and Tonle Sap rivers meet at Phnom Penh — it's called the Chaktomuk (Four Faces), one of only a few places in the world where rivers converge like this.",
+  },
+  'city-2': {
+    culturalNote: "Siem Reap (សៀមរាប) literally means 'Siam defeated' — commemorating a Khmer military victory over the Siamese (Thai) forces. Despite the aggressive name, it's now Cambodia's most tourist-friendly city.",
+    mnemonic: "SIEM = Siam (Thailand), REAP = defeated. 'The place where Siam was beaten.'",
+    funFact: "Siem Reap has more than 1,000 temples in the surrounding area — Angkor Wat is just the most famous. You could spend weeks exploring and still not see them all.",
+  },
+  'city-3': {
+    culturalNote: "Sihanoukville (ព្រះសីហនុ) was named after King Norodom Sihanouk, the father of Cambodian independence. The city was built in the 1950s as Cambodia's first deep-water port.",
+    mnemonic: "SIHANOUKville = King Sihanouk's city. ព្រះ (preah) = royal/holy.",
+    funFact: "Sihanoukville has undergone massive development in recent years. The nearby islands like Koh Rong are considered some of Southeast Asia's most pristine beaches.",
+  },
+  'city-4': {
+    culturalNote: "Battambang (បាត់ដំបង) means 'lost magic staff' from a legend where a peasant found a powerful staff, overthrew the king, but then lost the staff in battle. The city grew where the staff was lost.",
+    mnemonic: "BAT = lost, DAMBANG = magic staff. 'Where the magic stick went missing.'",
+    funFact: "Battambang is Cambodia's artistic heart — it hosts the country's best circus (Phare), colonial architecture, and the famous Bamboo Train (norry).",
+  },
+  'city-5': {
+    culturalNote: "Kampot (កំពត) is world-renowned for its pepper. Kampot pepper has Protected Geographical Indication (PGI) status — like Champagne or Parmesan. French chefs pay premium prices for it.",
+    mnemonic: "KAMPOT = Cambodia's pepper capital. Think: 'Kam-PEPPER-t.'",
+    funFact: "The French built beautiful colonial villas along the Kampot river in the early 1900s. Many have been restored into boutique hotels, giving the town a charming vintage feel.",
+  },
+  'city-6': {
+    culturalNote: "Kratie (ក្រចេះ) on the upper Mekong is one of the few places to see endangered Irrawaddy river dolphins. Only about 90 remain in the Cambodian stretch of the Mekong.",
+    mnemonic: "KRATIE rhymes with 'dotty' — think of the DOLPHINS with their round, dotty heads.",
+    funFact: "Kratie is also known for its spectacular sunsets over the Mekong and its beautiful French colonial waterfront. It's a common stop for cyclists touring Cambodia.",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SIDEQUEST: Angkor & History
+  // ═══════════════════════════════════════════════════════════════════════
+
+  'angkor-1': {
+    culturalNote: "Angkor Wat (អង្គរវត្ត) was built by King Suryavarman II in the early 12th century as a Hindu temple to Vishnu. It was later converted to Buddhism. 'Angkor' = city/capital, 'Wat' = temple.",
+    mnemonic: "ANGKOR = city, WAT = temple. 'The Temple City.'",
+    funFact: "Angkor Wat is so important to Cambodia that it appears on the national flag — the only building featured on any national flag in the world. It faces west, unlike most Khmer temples.",
+  },
+  'angkor-2': {
+    culturalNote: "Angkor Thom (អង្គរធំ) was the last capital of the Khmer Empire, built by Jayavarman VII after the Cham invasion. 'Thom' means big/great. Its centerpiece is the Bayon temple with 216 stone faces.",
+    mnemonic: "THOM = big/great (like English 'TOM' — big Tom). Angkor THOM = The GREAT City.",
+    funFact: "Angkor Thom's south gate is lined with 54 devas (gods) and 54 asuras (demons) holding a giant naga serpent — depicting the Hindu creation myth 'Churning of the Ocean of Milk.'",
+  },
+  'angkor-3': {
+    culturalNote: "The Khmer Empire (អាណាចក្រខ្មែរ) at its peak controlled much of mainland Southeast Asia — from southern Vietnam to Myanmar to southern China. It was one of the most powerful empires of the medieval world.",
+    mnemonic: "ANA-CHAK = empire/kingdom. Think of 'a KNACK for building empires.'",
+    funFact: "At its height around 1200 CE, Angkor was the world's largest pre-industrial city — home to nearly 1 million people when London had about 50,000.",
+  },
+  'angkor-4': {
+    culturalNote: "Tonle Sap (ទន្លេសាប) means 'great fresh lake.' It is the largest freshwater lake in Southeast Asia and one of the most productive inland fisheries in the world. Entire villages float on it.",
+    mnemonic: "TONLE = river/lake, SAP = fresh/tasteless. 'The Great Freshwater.'",
+    funFact: "During monsoon season (June–October), the Mekong pushes water backwards up the Tonle Sap River, expanding the lake from 2,500 km² to over 16,000 km² — a 6× increase.",
+  },
+  'angkor-5': {
+    culturalNote: "Jayavarman VII (ជ័យវរ្ម័នទី ៧) ruled from 1181–1218 CE and is considered the greatest Khmer king. A devout Buddhist, he built Angkor Thom, Ta Prohm, Preah Khan, and over 100 hospitals across the empire.",
+    mnemonic: "JAYA = victory, VARMAN = armor/shield. 'The Victorious Shield' — king #7.",
+    funFact: "Ta Prohm, the temple Jayavarman VII built for his mother, was left largely unrestored — its giant tree roots growing through the ruins made it famous as the 'Tomb Raider temple.'",
+  },
+  'angkor-6': {
+    culturalNote: "Cambodia's Independence Day (ទិវាឯករាជ្យ) on November 9, 1953, marks when King Norodom Sihanouk negotiated Cambodia's freedom from France through diplomacy, not war.",
+    mnemonic: "TIVEA = day, AEKKAREACH = independence. 'The Day of Standing Alone.'",
+    funFact: "The Independence Monument in Phnom Penh, shaped like an Angkorian lotus tower, was designed by Cambodian architect Vann Molyvann — Cambodia's most famous modern architect.",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SIDEQUEST: Festivals & Traditions
+  // ═══════════════════════════════════════════════════════════════════════
+
+  'fest-1': {
+    culturalNote: "Khmer New Year (ចូលឆ្នាំខ្មែរ) in April is a 3-day celebration. Day 1: Moha Sangkran (welcoming the new angel). Day 2: Virak Wanabat (offerings). Day 3: Virak Loeng Sak (cleansing Buddha statues).",
+    mnemonic: "CHOL = enter, CHNAM = year, KHMER = Khmer. 'Entering the Khmer Year.'",
+    funFact: "During Khmer New Year, Cambodians build sand mountains (pnom khsach) at pagodas — each grain represents a wish or prayer for the coming year.",
+  },
+  'fest-2': {
+    culturalNote: "Pchum Ben (បុណ្យភ្ជុំបិណ្ឌ) is one of the most important Cambodian holidays. For 15 days, people visit pagodas and offer food to monks, believing their ancestors' spirits can receive merit through these offerings.",
+    mnemonic: "PCHUM = gathering, BEN = rice ball offering. 'Gathering of Rice Ball Offerings.'",
+    funFact: "During Pchum Ben, Cambodians wake before dawn (around 4-5 AM) to throw sticky rice balls (bay ben) into the dark fields — the offerings must be made before sunrise.",
+  },
+  'fest-3': {
+    culturalNote: "The Water Festival (បុណ្យអុំទូក / Bon Om Touk) celebrates the reversal of the Tonle Sap River current. Boat racing teams from every province compete on the river in front of the Royal Palace.",
+    mnemonic: "OM = race, TOUK = boat. 'Boat Racing Festival.'",
+    funFact: "The Water Festival draws up to 2 million people to Phnom Penh — nearly a fifth of Cambodia's entire population — making it one of the largest gatherings in Southeast Asia.",
+  },
+  'fest-4': {
+    culturalNote: "Apsara dance (រំវង់អប្សរា) is a classical Khmer dance form over 1,000 years old. Apsaras are celestial female figures carved thousands of times across Angkor Wat. The slow, precise hand and finger movements are its hallmark.",
+    mnemonic: "APSARA = celestial dancer. Picture the carved dancers on Angkor's walls coming to life.",
+    funFact: "An Apsara dancer trains for 9+ years to master the over 4,500 distinct hand gestures (mudras). The fingertips are bent backwards to an extreme angle — years of flexibility training start in childhood.",
+  },
+  'fest-5': {
+    culturalNote: "The krama (ក្រមារ) is a checkered cotton scarf that is Cambodia's most recognizable textile. Every Cambodian owns at least one. It is deeply tied to rural Khmer identity and national pride.",
+    mnemonic: "KRAMAR sounds like 'karma' — it's a cloth with many lives (hat, bag, hammock, towel, baby sling).",
+    funFact: "The traditional krama comes in two main patterns: red-and-white (associated with the Khmer Rouge era) and blue-and-white (more traditional). Today, kramas come in many colors and are a beloved cultural symbol.",
+  },
+  'fest-6': {
+    culturalNote: "Theravada Buddhism (ព្រះពុទ្ធសាសនា) arrived in Cambodia around the 13th century, replacing Hinduism. Nearly every Cambodian man is expected to ordain as a monk at least once in his life, even briefly.",
+    mnemonic: "PREAH = sacred/holy, PUT = Buddha, SASANA = religion. 'The Sacred Religion of Buddha.'",
+    funFact: "Cambodia has approximately 4,400 Buddhist pagodas (wat). In rural areas, the pagoda serves as school, community center, hospital, and spiritual heart of the village.",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SIDEQUEST: Cambodian Food
+  // ═══════════════════════════════════════════════════════════════════════
+
+  'kfood-1': {
+    culturalNote: "Fish Amok (អាម៉ុក) is Cambodia's signature dish — white fish in a thick coconut curry (kroeung) paste, steamed in a banana leaf cup. It is rich, fragrant, and milder than Thai curries. Every restaurant in Cambodia serves their own version.",
+    mnemonic: "A-MOK: 'A-MOCK of Thai curry' — similar but uniquely Cambodian, gentler and creamier.",
+    funFact: "The kroeung paste in Amok uses up to 12 ingredients ground by hand: lemongrass, galangal, turmeric, kaffir lime leaves, garlic, shallots, and more. Every family has their own recipe.",
+  },
+  'kfood-2': {
+    culturalNote: "Lok Lak (លុកឡាក់) is stir-fried marinated beef cubes served over lettuce and tomato with a fried egg on top. The signature dipping sauce is lime juice and Kampot black pepper — simple but iconic.",
+    mnemonic: "LOK LAK sounds like 'Lock Luck' — you'll feel LUCKY when you taste this!",
+    funFact: "Lok Lak is believed to have been influenced by French cuisine during the colonial period. The Vietnamese have a similar dish called 'bo luc lac' (shaking beef).",
+  },
+  'kfood-3': {
+    culturalNote: "Prahok (ប្រហុក) is fermented fish paste — the backbone of Khmer cuisine. Made by crushing freshwater fish, salting them, and fermenting for weeks. It adds deep umami to soups, dips, and stir-fries.",
+    mnemonic: "PRA-HOK: 'PRA-HOOK — fish on a hook, then fermented!' The essential Khmer seasoning.",
+    funFact: "Prahok is so central to Cambodian identity that Cambodians sometimes call themselves 'Khmer Prahok people.' During Khmer New Year, prahok is a common gift between families.",
+  },
+  'kfood-4': {
+    culturalNote: "Num Pang (នំបុ័ង) is Cambodia's baguette sandwich — a direct legacy of French colonial rule (1863–1953). Filled with pâté, pickled vegetables, chili, and grilled pork or sardines, it is a beloved street food breakfast.",
+    mnemonic: "NUM = cake/bread, PANG = derived from French 'pain.' Cambodia's BAGUETTE.",
+    funFact: "Unlike the Vietnamese banh mi, the Cambodian num pang often includes butter and a sweeter pâté. The bread is lighter and crispier than a traditional French baguette.",
+  },
+  'kfood-5': {
+    culturalNote: "Bai Sach Chrouk (បាយសាច់ជ្រូក) is the quintessential Cambodian breakfast: thin slices of pork marinated in coconut milk and garlic, grilled over charcoal, served with broken rice and pickled daikon and carrots.",
+    mnemonic: "BAI = rice, SACH = meat, CHROUK = pig/pork. 'Rice + Meat + Pork' — what you see is what you get!",
+    funFact: "Bai Sach Chrouk stalls open as early as 5 AM and sell out by 8 AM. Cambodians eat breakfast early — if you want the best pork rice, set your alarm.",
+  },
+  'kfood-6': {
+    culturalNote: "The sugar palm (ត្នោត / Borassus flabellifer) is Cambodia's national tree. Palm sugar, palm juice, palm fruit, palm leaves for roofing, and palm trunk for construction — nothing is wasted.",
+    mnemonic: "SKOR = sugar, TNOT = palm tree. 'Sugar from the palm.'",
+    funFact: "Fresh palm juice (tuk tnot) is collected every morning by 'tnot climbers' who scale 20+ meter tall palms with bare feet. When fermented, it becomes palm wine (tuk tnot choo).",
+  },
 };
 
 export default culturalContext;
+
+export const didYouKnowFacts: string[] = [
+  // Angkor & History
+  "Angkor Wat is the world's largest religious monument — larger than the Vatican, and built without mortar.",
+  "The Khmer Empire (802–1431 CE) was one of the largest empires in Southeast Asian history, stretching from Vietnam to Myanmar.",
+  "Jayavarman II unified Cambodia in 802 CE and declared himself a 'devaraja' (god-king), starting the Angkor era.",
+  "Angkor Thom's Bayon temple has 216 giant stone faces — scholars believe they represent the bodhisattva Avalokitesvara.",
+  "The name 'Siem Reap' (សៀមរាប) literally means 'Siam defeated' — a reference to a Khmer military victory.",
+  "Tonle Sap Lake is unique: its river reverses direction seasonally, filling the lake to 5× its dry-season size.",
+  "Cambodia gained independence from France on November 9, 1953, under King Norodom Sihanouk.",
+  // Language & Script
+  "Khmer has one of the largest alphabets in the world — 74 characters (33 consonants, 23 vowels, 12 independent vowels, diacritics).",
+  "Khmer script is an abugida: each consonant has an inherent vowel that is modified by diacritical marks.",
+  "Khmer descends from the Pallava script of South India — the same ancestor as Thai and Lao scripts.",
+  "The oldest dated inscription in the Khmer language is from 611 CE, making it one of the oldest written records in Southeast Asia.",
+  "Khmer has no spaces between words — sentences are written as continuous streams of characters.",
+  "The word for 'rice' in Khmer is បាយ (baay) when cooked, and ស្រូវ (srov) when uncooked — two completely different words.",
+  // Culture & Daily Life
+  "The krama (ក្រមា), Cambodia's iconic checkered scarf, serves as a hat, bag, baby carrier, sarong, and hammock.",
+  "Cambodian New Year (Khmer New Year) is celebrated April 13–15 and marks the end of the harvest season.",
+  "Pchum Ben (បុណ្យភ្ជុំបិណ្ឌ) is a 15-day festival honoring ancestors — Cambodians believe the spirits of the deceased return during this time.",
+  "The Water Festival (Bon Om Touk) celebrates the reversal of the Tonle Sap river with 3 days of boat racing in Phnom Penh.",
+  "Apsara dance (រំវង់អប្សរា) is listed by UNESCO as an Intangible Cultural Heritage — it depicts celestial dancers from Angkor carvings.",
+  "Rice is eaten at virtually every meal in Cambodia — the Khmer phrase for 'eating' literally translates to 'eating rice.'",
+  // Food
+  "Fish amok (អាម៉ុក) is considered Cambodia's national dish — a coconut milk fish curry steamed in a banana leaf.",
+  "Prahok (ប្រហុក) is a fermented fish paste central to Khmer cooking — sometimes called the 'cheese of Cambodia.'",
+  "The Cambodian baguette (នំបុ័ង) is a legacy of French colonial rule — Cambodia was part of French Indochina from 1863–1953.",
+  // Geography
+  "Cambodia has 23 provinces and borders Thailand, Laos, and Vietnam.",
+  "The Mekong River runs through eastern Cambodia before splitting into the Mekong and Bassac rivers at Phnom Penh.",
+  "Phnom Penh means 'Hill of Penh' — named after a woman named Daun Penh who, legend says, found Buddha statues in the river.",
+  "Battambang (បាត់ដំបង) means 'lost magic staff' — from a legend about a commoner who stole a magic staff from a king.",
+  // Modern Cambodia
+  "Cambodia's national currency is the riel (រៀល) — but US dollars are widely accepted, even in rural areas.",
+  "Over 95% of Cambodians are Theravada Buddhist — Buddhism is the state religion.",
+  "Cambodia has the youngest population in Southeast Asia — over 60% of people are under 30 years old.",
+  "The Cambodian flag is the only national flag in the world that features a building — Angkor Wat.",
+];
+
+// ─── Bonus Round Questions ────────────────────────────────────────────────────
+
+export interface BonusQuestion {
+  id: string;
+  question: string;
+  answer: string;
+  distractors: [string, string, string]; // exactly 3 wrong answers
+  explanation: string;
+}
+
+export const bonusQuestions: BonusQuestion[] = [
+  {
+    id: 'bq-1',
+    question: 'How many provinces does Cambodia have?',
+    answer: '25 provinces',
+    distractors: ['18 provinces', '32 provinces', '12 provinces'],
+    explanation: 'Cambodia is divided into 25 provinces (\u1781\u17C1\u178F\u17D2\u178F) and 1 capital (\u179A\u17B6\u1787\u1792\u17B6\u1793\u17B8 Phnom Penh).',
+  },
+  {
+    id: 'bq-2',
+    question: 'What does "Angkor" mean in Khmer?',
+    answer: 'Capital City / Holy City',
+    distractors: ['Temple Mountain', 'River of Gods', 'Ancient Kingdom'],
+    explanation: 'Angkor (\u17A2\u1784\u17D2\u1782\u179A) derives from Sanskrit "Nagara" meaning capital or holy city.',
+  },
+  {
+    id: 'bq-3',
+    question: 'The Tonle Sap lake is unique because it does what?',
+    answer: 'Reverses its flow direction seasonally',
+    distractors: ['Glows blue at night', 'Rises 30 meters per year', 'Has no fish species'],
+    explanation: 'The Tonle Sap river reverses flow twice a year \u2014 one of the world\'s rarest hydrological phenomena.',
+  },
+  {
+    id: 'bq-4',
+    question: 'Which script did ancient Khmer writing descend from?',
+    answer: 'Pallava script (South India)',
+    distractors: ['Chinese characters', 'Arabic script', 'Tibetan script'],
+    explanation: 'Khmer script descended from Pallava script brought by Hindu-Buddhist missionaries from South India around the 7th century CE.',
+  },
+  {
+    id: 'bq-5',
+    question: 'What is Cambodia\'s national dish?',
+    answer: 'Fish Amok (\u17A2\u17B6\u1798\u17C9\u17BB\u1780)',
+    distractors: ['Lok Lak', 'Bai Sach Chrouk', 'Num Pang'],
+    explanation: 'Fish Amok (\u17A2\u17B6\u1798\u17C9\u17BB\u1780) \u2014 a steamed coconut fish curry cooked in banana leaf \u2014 is widely considered Cambodia\'s national dish.',
+  },
+  {
+    id: 'bq-6',
+    question: 'When is Cambodian Independence Day?',
+    answer: 'November 9, 1953',
+    distractors: ['April 17, 1975', 'January 7, 1979', 'July 4, 1776'],
+    explanation: 'Cambodia gained independence from France on November 9, 1953 under King Norodom Sihanouk.',
+  },
+  {
+    id: 'bq-7',
+    question: 'What is the Krama (\u1780\u17D2\u179A\u1798\u17B6)?',
+    answer: 'A traditional checkered cotton scarf',
+    distractors: ['A type of rice dish', 'A Khmer dance style', 'A royal title'],
+    explanation: 'The Krama is a traditional Khmer cotton scarf used as a hat, bag, hammock, baby carrier, or towel \u2014 a symbol of Khmer identity.',
+  },
+  {
+    id: 'bq-8',
+    question: 'Angkor Wat was originally built as a temple to which Hindu deity?',
+    answer: 'Vishnu (\u179C\u17B7\u179F\u17D2\u178E\u17BB)',
+    distractors: ['Shiva', 'Brahma', 'Indra'],
+    explanation: 'Angkor Wat was built by King Suryavarman II in the 12th century as a Hindu temple dedicated to Vishnu, before becoming Buddhist.',
+  },
+  {
+    id: 'bq-9',
+    question: 'What does "Siem Reap" (\u179F\u17C0\u1798\u179A\u17B6\u1794) mean?',
+    answer: '"Siam Defeated"',
+    distractors: ['"Gateway to Heaven"', '"City of Temples"', '"Great River"'],
+    explanation: 'Siem Reap (\u179F\u17C0\u1798\u179A\u17B6\u1794) literally means "Siam Defeated" \u2014 a reference to a Khmer victory over Siamese (Thai) forces.',
+  },
+  {
+    id: 'bq-10',
+    question: 'Apsara dance received what international recognition?',
+    answer: 'UNESCO Intangible Cultural Heritage',
+    distractors: ['Olympic Cultural Award', 'World Heritage Site status', 'UN Peace Prize'],
+    explanation: 'Royal Ballet of Cambodia (Apsara dance) was inscribed on UNESCO\'s Intangible Cultural Heritage list in 2008.',
+  },
+  {
+    id: 'bq-11',
+    question: 'Approximately what percentage of Cambodians rely on rice as a staple?',
+    answer: 'About 90%',
+    distractors: ['About 50%', 'About 30%', 'About 70%'],
+    explanation: 'Rice (\u1794\u17B6\u1799) is the foundation of Cambodian cuisine \u2014 about 90% of Cambodians eat rice with almost every meal.',
+  },
+  {
+    id: 'bq-12',
+    question: 'Who founded the Khmer Empire?',
+    answer: 'Jayavarman II (802 CE)',
+    distractors: ['Pol Pot (1975)', 'Suryavarman II (1113 CE)', 'Norodom Sihanouk (1941)'],
+    explanation: 'Jayavarman II founded the Khmer Empire in 802 CE when he declared himself "god-king" (Devaraja) on Phnom Kulen mountain.',
+  },
+  {
+    id: 'bq-13',
+    question: 'What is Pchum Ben (\u1794\u17BB\u178E\u17D2\u1799\u1797\u17D2\u1787\u17BB\u17C6\u1794\u17B7\u178E\u17D2\u178C)?',
+    answer: 'Ancestors\' Day \u2014 a 15-day Buddhist festival',
+    distractors: ['Khmer New Year celebration', 'Harvest festival', 'Water festival'],
+    explanation: 'Pchum Ben is a 15-day Buddhist festival where Cambodians honor deceased ancestors by offering food at pagodas \u2014 one of the most sacred holidays.',
+  },
+  {
+    id: 'bq-14',
+    question: 'Khmer New Year is celebrated in which month?',
+    answer: 'April (April 13\u201315)',
+    distractors: ['January', 'February', 'March'],
+    explanation: 'Khmer New Year (\u1785\u17BC\u179B\u1786\u17D2\u1793\u17B6\u17C6\u1781\u17D2\u1798\u17C2\u179A) is celebrated April 13\u201315 and marks the end of the harvest season.',
+  },
+  {
+    id: 'bq-15',
+    question: 'What major river flows through Phnom Penh?',
+    answer: 'The Mekong River (\u1791\u1793\u17D2\u179B\u17C1\u1798\u17C1\u1782\u1784\u17D2\u1782)',
+    distractors: ['The Nile', 'The Yangtze', 'The Irrawaddy'],
+    explanation: 'Phnom Penh sits at the confluence of the Mekong, Tonle Sap, and Bassac rivers \u2014 known as the "Four Faces" (\u1785\u178F\u17BB\u1798\u17BB\u1781).',
+  },
+  {
+    id: 'bq-16',
+    question: 'Angkor Wat is the world\'s largest what?',
+    answer: 'Religious monument',
+    distractors: ['Buddhist temple', 'Hindu temple', 'Archaeological site'],
+    explanation: 'Angkor Wat (\u17A2\u1784\u17D2\u1782\u179A\u179C\u178F\u17D2\u178F) covers 1.6 square kilometers and is the world\'s largest religious monument \u2014 built in the early 12th century.',
+  },
+  {
+    id: 'bq-17',
+    question: 'What does "Phnom Penh" (\u1797\u17D2\u1793\u17C6\u1796\u17C1\u1789) mean?',
+    answer: '"Hill of Penh" (named after Lady Penh)',
+    distractors: ['"Royal City"', '"City of Gold"', '"Southern Palace"'],
+    explanation: 'Phnom Penh means "Hill of Penh" \u2014 named after Daun Penh (Grandmother Penh) who according to legend founded a pagoda on the hill.',
+  },
+  {
+    id: 'bq-18',
+    question: 'Battambang is known as Cambodia\'s hub for what?',
+    answer: 'Arts and rice production',
+    distractors: ['Pepper farming', 'Fishing', 'Gem mining'],
+    explanation: 'Battambang (\u1794\u17B6\u178F\u17CB\u178A\u17C6\u1794\u1784) \u2014 meaning "Lost Staff" \u2014 is Cambodia\'s second largest city, famous for arts, circus, and its fertile rice fields.',
+  },
+  {
+    id: 'bq-19',
+    question: 'What crop made Kampot famous worldwide?',
+    answer: 'Black pepper (\u1798\u17D2\u179A\u17C1\u1785)',
+    distractors: ['Coffee', 'Tea', 'Cardamom'],
+    explanation: 'Kampot pepper is considered among the world\'s finest \u2014 its unique flavor comes from the mineral-rich soil of Kampot province.',
+  },
+  {
+    id: 'bq-20',
+    question: 'The Water Festival (Bon Om Touk) celebrates what event?',
+    answer: 'The reversal of the Tonle Sap river current',
+    distractors: ['End of monsoon season', 'King\'s birthday', 'Independence Day'],
+    explanation: 'Bon Om Touk (\u1794\u17BB\u178E\u17D2\u1799\u17A2\u17BB\u17C6\u1791\u17BC\u1780) celebrates the annual reversal of the Tonle Sap river current, with dragon boat racing on the river.',
+  },
+];
