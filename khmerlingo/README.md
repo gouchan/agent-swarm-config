@@ -47,7 +47,7 @@ Khmer is spoken by 16 million people but absent from Duolingo. KhmerLingo fills 
 - **Streaks** — consecutive daily practice tracking
 - **Badges** — 9+ achievements including per-module Legendary badges
 - **Leaderboard** — Family leaderboard with animated rank display
-- **Profiles** — Multi-profile system with emoji avatars and color themes
+- **Profiles** — 4-player profiles with 192-emoji avatar picker (8 categories), editable names (hover ✏️ to rename), per-profile state
 - **Bonus trivia** — cultural fun facts on lesson completion
 - **Progress persistence** — Zustand + localStorage
 
@@ -59,6 +59,11 @@ Khmer is spoken by 16 million people but absent from Duolingo. KhmerLingo fills 
 ### Utilities
 - **Translate Widget** — Floating English-Khmer translator powered by Google Translate API
 - **Grade Challenge API** — Server-side fuzzy answer grading using Levenshtein distance (no external AI dependency)
+
+### Security
+- **Rate-limited API routes** — TTS (30/min), Translate (60/min), Grade (120/min) per IP
+- **HTTP security headers** — X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy
+- **Runtime input validation** — language allowlists, length caps, schema sanitization on localStorage reads
 
 ## Tech Stack
 

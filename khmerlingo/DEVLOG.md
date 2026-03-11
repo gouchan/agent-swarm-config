@@ -81,6 +81,54 @@ Added rich learning features beyond basic Duolingo:
 
 ---
 
+## Session 2 — Security Hardening + Polish (2026-03-11)
+
+### Security Audit
+
+Ran a 3-agent parallel audit (security-reviewer, perf-profiler, explore-high) and identified 13 findings:
+
+**Critical/High:**
+- No rate limiting on any API route — any client could flood TTS/translate/grade endpoints
+- TTS cache used entry-count only (200 entries), not byte-based — large audio could exhaust memory
+- `/api/translate` trusted TypeScript types alone for `from`/`to` lang params — no runtime allowlist
+- `/api/grade-challenge` had no input length limits; `acceptedAnswers` array unbounded
+- LocalStorage game state loaded into Zustand store without schema validation — tampered data could corrupt state
+- Error messages leaked env var names (`ELEVENLABS_API_KEY missing`)
+
+**Medium/Low:**
+- No HTTP security headers (Content-Type-Options, Frame-Options, Referrer-Policy, Permissions-Policy)
+- Translate widget had no textarea `maxLength` and no debounce cleanup on unmount (memory leak)
+- New profiles started with 0 gems instead of the README-specified 200
+
+### Fixes Applied
+
+1. **`src/lib/rate-limit.ts`** (new) — Shared IP-based in-memory rate limiter used across all routes
+2. **`/api/tts`** — Rate limit 30/min, 500-char max, byte-based LRU cache (50 MB ceiling), generic error message
+3. **`/api/translate`** — Rate limit 60/min, runtime `["en","km"]` allowlist
+4. **`/api/grade-challenge`** — Rate limit 120/min, 500-char limits per field, max 20 acceptedAnswers
+5. **`next.config.mjs`** — 4 security headers on all routes
+6. **`profile-store.ts`** — Full schema sanitization before `useGameStore.setState()`, `freshGameData.gems: 200`
+7. **`game-store.ts`** — Fixed initial `gems: 0 → 200`
+8. **`translate-widget.tsx`** — `useEffect` cleanup + `maxLength={500}`
+
+### Avatar Picker Upgrade
+
+Expanded from 24 hardcoded emojis to ~192 across 8 categorized tabs:
+- Smileys (24), People (24), Animals (24), Food (24), Sports (24), Nature (24), Cambodia (24), Fun (24)
+- Category tabs with active underline in profile color
+- Scrollable 8-column grid, highlights current selection
+- Fixed nested `<a>` hydration error in `lesson-path.tsx` — "Study Cards" Link inside `<a>` replaced with `useRouter.push()`
+
+### Profile Name Editing
+
+- Added hover-reveal ✏️ pencil icon next to each profile name (using Lucide `Pencil`)
+- Click pencil OR double-click name to enter edit mode
+- Edit input styled with blue border + placeholder "Your name…"
+- Named Tailwind group (`group/name`) drives opacity transition on pencil icon
+- Updated hint text: "Tap avatar to change emoji • Hover name to rename ✏️"
+
+---
+
 ## Architecture Notes
 
 ### State Machine (Quiz)

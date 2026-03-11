@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { Pencil } from "lucide-react";
 import { useProfileStore, Profile } from "@/store/profile-store";
 import { cn } from "@/lib/utils";
 
@@ -277,7 +278,7 @@ function ProfileCard({
         />
       )}
 
-      {/* Name (editable on double-click) */}
+      {/* Name (editable) */}
       {editing ? (
         <input
           ref={inputRef}
@@ -286,19 +287,44 @@ function ProfileCard({
           onBlur={commitRename}
           onKeyDown={handleKeyDown}
           onClick={(e) => e.stopPropagation()}
-          className="w-14 rounded border border-gray-300 px-1 py-0.5 text-center text-xs font-bold outline-none focus:border-blue-400"
+          placeholder="Your name…"
+          className="w-16 rounded-lg border-2 border-blue-400 bg-blue-50 px-1 py-0.5 text-center text-xs font-bold outline-none placeholder:text-gray-400"
           maxLength={12}
         />
       ) : (
         <span
-          className="max-w-[56px] truncate text-center text-xs font-bold text-gray-700"
+          className="group/name flex items-center gap-0.5"
           onDoubleClick={(e) => {
             e.stopPropagation();
             handleDoubleClick();
           }}
-          title="Double-click to rename"
         >
-          {profile.name}
+          <span
+            className={cn(
+              "max-w-[44px] truncate text-xs font-bold",
+              isActive ? "text-gray-800" : "text-gray-600"
+            )}
+          >
+            {profile.name}
+          </span>
+          <span
+            role="button"
+            tabIndex={0}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleDoubleClick();
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.stopPropagation();
+                handleDoubleClick();
+              }
+            }}
+            className="opacity-0 group-hover/name:opacity-100 transition-opacity cursor-pointer"
+            title="Rename"
+          >
+            <Pencil className="h-2.5 w-2.5 text-gray-400 hover:text-[#1CB0F6]" />
+          </span>
         </span>
       )}
 
@@ -334,7 +360,7 @@ export function ProfileSwitcher() {
         ))}
       </div>
       <p className="mt-1.5 text-[9px] text-gray-400 text-center">
-        Click avatar to change • Double-click name to rename
+        Tap avatar to change emoji • Hover name to rename ✏️
       </p>
     </div>
   );

@@ -2,6 +2,29 @@
 
 All notable changes to KhmerLingo are documented here.
 
+## [0.4.0] - 2026-03-11
+
+### Added
+- **Profile name editing** — Hover over any profile name to reveal an inline ✏️ pencil icon; click it or double-click the name to rename. Friendlier input with placeholder "Your name…"
+- **192-emoji avatar picker** — 8 categorized tabs (Smileys, People, Animals, Food, Sports, Nature, Cambodia, Fun) with ~24 emojis each; replaces the original 24-emoji grid
+
+### Security
+- **Rate limiting** on all API routes (TTS: 30/min, Translate: 60/min, Grade: 120/min)
+- **Security headers** — X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy added to all responses
+- **Runtime language validation** on `/api/translate` — allowlist `["en","km"]` prevents arbitrary language injection
+- **Input length caps** — TTS and grade-challenge routes now reject inputs > 500 chars; grade-challenge caps accepted answers at 20
+- **Byte-based TTS cache** — LRU eviction at 50 MB ceiling prevents memory exhaustion from large audio blobs
+- **LocalStorage schema validation** — Profile switching now sanitizes all fields before merging into game store, rejecting tampered/corrupt data
+
+### Fixed
+- **Translate widget debounce timer leak** — `clearTimeout` cleanup added to `useEffect` on unmount
+- **Starting gems** — Fixed off-by-one: new profiles now correctly start with 200 gems (was 0)
+- **Generic error messages** — TTS route no longer leaks env var names in error responses
+
+### Technical
+- 8 files modified, 1 new file (`src/lib/rate-limit.ts`)
+- 0 TypeScript errors, clean Next.js build
+
 ## [0.3.0] - 2026-02-28
 
 ### Added
