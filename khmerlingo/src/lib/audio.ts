@@ -42,8 +42,18 @@ export async function speakText(text: string): Promise<void> {
     playUrl(url);
   } catch (err) {
     console.warn("ElevenLabs TTS failed, falling back to Web Speech:", err);
-    speakWebSpeech(text);
+    // Use Khmer-specific voice for Khmer script; English voice otherwise
+    if (isKhmerScript(text)) {
+      speakKhmer(text);
+    } else {
+      speakWebSpeech(text);
+    }
   }
+}
+
+/** Returns true if the string contains Khmer Unicode characters (U+1780–U+17FF). */
+function isKhmerScript(text: string): boolean {
+  return /[\u1780-\u17FF]/.test(text);
 }
 
 /**

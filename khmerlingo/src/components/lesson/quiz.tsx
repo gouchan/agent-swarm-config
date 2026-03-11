@@ -589,6 +589,7 @@ export function Quiz({ module, mode }: QuizProps) {
                 selectedOptionId={selectedOptionId}
                 status={status}
                 onSelect={handleSelect}
+                questionRomanized={currentVocabItem?.romanized}
                 optionIllustrations={optionIllustrations}
                 optionRomanized={optionRomanized}
                 matchLeftItems={matchLeftItems}

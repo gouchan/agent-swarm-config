@@ -14,6 +14,8 @@ interface ChallengeProps {
   onSelect: (id: string) => void;
   /** Vocab emoji illustrations indexed by option id */
   optionIllustrations?: Record<string, string>;
+  /** Romanized pronunciation of the question word (shown below Khmer script) */
+  questionRomanized?: string;
   /** Romanizations for option texts */
   optionRomanized?: Record<string, string>;
   // For MATCH type only
@@ -36,6 +38,7 @@ export function Challenge({
   selectedOptionId,
   status,
   onSelect,
+  questionRomanized,
   optionIllustrations,
   optionRomanized,
   matchLeftItems = [],
@@ -93,23 +96,31 @@ export function Challenge({
         </p>
 
         {/* Main question — Khmer word or English phrase */}
-        <div className="inline-flex items-center gap-3 bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4">
+        <div className="inline-flex flex-col items-center gap-2 bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4">
           {challenge.questionKhmer ? (
             <>
-              <span
-                className="text-4xl font-bold text-slate-800 leading-tight"
-                style={{ fontFamily: "'Noto Sans Khmer', sans-serif" }}
-              >
-                {challenge.questionKhmer}
-              </span>
-              {/* Audio for question word */}
-              <button
-                onClick={handleQuestionAudio}
-                className="p-2 rounded-xl bg-[#1CB0F6]/10 text-[#1CB0F6] hover:bg-[#1CB0F6]/20 transition-colors flex-shrink-0"
-                title="Hear pronunciation"
-              >
-                <Volume2 className="h-5 w-5" />
-              </button>
+              <div className="flex items-center gap-3">
+                <span
+                  className="text-4xl font-bold text-slate-800 leading-tight"
+                  style={{ fontFamily: "'Noto Sans Khmer', sans-serif" }}
+                >
+                  {challenge.questionKhmer}
+                </span>
+                {/* Audio for question word */}
+                <button
+                  onClick={handleQuestionAudio}
+                  className="p-2 rounded-xl bg-[#1CB0F6]/10 text-[#1CB0F6] hover:bg-[#1CB0F6]/20 transition-colors flex-shrink-0"
+                  title="Hear pronunciation"
+                >
+                  <Volume2 className="h-5 w-5" />
+                </button>
+              </div>
+              {/* Romanized pronunciation — essential for beginners */}
+              {questionRomanized && (
+                <p className="text-sm text-[#1CB0F6] font-semibold tracking-wide">
+                  {questionRomanized}
+                </p>
+              )}
             </>
           ) : (
             <span className="text-2xl font-bold text-slate-800">
