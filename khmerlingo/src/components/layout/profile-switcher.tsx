@@ -293,7 +293,7 @@ function ProfileCard({
         />
       ) : (
         <span
-          className="group/name flex items-center gap-0.5"
+          className="relative group/name flex items-center justify-center"
           onDoubleClick={(e) => {
             e.stopPropagation();
             handleDoubleClick();
@@ -301,7 +301,7 @@ function ProfileCard({
         >
           <span
             className={cn(
-              "max-w-[44px] truncate text-xs font-bold",
+              "max-w-[56px] truncate text-xs font-bold",
               isActive ? "text-gray-800" : "text-gray-600"
             )}
           >
@@ -320,7 +320,7 @@ function ProfileCard({
                 handleDoubleClick();
               }
             }}
-            className="opacity-0 group-hover/name:opacity-100 transition-opacity cursor-pointer"
+            className="absolute -right-3.5 opacity-0 group-hover/name:opacity-100 transition-opacity cursor-pointer"
             title="Rename"
           >
             <Pencil className="h-2.5 w-2.5 text-gray-400 hover:text-[#1CB0F6]" />
