@@ -254,7 +254,7 @@ function ProfileCard({
     <button
       onClick={onSelect}
       className={cn(
-        "relative flex flex-col items-center gap-1 rounded-xl p-2 transition-all cursor-pointer border-2",
+        "group relative flex flex-col items-center gap-1 rounded-xl p-2 transition-all cursor-pointer border-2",
         isActive ? "border-transparent bg-gray-50" : "border-transparent hover:bg-gray-50"
       )}
       style={isActive ? { boxShadow: `0 0 0 3px ${profile.color}` } : undefined}
@@ -293,7 +293,7 @@ function ProfileCard({
         />
       ) : (
         <span
-          className="relative group/name flex items-center justify-center"
+          className="relative flex items-center justify-center"
           onDoubleClick={(e) => {
             e.stopPropagation();
             handleDoubleClick();
@@ -320,7 +320,7 @@ function ProfileCard({
                 handleDoubleClick();
               }
             }}
-            className="absolute -right-3.5 opacity-0 group-hover/name:opacity-100 transition-opacity cursor-pointer"
+            className="absolute -right-4 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
             title="Rename"
           >
             <Pencil className="h-2.5 w-2.5 text-gray-400 hover:text-[#1CB0F6]" />
