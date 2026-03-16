@@ -8,6 +8,8 @@ import { formatXP } from "@/lib/utils";
 import { useProfileStore } from "@/store/profile-store";
 import { useGameStore } from "@/store/game-store";
 import Link from "next/link";
+import { Sidebar } from "@/components/layout/sidebar";
+import { MobileHeader } from "@/components/layout/mobile-header";
 
 // Default profiles metadata (colors)
 const PROFILE_DEFAULTS = [
@@ -138,7 +140,10 @@ export default function LeaderboardPage() {
   const RANK_ICONS = ["🥇", "🥈", "🥉", "4️⃣"];
 
   return (
-    <div className="min-h-screen bg-gray-50 md:ml-64">
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar />
+      <MobileHeader />
+      <div className="flex-1 md:ml-64">
       <div className="mx-auto max-w-lg px-4 py-8 pt-20 md:pt-8">
         {/* Header */}
         <div className="mb-6 text-center">
@@ -257,6 +262,7 @@ export default function LeaderboardPage() {
             Keep practicing →
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );
