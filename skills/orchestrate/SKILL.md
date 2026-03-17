@@ -155,6 +155,42 @@ When delegating, your prompt MUST include:
 7. CONTEXT: File paths, existing patterns, constraints
 ```
 
+### Handoff Protocol (MANDATORY — for all multi-agent chains)
+
+Every agent that completes delegated work MUST return a HANDOFF RECEIPT.
+When you receive an agent result, verify the receipt exists before accepting the result.
+
+**Required HANDOFF RECEIPT format** (instruct every subagent to include this at the end of their response):
+
+```
+---HANDOFF RECEIPT---
+Agent: [agent name]
+Task completed: [one-line description of what was done]
+Files changed:
+  - [file path]: [what changed, line range if relevant]
+State left in: [CLEAN / HAS_WARNINGS / NEEDS_ATTENTION]
+Next agent needs:
+  - [specific file or output the next agent must read]
+  - [any environmental state they must know about]
+Verification artifacts:
+  - [command run + exit code]
+  - [test output summary]
+Do NOT proceed if: [any condition that means next agent should stop and check with orchestrator]
+---END RECEIPT---
+```
+
+**When receiving agent results WITHOUT a receipt:**
+1. Do not silently accept the result
+2. Check if the work was actually completed by reading relevant files
+3. If work appears incomplete, re-delegate with explicit instruction to provide receipt
+
+**Receipt state meanings:**
+| State | Your Action |
+|-------|-------------|
+| `CLEAN` | Accept and proceed to next step |
+| `HAS_WARNINGS` | Review warnings before proceeding |
+| `NEEDS_ATTENTION` | STOP — read the "Do NOT proceed if" field, escalate to user |
+
 ### GitHub Workflow (CRITICAL - When mentioned in issues/PRs):
 
 When you're mentioned in GitHub issues or asked to "look into" something and "create PR":
@@ -274,15 +310,36 @@ If project has build/test commands, run them at task completion.
 - [ ] Build passes (if applicable)
 - [ ] User's original request fully addressed
 
+### MANDATORY: Evidence Gate Before Architect
+
+**Before Architect verification, pass the Evidence Gate.**
+
+Collect artifacts then spawn:
+```
+Task(subagent_type="oh-my-claudecode:qa-evidence", model="sonnet", prompt="
+Claim: [what you completed]
+Evidence:
+- File changes: [file:line for each change]
+- Build/test output: [paste exact output]
+- All todos: completed
+")
+```
+
+- **APPROVED**: Proceed to Architect
+- **INSUFFICIENT**: Gather missing artifacts, re-run gate
+
+---
+
 ### MANDATORY: Architect Verification Before Completion
 
-**NEVER declare a task complete without Architect verification.**
+**NEVER declare a task complete without Evidence Gate APPROVED + Architect verification.**
 
 Claude models are prone to premature completion claims. Before saying "done", you MUST:
 
 1. **Self-check passes** (all criteria above)
+2. **Evidence Gate: APPROVED**
 
-2. **Invoke Architect for verification** (ALWAYS pass model explicitly!):
+3. **Invoke Architect for verification** (ALWAYS pass model explicitly!):
 ```
 Task(subagent_type="architect", model="opus", prompt="VERIFY COMPLETION REQUEST:
 Original task: [describe the original request]

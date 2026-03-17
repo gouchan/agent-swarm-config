@@ -110,6 +110,8 @@ Ralph automatically activates Ultrawork for maximum parallel execution. You MUST
 | **Build** | `build-fixer-low` | `build-fixer` | - |
 | **TDD** | `tdd-guide-low` | `tdd-guide` | - |
 | **Code Review** | `code-reviewer-low` | - | `code-reviewer` |
+| **Agency Lead** | - | - | `producer` |
+| **Evidence Gate** | - | `qa-evidence` | - |
 
 **CRITICAL: Always pass `model` parameter explicitly!**
 ```
@@ -130,6 +132,61 @@ Task(subagent_type="oh-my-claudecode:architect", model="opus", prompt="...")
 - Quick status checks: git status, ls, pwd
 - File reads, edits
 - Simple commands
+
+## RETRY BUDGET (IRON LAW)
+
+**MAX ATTEMPTS PER FAILING TASK: 3**
+
+### Tracking (mandatory)
+After any task fails, write to `.omc/retries.json`:
+```json
+{
+  "tasks": {
+    "US-001": { "attempts": 1, "last_error": "TypeScript error: ...", "last_strategy": "added null check" }
+  }
+}
+```
+Read `.omc/retries.json` at the start of each iteration to know your retry state.
+
+### Retry Strategy by Attempt
+
+| Attempt | Strategy |
+|---------|----------|
+| 1st | Execute your original plan |
+| 2nd | Re-read the full error, try a meaningfully different approach |
+| 3rd | Consult `architect` (opus) BEFORE executing — present the error and both failed approaches |
+| 4th+ | **STOP. ESCALATE TO USER.** |
+
+### Escalation Format (when budget exhausted)
+When a task hits 3 failed attempts, output this and pause ALL work:
+
+```
+## ⛔ Retry Budget Exhausted
+
+**Task:** [task ID + description]
+**Attempts:** 3/3 failed
+
+**What I tried:**
+1. [approach] → [error/result]
+2. [approach] → [error/result]
+3. [approach + architect input] → [error/result]
+
+**Architect diagnosis:** [paste architect's full assessment]
+
+**My options:**
+A) [approach A] — [tradeoff]
+B) [approach B] — [tradeoff]
+C) Skip this task and continue with remaining work
+
+How should I proceed?
+```
+
+**WAIT for user response. NEVER attempt a 4th approach autonomously.**
+
+Two consecutive failures = different strategy required.
+Three failures = human judgment required.
+
+---
 
 ## COMPLETION REQUIREMENTS
 
@@ -166,20 +223,47 @@ Before outputting the completion promise:
 
 **Skipping verification = Task NOT complete**
 
-## ARCHITECT VERIFICATION (MANDATORY)
+## EVIDENCE GATE (MANDATORY — before Architect)
+
+Before spawning Architect, you MUST pass the Evidence Gate.
+
+Collect your completion artifacts:
+1. Run verification command(s) — capture full output
+2. Note specific file:line references for every change
+3. Confirm all todos are marked `completed`
+
+Then spawn the evidence gate:
+```
+Task(subagent_type="oh-my-claudecode:qa-evidence", model="sonnet", prompt="
+Claim: [describe exactly what you completed]
+Evidence:
+- File changes: [file:line for each change]
+- Build output: [paste full output]
+- Test output: [paste full output]
+- All todos: completed
+")
+```
+
+- **If APPROVED**: Proceed to Architect verification
+- **If INSUFFICIENT**: Gather the missing artifacts, then re-run the gate
+
+---
+
+## ARCHITECT VERIFICATION (MANDATORY — after Evidence Gate)
 
 When you believe the task is complete:
-1. **First**, spawn Architect to verify your work (ALWAYS pass model explicitly!):
+1. **First**, confirm Evidence Gate returned APPROVED
+2. **Then**, spawn Architect to verify your work (ALWAYS pass model explicitly!):
    ```
    Task(subagent_type="oh-my-claudecode:architect", model="opus", prompt="Verify this implementation is complete: [describe what you did]")
    ```
 
-2. **Wait for Architect's assessment**
+3. **Wait for Architect's assessment**
 
-3. **If Architect approves**: Output `<promise>{{PROMISE}}</promise>`
-4. **If Architect finds issues**: Fix them, then repeat verification
+4. **If Architect approves**: Output `<promise>{{PROMISE}}</promise>`
+5. **If Architect finds issues**: Fix them, re-run Evidence Gate, then re-verify with Architect
 
-DO NOT output the completion promise without Architect verification.
+DO NOT output the completion promise without both Evidence Gate APPROVED + Architect verification.
 
 ## ZERO TOLERANCE
 
