@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extract</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F9F8F6;
+      --bg-dark:  #F2F1EE;
+      --surface:  #FFFFFF;
+      --ink:      #1A1A1A;
+      --ink-2:    #4A4A4A;
+      --ink-3:    #8A8A8A;
+      --ink-4:    #BDBDBD;
+      --rule:     #E2E0DC;
+      --accent:   #1A1A1A;
+      --green:    #2D6A4F;
+      --red:      #C0392B;
+      --amber:    #B7791F;
+      --mono:     'DM Mono', 'Menlo', monospace;
+      --sans:     'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body { min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Masthead ── */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 32px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--bg);
+    }
+    .wordmark {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wordmark-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink);
+    }
+    .masthead-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .status-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .s-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--ink-4);
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .s-dot.loading { background: var(--amber); }
+    .s-dot.ok      { background: var(--green); }
+    .s-dot.error   { background: var(--red); }
+    .spin {
+      display: none;
+      width: 10px; height: 10px;
+      border: 1.5px solid var(--rule);
+      border-top-color: var(--amber);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Query bar ── */
+    .query-bar {
+      border-bottom: 1px solid var(--rule);
+      padding: 24px 32px;
+      background: var(--bg);
+    }
+    .query-row {
+      display: flex;
+      gap: 0;
+      max-width: 880px;
+    }
+    .q-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      align-self: center;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+    .url-input {
+      flex: 1;
+      height: 38px;
+      padding: 0 14px;
+      font-family: var(--mono);
+      font-size: 12px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .url-input::placeholder {
+      color: var(--ink-4);
+      font-style: italic;
+    }
+    .url-input:focus {
+      border-color: var(--ink);
+      z-index: 1;
+    }
+    .btn-run {
+      height: 38px;
+      padding: 0 18px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: #fff;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      cursor: pointer;
+      transition: opacity 0.12s;
+      white-space: nowrap;
+    }
+    .btn-run:hover:not(:disabled) { opacity: 0.75; }
+    .btn-run:disabled { opacity: 0.25; cursor: not-allowed; }
+
+    .btn-crawl {
+      height: 38px;
+      padding: 0 18px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--ink-2);
+      border: 1px solid var(--rule);
+      border-left: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: border-color 0.12s, color 0.12s;
+      white-space: nowrap;
+    }
+    .btn-crawl:hover:not(:disabled) { border-color: var(--ink); color: var(--ink); }
+    .btn-crawl:disabled { opacity: 0.25; cursor: not-allowed; }
+
+    .query-opts {
+      margin-top: 14px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      max-width: 880px;
+    }
+    .qopt {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      cursor: pointer;
+      user-select: none;
+    }
+    .qopt input[type="checkbox"] {
+      accent-color: var(--ink);
+      cursor: pointer;
+      width: 12px; height: 12px;
+    }
+    .qopt-input {
+      height: 24px;
+      padding: 0 7px;
+      font-family: var(--mono);
+      font-size: 11px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      color: var(--ink);
+      outline: none;
+      width: 40px;
+    }
+    .qopt-input.wide { width: 90px; }
+    .qopt-input:focus { border-color: var(--ink); }
+
+    /* ── Page meta ── */
+    #page-meta {
+      display: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 16px 32px;
+    }
+    .meta-title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .meta-desc { font-size: 12px; color: var(--ink-2); margin-bottom: 4px; line-height: 1.5; }
+    .meta-sub  {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+    }
+
+    /* ── Stats strip ── */
+    #summary {
+      display: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stats-row {
+      display: flex;
+      overflow-x: auto;
+    }
+    .stat {
+      padding: 16px 28px;
+      border-right: 1px solid var(--rule);
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .stat:hover { background: var(--bg-dark); }
+    .stat:last-child { border-right: none; }
+    .stat-n {
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-l {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-3);
+    }
+
+    /* ── Layout ── */
+    #results { display: none; }
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 220px);
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: 148px;
+      flex-shrink: 0;
+      border-right: 1px solid var(--rule);
+      background: var(--bg);
+      padding: 24px 0;
+      position: sticky;
+      top: 52px;
+      height: calc(100vh - 52px);
+      overflow-y: auto;
+    }
+    .nav-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-4);
+      padding: 0 20px;
+      margin-bottom: 6px;
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 7px 20px;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--ink-3);
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.1s;
+      border-left: 2px solid transparent;
+    }
+    .nav-btn:hover { color: var(--ink); }
+    .nav-btn.active {
+      color: var(--ink);
+      font-weight: 500;
+      border-left-color: var(--ink);
+    }
+    .nav-n {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-4);
+    }
+    .nav-rule {
+      height: 1px;
+      background: var(--rule);
+      margin: 14px 20px;
+    }
+
+    /* ── Content ── */
+    .content {
+      flex: 1;
+      min-width: 0;
+      padding: 28px 32px 80px;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Panel header */
+    .panel-hd {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .panel-hd-left {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .panel-title {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .panel-count {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+    }
+
+    /* ── Image grid ── */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 8px;
+    }
+    .img-cell {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--bg-dark);
+      border: 1px solid var(--rule);
+    }
+    .img-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .img-cell:hover img { opacity: 0.85; }
+    .img-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 6px 8px;
+      opacity: 0;
+      transition: opacity 0.15s;
+      background: linear-gradient(transparent 40%, rgba(0,0,0,0.5));
+    }
+    .img-cell:hover .img-overlay { opacity: 1; }
+    .img-name {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(255,255,255,0.8);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+    }
+    .img-dl {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(0,0,0,0.4);
+      padding: 2px 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+    .img-err {
+      width: 100%; height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-4);
+      background: var(--bg-dark);
+    }
+
+    /* ── Fonts ── */
+    .font-list { display: flex; flex-direction: column; }
+    .font-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .font-preview {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      min-width: 100px;
+      color: var(--ink);
+    }
+    .font-info { flex: 1; min-width: 120px; }
+    .font-name { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .font-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+      border: 1px solid var(--rule);
+      padding: 1px 6px;
+    }
+    .btn-dl {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      height: 28px;
+      padding: 0 12px;
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--ink-2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.1s, color 0.1s;
+    }
+    .btn-dl:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ── Files ── */
+    .file-list { display: flex; flex-direction: column; }
+    .file-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .file-type {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: 32px;
+      text-align: center;
+      padding: 3px 0;
+      flex-shrink: 0;
+    }
+    .file-type.pdf   { color: var(--red);   border: 1px solid; }
+    .file-type.zip   { color: var(--amber);  border: 1px solid; }
+    .file-type.doc   { color: #2563EB; border: 1px solid; }
+    .file-type.xlsx  { color: var(--green); border: 1px solid; }
+    .file-type.other { color: var(--ink-3); border: 1px solid var(--rule); }
+    .file-info { flex: 1; min-width: 120px; }
+    .file-name { font-size: 13px; font-weight: 400; word-break: break-all; }
+    .file-path { font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px; }
+
+    /* ── Links ── */
+    .link-group-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-4);
+      margin-bottom: 10px;
+      margin-top: 28px;
+    }
+    .link-group-label:first-child { margin-top: 0; }
+    .link-list { display: flex; flex-direction: column; }
+    .link-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .link-text {
+      font-size: 12px;
+      font-weight: 500;
+      min-width: 70px;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 0;
+    }
+    .link-href {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+      flex: 1;
+      word-break: break-all;
+      line-height: 1.5;
+    }
+    .link-ext {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 2px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .link-ext:hover { color: var(--ink); }
+
+    /* ── Products ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .product-cell {
+      background: var(--bg);
+      padding: 20px;
+    }
+    .product-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-dark);
+      margin-bottom: 14px;
+    }
+    .product-title { font-size: 13px; font-weight: 500; margin-bottom: 8px; }
+    .price-list { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .price-item {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink);
+      background: var(--bg-dark);
+      border: 1px solid var(--rule);
+      padding: 2px 8px;
+    }
+    .product-snip {
+      font-size: 12px;
+      color: var(--ink-2);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Headings ── */
+    .heading-list { display: flex; flex-direction: column; }
+    .heading-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .h-level {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-4);
+      width: 20px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .h-text {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ── JSON ── */
+    #json-output {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 20px 24px;
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.7;
+      white-space: pre;
+      overflow: auto;
+      max-height: 640px;
+      color: var(--ink-2);
+    }
+    .json-key  { color: #1D4ED8; }
+    .json-str  { color: #15803D; }
+    .json-num  { color: #7C3AED; }
+    .json-bool { color: #B45309; }
+    .json-null { color: var(--ink-4); }
+
+    /* ── Crawl results ── */
+    #crawl-container { display: none; padding: 28px 32px; }
+    .crawl-hd {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .crawl-title { font-size: 15px; font-weight: 500; letter-spacing: -0.02em; }
+    .crawl-list { display: flex; flex-direction: column; }
+    .crawl-row {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+      transition: padding-left 0.12s;
+    }
+    .crawl-row:hover { padding-left: 8px; }
+    .crawl-row-title { font-size: 13px; font-weight: 500; flex: 1; min-width: 0; }
+    .crawl-row-url {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
+    }
+    .crawl-chips { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+    .chip {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+    }
+
+    /* ── Empty ── */
+    .empty {
+      padding: 56px 0;
+      text-align: left;
+    }
+    .empty-n {
+      font-family: var(--mono);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--rule);
+      letter-spacing: -3px;
+      margin-bottom: 10px;
+    }
+    .empty-msg {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 3px; height: 3px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--rule); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ink-4); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .masthead, .query-bar { padding: 0 16px; }
+      .masthead { height: 48px; }
+      .query-bar { padding: 18px 16px; }
+      .content { padding: 20px 16px 60px; }
+      .sidebar { display: none; }
+      #crawl-container { padding: 20px 16px; }
+      #page-meta { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="wordmark">
+    <div class="wordmark-dot"></div>
+    extract
+  </div>
+  <div class="masthead-meta">
+    <span class="spin" id="spinner"></span>
+    <div class="status-pill">
+      <div class="s-dot" id="s-dot"></div>
+      <span id="s-text">ready</span>
+    </div>
+  </div>
+</header>
+
+<!-- Query bar -->
+<div class="query-bar">
+  <div class="query-row">
+    <span class="q-label">URL</span>
+    <input class="url-input" type="url" id="url-input"
+      placeholder="paste any url…"
+      autocomplete="off" spellcheck="false" />
+    <button class="btn-run" id="scrape-btn" onclick="doScrape()">Scrape</button>
+    <button class="btn-crawl" id="crawl-btn" onclick="doCrawl()">Crawl</button>
+  </div>
+  <div class="query-opts">
+    <label class="qopt" title="Use ScraperAPI for JS-rendered pages (requires SCRAPERAPI_KEY)">
+      <input type="checkbox" id="use-api" /> scraperapi
+    </label>
+    <label class="qopt">
+      depth&nbsp;<input type="number" class="qopt-input" id="max-pages" value="5" min="1" max="20" />
+    </label>
+    <label class="qopt">
+      filter&nbsp;<input type="text" class="qopt-input wide" id="path-filter" value=".*" />
+    </label>
+  </div>
+</div>
+
+<!-- Page meta -->
+<div id="page-meta"></div>
+
+<!-- Stats -->
+<div id="summary">
+  <div class="stats-row">
+    <div class="stat" onclick="switchTabByName('images')">
+      <div class="stat-n" id="stat-images">0</div>
+      <div class="stat-l">Images</div>
+    </div>
+    <div class="stat" onclick="switchTabByName('fonts')">
+      <div class="stat-n" id="stat-fonts">0</div>
+      <div class="stat-l">Fonts</div>
+    </div>
+    <div class="stat" onclick="switchTabByName('files')">
+      <div class="stat-n" id="stat-files">0</div>
+      <div class="stat-l">Files</div>
+    </div>
+    <div class="stat" onclick="switchTabByName('links')">
+      <div class="stat-n" id="stat-links">0</div>
+      <div class="stat-l">Links</div>
+    </div>
+    <div class="stat" onclick="switchTabByName('products')">
+      <div class="stat-n" id="stat-products">0</div>
+      <div class="stat-l">Products</div>
+    </div>
+    <div class="stat" onclick="switchTabByName('headings')">
+      <div class="stat-n" id="stat-headings">0</div>
+      <div class="stat-l">Headings</div>
+    </div>
+  </div>
+</div>
+
+<!-- Results -->
+<div id="results">
+  <div class="layout">
+
+    <!-- Sidebar nav -->
+    <nav class="sidebar">
+      <div class="nav-label">Extracted</div>
+      <button class="nav-btn active" id="tab-btn-images" onclick="switchTab('images',this)">
+        Images <span class="nav-n" id="img-count">0</span>
+      </button>
+      <button class="nav-btn" id="tab-btn-fonts" onclick="switchTab('fonts',this)">
+        Fonts <span class="nav-n" id="font-count">0</span>
+      </button>
+      <button class="nav-btn" id="tab-btn-files" onclick="switchTab('files',this)">
+        Files <span class="nav-n" id="file-count">0</span>
+      </button>
+      <button class="nav-btn" id="tab-btn-links" onclick="switchTab('links',this)">
+        Links <span class="nav-n" id="link-count">0</span>
+      </button>
+      <button class="nav-btn" id="tab-btn-products" onclick="switchTab('products',this)">
+        Products <span class="nav-n" id="product-count">0</span>
+      </button>
+      <button class="nav-btn" id="tab-btn-headings" onclick="switchTab('headings',this)">
+        Headings <span class="nav-n" id="heading-count">0</span>
+      </button>
+      <div class="nav-rule"></div>
+      <div class="nav-label">Export</div>
+      <button class="nav-btn" id="tab-btn-json" onclick="switchTab('json',this)">
+        JSON
+      </button>
+    </nav>
+
+    <!-- Panel content -->
+    <div class="content">
+
+      <!-- Images -->
+      <div id="tab-images" class="tab-panel active">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Images</span>
+            <span class="panel-count" id="img-count-sub"></span>
+          </div>
+        </div>
+        <div id="image-grid" class="image-grid"></div>
+      </div>
+
+      <!-- Fonts -->
+      <div id="tab-fonts" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Fonts</span>
+            <span class="panel-count" id="font-count-sub"></span>
+          </div>
+        </div>
+        <div id="font-list" class="font-list"></div>
+      </div>
+
+      <!-- Files -->
+      <div id="tab-files" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">PDFs &amp; Files</span>
+            <span class="panel-count" id="file-count-sub"></span>
+          </div>
+        </div>
+        <div id="file-list" class="file-list"></div>
+      </div>
+
+      <!-- Links -->
+      <div id="tab-links" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Links</span>
+            <span class="panel-count" id="link-count-sub"></span>
+          </div>
+        </div>
+        <div class="link-group-label">Internal</div>
+        <div id="link-list" class="link-list"></div>
+        <div class="link-group-label">External</div>
+        <div id="ext-link-list" class="link-list"></div>
+      </div>
+
+      <!-- Products -->
+      <div id="tab-products" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Products &amp; Pricing</span>
+            <span class="panel-count" id="product-count-sub"></span>
+          </div>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+
+      <!-- Headings -->
+      <div id="tab-headings" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Headings</span>
+            <span class="panel-count" id="heading-count-sub"></span>
+          </div>
+        </div>
+        <div id="heading-list" class="heading-list"></div>
+      </div>
+
+      <!-- JSON -->
+      <div id="tab-json" class="tab-panel">
+        <div class="panel-hd">
+          <div class="panel-hd-left">
+            <span class="panel-title">Raw JSON</span>
+          </div>
+          <button class="btn-dl" onclick="downloadJson()">↓ Download</button>
+        </div>
+        <div id="json-output"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Crawl results -->
+<div id="crawl-container">
+  <div class="crawl-hd">
+    <span class="crawl-title">Crawl Results</span>
+    <button class="btn-dl" onclick="downloadCrawlJson()">↓ JSON</button>
+  </div>
+  <div id="crawl-list" class="crawl-list"></div>
+</div>
+
+<script>
+let lastResult = null;
+let lastCrawlResult = null;
+let lastTab = 'images'; // remember which tab the user was on
+
+// ── Tabs ──────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  lastTab = name;
+}
+function switchTabByName(name) {
+  switchTab(name, document.getElementById('tab-btn-' + name));
+}
+
+// ── Status ──────────────────────────────────────────
+function setStatus(msg, type = '') {
+  document.getElementById('s-text').textContent = msg;
+  document.getElementById('s-dot').className = 's-dot ' + type;
+  document.getElementById('spinner').style.display = type === 'loading' ? 'inline-block' : 'none';
+}
+function setLoading(msg) { setStatus(msg, 'loading'); }
+function setError(msg)   { setStatus('error: ' + msg, 'error'); }
+function setOk(msg)      { setStatus(msg, 'ok'); }
+
+function setBusy(busy) {
+  document.getElementById('scrape-btn').disabled = busy;
+  document.getElementById('crawl-btn').disabled  = busy;
+}
+
+// ── Scrape ──────────────────────────────────────────
+async function doScrape() {
+  const url    = document.getElementById('url-input').value.trim();
+  const useApi = document.getElementById('use-api').checked;
+  if (!url) { setError('enter a url'); return; }
+  setLoading('scraping…');
+  setBusy(true);
+  clearResults();
+  try {
+    const res  = await fetch('/api/scrape', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, useApi }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error + (data.tip ? ' — ' + data.tip : ''));
+    lastResult = data;
+    renderResult(data);
+    setOk(`${data.summary.images} images · ${data.summary.fonts} fonts · ${data.summary.files} files`);
+  } catch (e) {
+    setError(e.message);
+  } finally {
+    setBusy(false);
+  }
+}
+
+// ── Crawl ──────────────────────────────────────────
+async function doCrawl() {
+  const url        = document.getElementById('url-input').value.trim();
+  const maxPages   = parseInt(document.getElementById('max-pages').value) || 5;
+  const pathFilter = document.getElementById('path-filter').value || '.*';
+  const useApi     = document.getElementById('use-api').checked;
+  if (!url) { setError('enter a url'); return; }
+  setLoading(`crawling up to ${maxPages} pages…`);
+  setBusy(true);
+  clearResults();
+  try {
+    const res  = await fetch('/api/crawl', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, pathFilter, maxPages, useApi }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error);
+    lastCrawlResult = data;
+    renderCrawlResults(data);
+    setOk(`crawled ${data.pages} pages`);
+  } catch (e) {
+    setError(e.message);
+  } finally {
+    setBusy(false);
+  }
+}
+
+document.getElementById('url-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !document.getElementById('scrape-btn').disabled) doScrape();
+});
+
+// ── Clear ──────────────────────────────────────────
+function clearResults() {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('crawl-container').style.display = 'none';
+  document.getElementById('summary').style.display = 'none';
+  document.getElementById('page-meta').style.display = 'none';
+  lastResult = lastCrawlResult = null;
+}
+
+// ── Render ──────────────────────────────────────────
+function renderResult(data) {
+  document.getElementById('crawl-container').style.display = 'none';
+
+  const m = document.getElementById('page-meta');
+  m.style.display = 'block';
+  m.innerHTML = `
+    <div class="meta-title">${esc(data.meta.title || '(no title)')}</div>
+    ${data.meta.description ? `<div class="meta-desc">${esc(data.meta.description.slice(0,160))}</div>` : ''}
+    <div class="meta-sub">${esc(data.meta.url)} · ${data.meta.mode} · ${new Date(data.meta.scrapedAt).toLocaleTimeString()}</div>
+  `;
+
+  const s = data.summary;
+  document.getElementById('stat-images').textContent   = s.images;
+  document.getElementById('stat-fonts').textContent    = s.fonts;
+  document.getElementById('stat-files').textContent    = s.files;
+  document.getElementById('stat-links').textContent    = s.internalLinks + s.externalLinks;
+  document.getElementById('stat-products').textContent = s.productBlocks;
+  document.getElementById('stat-headings').textContent = s.headings;
+  document.getElementById('summary').style.display = 'block';
+
+  document.getElementById('results').style.display = 'block';
+  // Restore the tab the user was on; fall back to images on first load
+  switchTabByName(lastTab);
+
+  renderImages(data.images);
+  renderFonts(data.fonts);
+  renderFiles(data.files);
+  renderLinks(data.links);
+  renderProducts(data.productBlocks);
+  renderHeadings(data.headings);
+  renderJson(data);
+}
+
+// ── Images ──────────────────────────────────────────
+function renderImages(images) {
+  const n = images.length;
+  document.getElementById('img-count').textContent     = n;
+  document.getElementById('img-count-sub').textContent = n + ' found';
+  const el = document.getElementById('image-grid');
+  if (!n) { el.innerHTML = empty('no images found'); return; }
+  el.innerHTML = images.map(img => `
+    <div class="img-cell">
+      <img src="${esc(img.src)}" alt="${esc(img.alt)}"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy"/>
+      <div class="img-err">☐</div>
+      <div class="img-overlay">
+        <span class="img-name">${esc(fileName(img.src))}</span>
+        <a class="img-dl" href="/api/download?url=${enc(img.src)}&filename=${enc(fileName(img.src))}" download>↓</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── Fonts ──────────────────────────────────────────
+function renderFonts(fonts) {
+  const n = fonts.length;
+  document.getElementById('font-count').textContent     = n;
+  document.getElementById('font-count-sub').textContent = n + ' found';
+  const el = document.getElementById('font-list');
+  if (!n) { el.innerHTML = empty('no @font-face fonts found'); return; }
+  el.innerHTML = fonts.map(f => `
+    <div class="font-row">
+      <div class="font-preview" style="font-family:'${esc(f.family)}',sans-serif;">Aa</div>
+      <div class="font-info">
+        <div class="font-name">${esc(f.family)}</div>
+        <div class="font-meta">weight ${esc(f.weight)} · ${esc(f.style)}</div>
+      </div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+        ${f.sources.map(s => `<span class="tag">${s.format}</span>`).join('')}
+      </div>
+      <a class="btn-dl"
+        href="/api/download?url=${enc(f.downloadUrl)}&filename=${enc(f.family+'-'+f.weight+'.'+f.format)}" download>
+        ↓ ${f.format.toUpperCase()}
+      </a>
+    </div>
+  `).join('');
+}
+
+// ── Files ──────────────────────────────────────────
+function renderFiles(files) {
+  const n = files.length;
+  document.getElementById('file-count').textContent     = n;
+  document.getElementById('file-count-sub').textContent = n + ' found';
+  const el = document.getElementById('file-list');
+  if (!n) { el.innerHTML = empty('no downloadable files found'); return; }
+  el.innerHTML = files.map(f => `
+    <div class="file-row">
+      <div class="file-type ${fileIconClass(f.ext)}">${esc(f.type)}</div>
+      <div class="file-info">
+        <div class="file-name">${esc(f.text.slice(0,80))}</div>
+        <div class="file-path">${esc(fileName(f.url))}</div>
+      </div>
+      <a class="btn-dl"
+        href="/api/download?url=${enc(f.url)}&filename=${enc(fileName(f.url))}" download>↓</a>
+    </div>
+  `).join('');
+}
+
+// ── Links ──────────────────────────────────────────
+function renderLinks({ internal, external }) {
+  const n = internal.length + external.length;
+  document.getElementById('link-count').textContent     = n;
+  document.getElementById('link-count-sub').textContent = n + ' found';
+  document.getElementById('link-list').innerHTML     = internal.length  ? internal.map(linkRow).join('')  : empty('no internal links');
+  document.getElementById('ext-link-list').innerHTML = external.length ? external.map(linkRow).join('') : empty('no external links');
+}
+function linkRow(l) {
+  return `
+    <div class="link-row">
+      <span class="link-text" title="${esc(l.text)}">${esc(l.text || '(no text)')}</span>
+      <span class="link-href">${esc(l.href)}</span>
+      <a class="link-ext" href="${esc(l.href)}" target="_blank" rel="noopener" title="Open">↗</a>
+    </div>`;
+}
+
+// ── Products ──────────────────────────────────────────
+function renderProducts(blocks) {
+  const n = blocks.length;
+  document.getElementById('product-count').textContent     = n;
+  document.getElementById('product-count-sub').textContent = n + ' found';
+  const el = document.getElementById('product-grid');
+  if (!n) { el.innerHTML = `<div style="padding:20px;">${empty('no pricing blocks found')}</div>`; return; }
+  el.innerHTML = blocks.map(b => `
+    <div class="product-cell">
+      ${b.image ? `<img class="product-img" src="${esc(b.image)}" alt="" onerror="this.style.display='none'" loading="lazy"/>` : ''}
+      ${b.heading ? `<div class="product-title">${esc(b.heading)}</div>` : ''}
+      <div class="price-list">${b.prices.map(p => `<span class="price-item">${esc(p)}</span>`).join('')}</div>
+      <div class="product-snip">${esc(b.snippet)}</div>
+    </div>
+  `).join('');
+}
+
+// ── Headings ──────────────────────────────────────────
+function renderHeadings(headings) {
+  const n = headings.length;
+  document.getElementById('heading-count').textContent     = n;
+  document.getElementById('heading-count-sub').textContent = n + ' found';
+  const el = document.getElementById('heading-list');
+  if (!n) { el.innerHTML = empty('no headings found'); return; }
+  el.innerHTML = headings.map(h => `
+    <div class="heading-row">
+      <span class="h-level">${esc(h.level)}</span>
+      <span class="h-text">${esc(h.text)}</span>
+    </div>
+  `).join('');
+}
+
+// ── JSON ──────────────────────────────────────────
+function renderJson(data) {
+  document.getElementById('json-output').innerHTML = syntaxHighlight(JSON.stringify(data, null, 2));
+}
+function downloadJson() {
+  if (!lastResult) return;
+  triggerDownload(JSON.stringify(lastResult, null, 2), 'scraper-result.json', 'application/json');
+}
+
+// ── Crawl results ──────────────────────────────────────────
+function renderCrawlResults(data) {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('summary').style.display = 'none';
+  document.getElementById('crawl-container').style.display = 'block';
+  document.getElementById('crawl-list').innerHTML = data.results.map((r, i) => {
+    if (r.error) return `
+      <div class="crawl-row" style="cursor:default;">
+        <span class="crawl-row-title" style="color:var(--red)">Error — ${esc(r.url)}</span>
+        <span class="chip">${esc(r.error)}</span>
+      </div>`;
+    const s = r.summary;
+    return `
+      <div class="crawl-row" onclick="openCrawlPage(${i})">
+        <span class="crawl-row-title">${esc(r.meta.title || '(no title)')}</span>
+        <span class="crawl-row-url">${esc(r.meta.url)}</span>
+        <div class="crawl-chips">
+          <span class="chip">${s.images} img</span>
+          <span class="chip">${s.fonts} font</span>
+          <span class="chip">${s.files} file</span>
+          <span class="chip">${s.internalLinks} link</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function openCrawlPage(i) {
+  if (!lastCrawlResult) return;
+  const page = lastCrawlResult.results[i];
+  if (!page || page.error || !page.meta) return; // guard against error results
+  lastResult = page;
+  document.getElementById('crawl-container').style.display = 'none';
+  renderResult(page);
+  setOk('showing: ' + page.meta.url);
+}
+function downloadCrawlJson() {
+  if (!lastCrawlResult) return;
+  triggerDownload(JSON.stringify(lastCrawlResult, null, 2), 'crawl-results.json', 'application/json');
+}
+
+// ── Utils ──────────────────────────────────────────
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function enc(s) { return encodeURIComponent(s || ''); }
+function fileName(url) {
+  try { return decodeURIComponent(new URL(url).pathname.split('/').pop()) || url; }
+  catch { return url; }
+}
+function fileIconClass(ext) {
+  if (ext === 'pdf') return 'pdf';
+  if (['zip','gz','tar','rar','7z'].includes(ext)) return 'zip';
+  if (['doc','docx'].includes(ext)) return 'doc';
+  if (['xls','xlsx','csv'].includes(ext)) return 'xlsx';
+  return 'other';
+}
+function empty(msg) {
+  return `<div class="empty"><div class="empty-n">—</div><div class="empty-msg">${esc(msg)}</div></div>`;
+}
+function triggerDownload(content, filename, type) {
+  const blob = new Blob([content], { type });
+  const objectUrl = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), { href: objectUrl, download: filename });
+  a.click();
+  // Defer revoke so the browser has time to start the download
+  setTimeout(() => URL.revokeObjectURL(objectUrl), 100);
+}
+function syntaxHighlight(json) {
+  // HTML-escape first to prevent XSS from scraped page content
+  const safe = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return safe.replace(
+    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+    m => {
+      let c = 'json-num';
+      if (/^"/.test(m)) c = /:$/.test(m) ? 'json-key' : 'json-str';
+      else if (/true|false/.test(m)) c = 'json-bool';
+      else if (/null/.test(m)) c = 'json-null';
+      return `<span class="${c}">${m}</span>`;
+    }
+  );
+}
+</script>
+</body>
+</html>
