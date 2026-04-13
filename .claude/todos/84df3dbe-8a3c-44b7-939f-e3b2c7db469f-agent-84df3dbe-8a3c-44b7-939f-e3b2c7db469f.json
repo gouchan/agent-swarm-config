@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Create microcopy utility system with smart explanations",
+    "status": "in_progress",
+    "activeForm": "Creating microcopy utilities"
+  },
+  {
+    "content": "Build ContextualHelp component for tooltips",
+    "status": "pending",
+    "activeForm": "Building help component"
+  },
+  {
+    "content": "Update PortfolioView with natural language",
+    "status": "pending",
+    "activeForm": "Updating portfolio microcopy"
+  },
+  {
+    "content": "Update signal displays with plain English",
+    "status": "pending",
+    "activeForm": "Updating signal microcopy"
+  },
+  {
+    "content": "Add smart summaries to all major components",
+    "status": "pending",
+    "activeForm": "Adding smart summaries"
+  }
+]

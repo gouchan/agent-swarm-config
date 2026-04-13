@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Build Survivor Fear Meter System with visual/audio feedback",
+    "status": "completed",
+    "activeForm": "Building Survivor Fear Meter System with visual/audio feedback"
+  },
+  {
+    "content": "Build Ghost Fear Energy + 4-Tier progression system",
+    "status": "in_progress",
+    "activeForm": "Building Ghost Fear Energy + 4-Tier progression system"
+  },
+  {
+    "content": "Build Ghost ethereal movement with object anchoring",
+    "status": "pending",
+    "activeForm": "Building Ghost ethereal movement with object anchoring"
+  },
+  {
+    "content": "Build basic survivor controls - movement, flashlight, hiding",
+    "status": "pending",
+    "activeForm": "Building basic survivor controls - movement, flashlight, hiding"
+  }
+]

@@ -1,0 +1,718 @@
+2026-03-01T17:32:47.579Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T17:32:47.579Z [DEBUG] MDM settings load completed in 3ms
+2026-03-01T17:32:47.644Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-01T17:32:47.645Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-01T17:32:47.645Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-01T17:32:47.645Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-01T17:32:47.650Z [DEBUG] Applying permission update: Adding 56 allow rule(s) to destination 'localSettings': ["Bash(chmod:*)","Bash(gh:*)","Bash(brew install:*)","Bash(git init:*)","Bash(git add .)","mcp__robloxstudio-mcp__mass_create_objects","mcp__robloxstudio-mcp__create_object_with_properties","mcp__robloxstudio-mcp__set_script_source","mcp__robloxstudio-mcp__mass_create_objects_with_properties","mcp__robloxstudio-mcp__get_project_structure","mcp__robloxstudio-mcp__get_services","mcp__robloxstudio-mcp__get_script_source","mcp__robloxstudio-mcp__edit_script_lines","mcp__robloxstudio-mcp__get_instance_children","mcp__robloxstudio-mcp__get_instance_properties","mcp__robloxstudio-mcp__set_property","mcp__robloxstudio-mcp__delete_object","Bash(find:*)","Bash(ls:*)","Bash(grep:*)","Bash(git -C /Users/robinsonchan log --oneline --all)","Bash(git -C /Users/robinsonchan log --all --grep=\"roblox\\\\|mansion\\\\|building\" -i --oneline)","Bash(npm install:*)","Bash(node test-roblox-mcp.js:*)","Bash(lsof:*)","Bash(kill:*)","Bash(node:*)","Bash(xargs kill:*)","mcp__robloxstudio-mcp__get_place_info","mcp__robloxstudio-mcp__mass_get_property","mcp__robloxstudio-mcp__search_files","mcp__robloxstudio-mcp__search_objects","mcp__robloxstudio-mcp__add_tag","mcp__robloxstudio-mcp__insert_script_lines","mcp__robloxstudio-mcp__get_tags","mcp__robloxstudio-mcp__delete_script_lines","WebSearch","Bash(unzip:*)","Bash(fold:*)","Bash(npm --version:*)","WebFetch(domain:github.com)","WebFetch(domain:raw.githubusercontent.com)","Bash(npm run build:*)","WebFetch(domain:ticketsdata.com)","WebFetch(domain:developer.ticketmaster.com)","Bash(git add:*)","Bash(git commit:*)","Bash(git push)","Bash(git clone:*)","Bash(pip3 install:*)","Bash(python3:*)","Bash(source:*)","Bash(pip install:*)","mcp__claude_ai_Granola__list_meetings","mcp__granola-mcp__get_recent_meetings","mcp__claude_ai_Granola__get_meetings"]
+2026-03-01T17:32:47.651Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-01T17:32:47.657Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-01T17:32:47.657Z [DEBUG] [STARTUP] Running setup()...
+2026-03-01T17:32:47.679Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/robinsonchan/.claude/skills, project=[]
+2026-03-01T17:32:47.680Z [DEBUG] Error log sink initialized
+2026-03-01T17:32:47.683Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default, Profile 1, Profile 10, Profile 11, Profile 2, Profile 3, Profile 4, Profile 5, Profile 6, Profile 7, Profile 8
+2026-03-01T17:32:47.689Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-03-01T17:32:47.689Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-01T17:32:47.690Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-01T17:32:47.690Z [DEBUG] Total plugin skills loaded: 0
+2026-03-01T17:32:47.690Z [DEBUG] Total plugin commands loaded: 0
+2026-03-01T17:32:47.690Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-01T17:32:47.692Z [DEBUG] [STARTUP] setup() completed in 35ms
+2026-03-01T17:32:47.692Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-01T17:32:47.710Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-01T17:32:47.710Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-01T17:32:47.713Z [DEBUG] [Claude in Chrome] Found arc profiles: Default, Profile 1, Profile 2
+2026-03-01T17:32:47.716Z [DEBUG] [Claude in Chrome] Extension not found in any browser
+2026-03-01T17:32:47.716Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-03-01T17:32:47.729Z [DEBUG] Agent file /Users/robinsonchan/.claude/agents/general-purpose.md has invalid model 'default'. Valid options: sonnet, opus, haiku, best, sonnet[1m], opus[1m], opusplan, inherit
+2026-03-01T17:32:47.730Z [DEBUG] Total plugin agents loaded: 0
+2026-03-01T17:32:47.771Z [DEBUG] Loaded 127 unique skills (127 unconditional, 0 conditional, managed: 0, user: 85, project: 0, additional: 0, legacy commands: 42)
+2026-03-01T17:32:47.771Z [DEBUG] getSkills returning: 127 skill dir commands, 0 plugin skills, 5 bundled skills
+2026-03-01T17:32:47.772Z [DEBUG] [STARTUP] Commands and agents loaded in 80ms
+2026-03-01T17:32:47.776Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-01T17:32:47.792Z [DEBUG] Grove: Using fresh cached config
+2026-03-01T17:32:47.803Z [DEBUG] Path /Users/robinsonchan already tracked for repo gouchan/agent-swarm-config
+2026-03-01T17:32:47.803Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-01T17:32:47.804Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-01T17:32:47.808Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T17:32:47.819Z [DEBUG] [keybindings] Watching for changes to /Users/robinsonchan/.claude/keybindings.json
+2026-03-01T17:32:48.010Z [DEBUG] [STARTUP] showSetupScreens() completed in 234ms
+2026-03-01T17:32:48.010Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-01T17:32:48.010Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-01T17:32:48.010Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-01T17:32:48.010Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:32:48.010Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:32:48.011Z [DEBUG] Total LSP servers loaded: 0
+2026-03-01T17:32:48.012Z [DEBUG] [STARTUP] MCP configs loaded in 361ms
+2026-03-01T17:32:48.013Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-01T17:32:48.015Z [DEBUG] MCP server "robloxstudio-mcp": Starting connection with timeout of 30000ms
+2026-03-01T17:32:48.017Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-01T17:32:48.017Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-01T17:32:48.018Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-03-01T17:32:48.018Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:32:48.018Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-03-01T17:32:48.018Z [DEBUG] LSP server manager initialized successfully
+2026-03-01T17:32:48.018Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-01T17:32:48.018Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:32:48.024Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-01T17:32:48.024Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-01T17:32:48.053Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:48.083Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": Initializing HTTP transport to http://127.0.0.1:29979/mcp
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": Node version: v22.12.0, Platform: darwin
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": Proxy options: default
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": HTTP transport options: {"url":"http://127.0.0.1:29979/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-01T17:32:48.084Z [DEBUG] MCP server "paper": HTTP transport created successfully
+2026-03-01T17:32:48.085Z [DEBUG] MCP server "paper": Client created, setting up request handler
+2026-03-01T17:32:48.085Z [DEBUG] MCP server "paper": Starting connection with timeout of 30000ms
+2026-03-01T17:32:48.085Z [DEBUG] MCP server "paper": Testing basic HTTP connectivity to http://127.0.0.1:29979/mcp
+2026-03-01T17:32:48.085Z [DEBUG] MCP server "paper": Parsed URL: host=127.0.0.1, port=29979, protocol=http:
+2026-03-01T17:32:48.085Z [DEBUG] MCP server "paper": Using loopback address: 127.0.0.1
+2026-03-01T17:32:48.113Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Node version: v22.12.0, Platform: darwin
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Proxy options: default
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": HTTP transport created successfully
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Client created, setting up request handler
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Starting connection with timeout of 30000ms
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-01T17:32:48.114Z [DEBUG] MCP server "granola": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-01T17:32:48.160Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": Node version: v22.12.0, Platform: darwin
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": Proxy options: default
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-01T17:32:48.161Z [DEBUG] MCP server "granola-mcp": HTTP transport created successfully
+2026-03-01T17:32:48.162Z [DEBUG] MCP server "granola-mcp": Client created, setting up request handler
+2026-03-01T17:32:48.162Z [DEBUG] MCP server "granola-mcp": Starting connection with timeout of 30000ms
+2026-03-01T17:32:48.162Z [DEBUG] MCP server "granola-mcp": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-01T17:32:48.162Z [DEBUG] MCP server "granola-mcp": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-01T17:32:48.177Z [DEBUG] MCP server "granola-mcp": No token data found
+2026-03-01T17:32:48.215Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:48.218Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T17:32:48.219Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.307; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:32:48.220Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:32:48.220Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:32:48.221Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:32:48.256Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:48.257Z [DEBUG] MCP server "paper": Successfully connected to http server in 173ms
+2026-03-01T17:32:48.257Z [DEBUG] MCP server "paper": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"paper-desktop","version":"0.1.4"}}
+2026-03-01T17:32:48.257Z [DEBUG] [MCP] Server "paper" connected with subscribe=false
+2026-03-01T17:32:48.284Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:48.287Z [DEBUG] Org fast mode: disabled (extra_usage_disabled)
+2026-03-01T17:32:48.582Z [DEBUG] MCP server "granola-mcp": No token data found
+2026-03-01T17:32:48.611Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:48.839Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:32:48.897Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:48.897Z [DEBUG] MCP server "granola": Successfully connected to http server in 783ms
+2026-03-01T17:32:48.897Z [DEBUG] MCP server "granola": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"granola-mcp","version":"1.0.0"}}
+2026-03-01T17:32:48.897Z [DEBUG] [MCP] Server "granola" connected with subscribe=false
+2026-03-01T17:32:48.925Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:48.953Z [DEBUG] MCP server "granola-mcp": No token data found
+2026-03-01T17:32:48.954Z [DEBUG] MCP server "granola-mcp": Successfully connected to http server in 793ms
+2026-03-01T17:32:48.954Z [DEBUG] MCP server "granola-mcp": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"granola-mcp","version":"1.0.0"}}
+2026-03-01T17:32:48.954Z [DEBUG] [MCP] Server "granola-mcp" connected with subscribe=false
+2026-03-01T17:32:48.986Z [DEBUG] MCP server "granola-mcp": No token data found
+2026-03-01T17:32:48.989Z [ERROR] MCP server "robloxstudio-mcp" Server stderr: HTTP server listening on 0.0.0.0:58741 for Studio plugin (primary mode)
+Legacy HTTP server also listening on 0.0.0.0:3002 for old plugins
+robloxstudio-mcp v2.4.0 running on stdio
+MCP server marked as active (primary mode)
+Waiting for Studio plugin to connect...
+2026-03-01T17:32:48.989Z [DEBUG] MCP server "robloxstudio-mcp": Successfully connected to undefined server in 976ms
+2026-03-01T17:32:48.989Z [DEBUG] MCP server "robloxstudio-mcp": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"robloxstudio-mcp","version":"2.4.0"}}
+2026-03-01T17:32:48.989Z [DEBUG] [MCP] Server "robloxstudio-mcp" connected with subscribe=false
+2026-03-01T17:32:49.037Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:49.207Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:49.320Z [DEBUG] MCP server "granola": Returning cached discovery state (authServer: https://mcp-auth.granola.ai)
+2026-03-01T17:32:49.320Z [DEBUG] MCP server "granola": Found client info
+2026-03-01T17:32:49.364Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:49.365Z [DEBUG] MCP server "granola": Generated new OAuth state
+2026-03-01T17:32:49.370Z [DEBUG] MCP server "granola": Saving code verifier
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": Authorization URL: https://mcp-auth.granola.ai/oauth2/authorize?response_type=code&client_id=client_01KH9E3RJW3Z42AK7RYGN7XGSX&code_challenge=%5BREDACTED%5D&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A3118%2Fcallback&state=%5BREDACTED%5D&resource=https%3A%2F%2Fmcp.granola.ai%2F
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": Scopes in URL: NOT FOUND
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": No scopes available from URL or metadata
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": Redirection handling is disabled, skipping redirect
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": HTTP connection dropped after 0s uptime
+2026-03-01T17:32:49.371Z [DEBUG] MCP server "granola": Connection error: Unauthorized
+2026-03-01T17:32:49.371Z [ERROR] MCP server "granola" Failed to fetch tools: Unauthorized
+2026-03-01T17:32:49.441Z [DEBUG] MCP server "framer": Successfully connected to sse server in 1417ms
+2026-03-01T17:32:49.441Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-01T17:32:49.441Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-01T17:32:49.490Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:49.526Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:49.560Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:50.182Z [DEBUG] MCP server "granola-mcp": Saving discovery state (authServer: https://mcp-auth.granola.ai)
+2026-03-01T17:32:50.308Z [DEBUG] MCP server "granola-mcp": No client info found
+2026-03-01T17:32:50.314Z [WARN] [3P telemetry] Event dropped (no event logger initialized): api_request
+2026-03-01T17:32:50.703Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:50.703Z [DEBUG] MCP server "granola-mcp": Generated new OAuth state
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": Saving code verifier
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": Authorization URL: https://mcp-auth.granola.ai/oauth2/authorize?response_type=code&client_id=client_01KJN7BGZ84BF1NY0JMKGZ9NTB&code_challenge=%5BREDACTED%5D&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A3118%2Fcallback&state=%5BREDACTED%5D&resource=https%3A%2F%2Fmcp.granola.ai%2F
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": Scopes in URL: NOT FOUND
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": No scopes available from URL or metadata
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": Redirection handling is disabled, skipping redirect
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": HTTP connection dropped after 1s uptime
+2026-03-01T17:32:50.704Z [DEBUG] MCP server "granola-mcp": Connection error: Unauthorized
+2026-03-01T17:32:50.704Z [ERROR] MCP server "granola-mcp" Failed to fetch tools: Unauthorized
+2026-03-01T17:32:50.706Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-03-01T17:32:50.707Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-01T17:32:50.708Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.19138.1772386370708
+2026-03-01T17:32:50.708Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:32:50.708Z [DEBUG] Temp file written successfully, size: 12695 bytes
+2026-03-01T17:32:50.708Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:32:50.708Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.19138.1772386370708 to /Users/robinsonchan/.claude.json
+2026-03-01T17:32:50.708Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:32:50.737Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T17:32:50.773Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-01T17:32:50.774Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-01T17:32:50.775Z [DEBUG] performStartupChecks called
+2026-03-01T17:32:50.775Z [DEBUG] Starting background plugin installations
+2026-03-01T17:32:50.777Z [DEBUG] FileHistory: Added snapshot for 6314373a-a522-496f-b87b-d849435e4650, tracking 0 files
+2026-03-01T17:32:50.778Z [DEBUG] Loaded 1 CLAUDE.md/rules files:
+  [Project] /Users/robinsonchan/CLAUDE.md (1924 chars)
+2026-03-01T17:32:50.786Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-01T17:32:50.786Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-01T17:32:50.786Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-01T17:32:50.786Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-03-01T17:32:50.824Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:50.881Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:50.907Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:50.937Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:50.979Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:51.005Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:51.034Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:51.057Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:51.059Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:32:51.087Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:51.110Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:51.131Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:51.152Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:51.163Z [DEBUG] Watching for changes in setting files /Users/robinsonchan/.claude/settings.json, /Users/robinsonchan/.claude/settings.local.json...
+2026-03-01T17:32:51.163Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-01T17:32:51.163Z [DEBUG] Watching for changes in skill/command directories: /Users/robinsonchan/.claude/skills, /Users/robinsonchan/.claude/commands, /Users/robinsonchan/.claude/skills, /Users/robinsonchan/.claude/commands...
+2026-03-01T17:32:51.163Z [DEBUG] [claudeai-mcp] Fetched 7 servers
+2026-03-01T17:32:51.191Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:51.217Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:51.239Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:51.263Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:51.264Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-01T17:32:51.264Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-01T17:32:51.264Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.264Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.265Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-01T17:32:51.265Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-01T17:32:51.265Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.265Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.266Z [DEBUG] MCP server "claude.ai Granola": Initializing claude.ai proxy transport for server mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-01T17:32:51.266Z [DEBUG] MCP server "claude.ai Granola": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-01T17:32:51.266Z [DEBUG] MCP server "claude.ai Granola": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.266Z [DEBUG] MCP server "claude.ai Granola": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.267Z [DEBUG] MCP server "claude.ai Notion": Initializing claude.ai proxy transport for server mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-01T17:32:51.267Z [DEBUG] MCP server "claude.ai Notion": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-01T17:32:51.267Z [DEBUG] MCP server "claude.ai Notion": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.267Z [DEBUG] MCP server "claude.ai Notion": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Stripe": Initializing claude.ai proxy transport for server mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Stripe": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Stripe": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Stripe": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Figma": Initializing claude.ai proxy transport for server mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Figma": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Figma": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.268Z [DEBUG] MCP server "claude.ai Figma": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.269Z [DEBUG] MCP server "claude.ai Canva": Initializing claude.ai proxy transport for server mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-01T17:32:51.269Z [DEBUG] MCP server "claude.ai Canva": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-01T17:32:51.269Z [DEBUG] MCP server "claude.ai Canva": claude.ai proxy transport created successfully
+2026-03-01T17:32:51.269Z [DEBUG] MCP server "claude.ai Canva": Starting connection with timeout of 30000ms
+2026-03-01T17:32:51.274Z [DEBUG] High write ratio: blit=554, write=646 (53.8% writes), screen=33x80
+2026-03-01T17:32:51.281Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-03-01T17:32:51.326Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-01T17:32:51.946Z [DEBUG] SSH config check: code=255 configured=false
+2026-03-01T17:32:51.963Z [DEBUG] git pull: cwd=/Users/robinsonchan/.claude/plugins/marketplaces/claude-plugins-official ref=default
+2026-03-01T17:32:51.965Z [DEBUG] MCP server "claude.ai Google Calendar": Successfully connected to claudeai-proxy server in 701ms
+2026-03-01T17:32:51.965Z [DEBUG] MCP server "claude.ai Google Calendar": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"mcp-server-gcal","version":"0.1.0"}}
+2026-03-01T17:32:51.965Z [DEBUG] [MCP] Server "claude.ai Google Calendar" connected with subscribe=false
+2026-03-01T17:32:52.003Z [DEBUG] MCP server "claude.ai Gmail": Successfully connected to claudeai-proxy server in 738ms
+2026-03-01T17:32:52.003Z [DEBUG] MCP server "claude.ai Gmail": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"mcp-server-gmail","version":"0.1.0"}}
+2026-03-01T17:32:52.003Z [DEBUG] [MCP] Server "claude.ai Gmail" connected with subscribe=false
+2026-03-01T17:32:52.155Z [DEBUG] MCP server "claude.ai Figma": Successfully connected to claudeai-proxy server in 887ms
+2026-03-01T17:32:52.156Z [DEBUG] MCP server "claude.ai Figma": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Figma MCP Server","icons":[{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"}],"version":"1.0.0","websiteUrl":"https://developers.figma.com/docs/figma-mcp-server/"}}
+2026-03-01T17:32:52.156Z [DEBUG] [MCP] Server "claude.ai Figma" connected with subscribe=false
+2026-03-01T17:32:52.168Z [DEBUG] MCP server "claude.ai Stripe": Successfully connected to claudeai-proxy server in 900ms
+2026-03-01T17:32:52.168Z [DEBUG] MCP server "claude.ai Stripe": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"stripe-mcp","version":"1.0.0"}}
+2026-03-01T17:32:52.168Z [DEBUG] [MCP] Server "claude.ai Stripe" connected with subscribe=false
+2026-03-01T17:32:52.301Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-01T17:32:52.301Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-01T17:32:52.334Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:52.364Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:52.390Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:52.414Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:52.498Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:52.527Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:52.554Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:52.581Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:52.584Z [DEBUG] MCP server "claude.ai Canva": Successfully connected to claudeai-proxy server in 1315ms
+2026-03-01T17:32:52.584Z [DEBUG] MCP server "claude.ai Canva": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Canva MCP Server","version":"1.0.0"}}
+2026-03-01T17:32:52.584Z [DEBUG] [MCP] Server "claude.ai Canva" connected with subscribe=false
+2026-03-01T17:32:52.586Z [DEBUG] MCP server "claude.ai Granola": Successfully connected to claudeai-proxy server in 1320ms
+2026-03-01T17:32:52.586Z [DEBUG] MCP server "claude.ai Granola": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"granola-mcp","version":"1.0.0"}}
+2026-03-01T17:32:52.586Z [DEBUG] [MCP] Server "claude.ai Granola" connected with subscribe=false
+2026-03-01T17:32:52.587Z [DEBUG] MCP server "claude.ai Notion": Successfully connected to claudeai-proxy server in 1320ms
+2026-03-01T17:32:52.587Z [DEBUG] MCP server "claude.ai Notion": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Notion MCP","icons":[{"src":"https://mcp.notion.com/notion-logo-block-main.svg","mimeType":"image/svg+xml"}],"version":"1.2.0","websiteUrl":"https://developers.notion.com/docs/mcp","description":"Notion's official MCP server lets you use your Notion workspace as a system of record for knowledge work and software development. Search questions about the codebase and business, fetch links to pages such as tech specs and PRDs, and track tasks with your team."}}
+2026-03-01T17:32:52.587Z [DEBUG] [MCP] Server "claude.ai Notion" connected with subscribe=false
+2026-03-01T17:32:52.671Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:52.696Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:52.719Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:52.743Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:52.890Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:52.920Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:52.946Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:52.981Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:53.088Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:53.114Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:53.139Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:53.164Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:53.213Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:53.243Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:53.269Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:53.298Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:32:53.599Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:53.635Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:32:53.664Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T17:32:53.690Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:41:41.805Z [DEBUG] MCP server "framer": SSE connection dropped after 532s uptime
+2026-03-01T17:41:41.807Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-01T17:41:41.807Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-01T17:41:44.889Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:41:44.931Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T18:06:40.617Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T18:39:11.849Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T19:12:15.631Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T19:27:23.950Z [DEBUG] MCP server "framer": SSE connection dropped after 6874s uptime
+2026-03-01T19:27:23.950Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-01T19:27:23.950Z [DEBUG] MCP server "framer": Terminal connection error 2/3
+2026-03-01T19:27:27.077Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T19:27:27.143Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T19:43:07.682Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T20:14:07.807Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T20:47:36.619Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T21:22:11.734Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T21:52:40.686Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T22:26:38.683Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T22:53:40.940Z [DEBUG] MCP server "framer": SSE connection dropped after 19251s uptime
+2026-03-01T22:53:40.940Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-01T22:53:40.940Z [DEBUG] MCP server "framer": Terminal connection error 3/3
+2026-03-01T22:53:40.940Z [DEBUG] MCP server "framer": Max consecutive errors reached, triggering reconnection via onclose
+2026-03-01T22:53:40.951Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-01T22:53:40.952Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-01T22:53:40.954Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-01T22:53:40.968Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-01T22:53:41.066Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:41.110Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:41.165Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:41.210Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T22:53:41.239Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T22:53:41.281Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T22:53:42.945Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:43.376Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:43.686Z [DEBUG] MCP server "framer": Successfully connected to sse server in 2732ms
+2026-03-01T22:53:43.687Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-01T22:53:43.687Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-01T22:53:43.735Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:43.776Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:43.815Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:43.980Z [DEBUG] MCP server "framer": SSE reconnection successful after 3029ms (attempt 1)
+2026-03-01T22:53:43.980Z [DEBUG] MCP server "framer": SSE reconnection successful after 3028ms (attempt 1)
+2026-03-01T22:53:44.051Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T22:53:44.073Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T22:53:44.095Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-01T22:53:44.115Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T23:07:20.632Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T23:39:21.818Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T00:10:24.639Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T00:45:39.672Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T00:45:41.108Z [DEBUG] MCP server "framer": SSE connection dropped after 6717s uptime
+2026-03-02T00:45:41.108Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T00:45:41.108Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-02T00:45:44.193Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T00:45:44.232Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T01:29:39.789Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T02:14:38.429Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T02:48:14.738Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T02:57:42.074Z [DEBUG] MCP server "framer": SSE connection dropped after 14638s uptime
+2026-03-02T02:57:42.077Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T02:57:42.077Z [DEBUG] MCP server "framer": Terminal connection error 2/3
+2026-03-02T02:57:45.138Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T02:57:45.174Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:19:39.077Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T03:19:48.789Z [DEBUG] MCP server "paper": HTTP connection dropped after 35220s uptime
+2026-03-02T03:19:48.790Z [DEBUG] MCP server "paper": Connection error: SSE stream disconnected: TypeError: terminated
+2026-03-02T03:19:48.790Z [DEBUG] MCP server "paper": Terminal connection error 1/3
+2026-03-02T03:19:49.850Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:19:49.854Z [DEBUG] MCP server "paper": HTTP connection dropped after 35221s uptime
+2026-03-02T03:19:49.854Z [DEBUG] MCP server "paper": Connection error: fetch failed
+2026-03-02T03:19:49.854Z [DEBUG] MCP server "paper": HTTP connection dropped after 35221s uptime
+2026-03-02T03:19:49.854Z [DEBUG] MCP server "paper": Connection error: Failed to reconnect SSE stream: fetch failed
+2026-03-02T03:19:51.452Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": HTTP connection dropped after 35223s uptime
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": Connection error: fetch failed
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": HTTP connection dropped after 35223s uptime
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": Connection error: Failed to reconnect SSE stream: fetch failed
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": HTTP connection dropped after 35223s uptime
+2026-03-02T03:19:51.455Z [DEBUG] MCP server "paper": Connection error: Maximum reconnection attempts (2) exceeded.
+2026-03-02T03:24:31.305Z [DEBUG] MCP server "framer": SSE connection dropped after 16247s uptime
+2026-03-02T03:24:31.307Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T03:24:31.307Z [DEBUG] MCP server "framer": Terminal connection error 3/3
+2026-03-02T03:24:31.307Z [DEBUG] MCP server "framer": Max consecutive errors reached, triggering reconnection via onclose
+2026-03-02T03:24:31.311Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T03:24:31.312Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T03:24:31.314Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T03:24:31.318Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T03:24:31.371Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:31.409Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:31.466Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:31.503Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T03:24:31.533Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T03:24:31.559Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:24:32.893Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:33.099Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:33.224Z [DEBUG] MCP server "framer": Successfully connected to sse server in 1911ms
+2026-03-02T03:24:33.224Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-02T03:24:33.224Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-02T03:24:33.328Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:33.367Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:33.402Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:33.839Z [DEBUG] MCP server "framer": SSE reconnection successful after 2528ms (attempt 1)
+2026-03-02T03:24:33.839Z [DEBUG] MCP server "framer": SSE reconnection successful after 2527ms (attempt 1)
+2026-03-02T03:24:33.943Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:24:34.001Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T03:24:34.044Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T03:24:34.091Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:29:34.992Z [DEBUG] MCP server "framer": SSE connection dropped after 301s uptime
+2026-03-02T03:29:34.996Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T03:29:34.996Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-02T03:29:38.102Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:29:38.156Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:34:40.760Z [DEBUG] MCP server "framer": SSE connection dropped after 607s uptime
+2026-03-02T03:34:40.760Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T03:34:40.761Z [DEBUG] MCP server "framer": Terminal connection error 2/3
+2026-03-02T03:34:43.822Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:34:43.858Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:46.557Z [DEBUG] MCP server "framer": SSE connection dropped after 913s uptime
+2026-03-02T03:39:46.557Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T03:39:46.557Z [DEBUG] MCP server "framer": Terminal connection error 3/3
+2026-03-02T03:39:46.557Z [DEBUG] MCP server "framer": Max consecutive errors reached, triggering reconnection via onclose
+2026-03-02T03:39:46.561Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T03:39:46.563Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T03:39:46.566Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T03:39:46.570Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T03:39:46.606Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:46.638Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:46.690Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:46.717Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T03:39:46.747Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T03:39:46.777Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:39:48.031Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.222Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.399Z [DEBUG] MCP server "framer": Successfully connected to sse server in 1833ms
+2026-03-02T03:39:48.399Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-02T03:39:48.399Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-02T03:39:48.448Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.474Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.501Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.627Z [DEBUG] MCP server "framer": SSE reconnection successful after 2066ms (attempt 1)
+2026-03-02T03:39:48.627Z [DEBUG] MCP server "framer": SSE reconnection successful after 2064ms (attempt 1)
+2026-03-02T03:39:48.722Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:39:48.767Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T03:39:48.806Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T03:39:48.854Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T03:44:49.710Z [DEBUG] MCP server "framer": SSE connection dropped after 301s uptime
+2026-03-02T03:44:49.712Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T03:44:49.712Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-02T03:44:52.789Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T03:44:52.835Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T04:05:20.650Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T04:39:46.491Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T05:11:13.788Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T05:44:14.610Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T05:44:15.880Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.19138.1772430255880
+2026-03-02T05:44:15.880Z [DEBUG] Preserving file permissions: 100600
+2026-03-02T05:44:15.880Z [DEBUG] Temp file written successfully, size: 12695 bytes
+2026-03-02T05:44:15.880Z [DEBUG] Applied original permissions to temp file
+2026-03-02T05:44:15.880Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.19138.1772430255880 to /Users/robinsonchan/.claude.json
+2026-03-02T05:44:15.881Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-02T06:15:33.637Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T06:30:43.373Z [DEBUG] MCP server "framer": SSE connection dropped after 10254s uptime
+2026-03-02T06:30:43.374Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-02T06:30:43.374Z [DEBUG] MCP server "framer": Terminal connection error 2/3
+2026-03-02T06:46:27.133Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T06:46:27.173Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T06:46:27.192Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T07:23:59.562Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T08:07:41.491Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T08:41:16.472Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T08:58:55.893Z [DEBUG] MCP server "framer": SSE connection dropped after 19147s uptime
+2026-03-02T08:58:55.894Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T08:58:55.894Z [DEBUG] MCP server "framer": Terminal connection error 3/3
+2026-03-02T08:58:55.894Z [DEBUG] MCP server "framer": Max consecutive errors reached, triggering reconnection via onclose
+2026-03-02T08:58:55.900Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T08:58:55.901Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T08:58:55.903Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T08:58:55.913Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T08:58:55.970Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T08:58:56.007Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T08:58:56.051Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T08:58:56.072Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T08:58:56.092Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T08:58:56.114Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T09:14:03.429Z [DEBUG] MCP server "framer": Connection timeout triggered after 907527ms (limit: 30000ms)
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": SSE Connection failed after 907531ms: {"url":"https://mcp.unframer.co/sse?id=05f22df5adccedccd2bd9b53750cf44de0dea2f882fd4621da2c74a126ab1ba4&secret=yNIobHFVYzizttP9RL9MVwvayIhMwYXc","error":"MCP server \"framer\" connection timed out after 30000ms","errorType":"CL","stack":"TelemetrySafeError: MCP server \"framer\" connection timed out after 30000ms\n    at Timeout._onTimeout (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:1900:27218)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)"}
+2026-03-02T09:14:03.459Z [ERROR] MCP server "framer" TelemetrySafeError: MCP server "framer" connection timed out after 30000ms
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": Connection failed after 907557ms: MCP server "framer" connection timed out after 30000ms
+2026-03-02T09:14:03.459Z [ERROR] MCP server "framer" Connection failed: MCP server "framer" connection timed out after 30000ms
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": SSE reconnection attempt 1 completed with status: failed
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": Scheduling reconnection attempt 2 in 1000ms
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": SSE reconnection attempt 1 completed with status: failed
+2026-03-02T09:14:03.459Z [DEBUG] MCP server "framer": Scheduling reconnection attempt 2 in 1000ms
+2026-03-02T09:14:03.478Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T09:14:04.462Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T09:14:04.464Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T09:14:04.512Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:04.555Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:04.606Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:04.636Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T09:14:04.659Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T09:14:04.687Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T09:14:06.097Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.418Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.629Z [DEBUG] MCP server "framer": Successfully connected to sse server in 2167ms
+2026-03-02T09:14:06.629Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-02T09:14:06.629Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-02T09:14:06.687Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.728Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.766Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.768Z [DEBUG] MCP server "framer": SSE connection closed after 0s (cleanly)
+2026-03-02T09:14:06.768Z [DEBUG] MCP server "framer": Cleared connection cache for reconnection
+2026-03-02T09:14:06.768Z [ERROR] MCP server "framer" Failed to fetch tools: MCP error -32000: Connection closed
+2026-03-02T09:14:06.768Z [ERROR] MCP server "framer" Failed to fetch commands: MCP error -32000: Connection closed
+2026-03-02T09:14:06.768Z [ERROR] MCP server "framer" Failed to fetch resources: MCP error -32000: Connection closed
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": SSE reconnection successful after 2307ms (attempt 2)
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": SSE connection dropped after 0s uptime
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": SSE connection dropped after 0s uptime
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": SSE connection dropped after 0s uptime
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:14:06.769Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T09:14:06.771Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T09:14:06.806Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.831Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.856Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:06.877Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T09:14:06.901Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T09:14:06.924Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T09:14:07.841Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:07.963Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:08.116Z [DEBUG] MCP server "framer": Successfully connected to sse server in 1347ms
+2026-03-02T09:14:08.116Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-02T09:14:08.116Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-02T09:14:08.163Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:08.205Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:14:08.244Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:30:38.431Z [ERROR] Error: Error: {"stack":"Error: Operation timed out.\n    at Timeout.<anonymous> (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:167514)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)","message":"Operation timed out.","name":"Error"}
+    at gh8.error (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2478:34864)
+    at nl1.error (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:64369)
+    at file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:95394
+    at PCK (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:95940)
+    at file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:119:19810
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processTimers (node:internal/timers:526:9)
+2026-03-02T09:30:38.431Z [ERROR] [3P telemetry] OTEL diag error: {"stack":"Error: Operation timed out.\n    at Timeout.<anonymous> (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:167514)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)","message":"Operation timed out.","name":"Error"}
+2026-03-02T09:30:38.480Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:30:38.480Z [ERROR] MCP server "framer" Failed to fetch tools: MCP error -32001: Request timed out
+2026-03-02T09:30:38.505Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:30:38.506Z [ERROR] MCP server "framer" Failed to fetch commands: MCP error -32001: Request timed out
+2026-03-02T09:30:38.553Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:30:38.553Z [ERROR] MCP server "framer" Failed to fetch resources: MCP error -32001: Request timed out
+2026-03-02T09:30:38.554Z [DEBUG] MCP server "framer": SSE reconnection successful after 993999ms (attempt 2)
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": SSE connection dropped after 990s uptime
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": SSE connection dropped after 990s uptime
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": SSE connection dropped after 990s uptime
+2026-03-02T09:30:38.555Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T09:30:38.560Z [ERROR] Error: Error: 1P event logging: 3 events failed to export (code=ECONNABORTED, timeout of 10000ms exceeded)
+    at ac8.queueFailedEvents (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:6340:2379)
+    at async ac8.doExport (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:6340:1261)
+2026-03-02T09:30:38.561Z [ERROR] Error: Error: {"stack":"Error: Failed to export 3 events (code=ECONNABORTED, timeout of 10000ms exceeded)\n    at ac8.doExport (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:6340:1436)","message":"Failed to export 3 events (code=ECONNABORTED, timeout of 10000ms exceeded)","name":"Error"}
+    at gh8.error (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2478:34864)
+    at nl1.error (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:64369)
+    at file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:95394
+    at PCK (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:118:95940)
+    at file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:119:20250
+2026-03-02T09:30:38.561Z [ERROR] [3P telemetry] OTEL diag error: {"stack":"Error: Failed to export 3 events (code=ECONNABORTED, timeout of 10000ms exceeded)\n    at ac8.doExport (file:///Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:6340:1436)","message":"Failed to export 3 events (code=ECONNABORTED, timeout of 10000ms exceeded)","name":"Error"}
+2026-03-02T09:30:38.610Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T09:30:38.647Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T09:30:38.662Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T09:30:38.678Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T09:46:55.439Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T10:21:04.598Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T10:53:17.562Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T11:24:37.248Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T11:24:40.620Z [DEBUG] MCP server "framer": SSE connection dropped after 7832s uptime
+2026-03-02T11:24:40.621Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T11:24:40.621Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-02T11:24:43.696Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T11:24:43.736Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T11:56:42.725Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T12:31:48.537Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T13:10:03.415Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T13:41:35.458Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T13:57:39.334Z [DEBUG] MCP server "framer": SSE connection dropped after 17011s uptime
+2026-03-02T13:57:39.334Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T13:57:39.334Z [DEBUG] MCP server "framer": Terminal connection error 2/3
+2026-03-02T14:13:33.010Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T14:13:33.060Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T14:13:33.078Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T14:58:51.297Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T15:32:09.573Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T16:15:40.376Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T16:32:49.436Z [DEBUG] MCP server "framer": SSE connection dropped after 26321s uptime
+2026-03-02T16:32:49.436Z [DEBUG] MCP server "framer": Connection reset - server may have crashed or restarted
+2026-03-02T16:32:49.436Z [DEBUG] MCP server "framer": Terminal connection error 3/3
+2026-03-02T16:32:49.436Z [DEBUG] MCP server "framer": Max consecutive errors reached, triggering reconnection via onclose
+2026-03-02T16:32:49.437Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T16:32:49.441Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T16:32:49.458Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T16:32:49.461Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T16:32:49.512Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:49.537Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:49.568Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:49.657Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T16:32:49.673Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T16:32:49.688Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T16:32:51.475Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:51.905Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:52.112Z [DEBUG] MCP server "framer": Successfully connected to sse server in 2657ms
+2026-03-02T16:32:52.112Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-02T16:32:52.112Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-02T16:32:52.199Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:52.224Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:32:52.249Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:44:35.403Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:44:35.404Z [ERROR] MCP server "framer" Failed to fetch tools: MCP error -32001: Request timed out
+2026-03-02T16:44:35.435Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:44:35.436Z [ERROR] MCP server "framer" Failed to fetch commands: MCP error -32001: Request timed out
+2026-03-02T16:44:35.478Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:44:35.478Z [ERROR] MCP server "framer" Failed to fetch resources: MCP error -32001: Request timed out
+2026-03-02T16:44:35.479Z [DEBUG] MCP server "framer": SSE reconnection successful after 706041ms (attempt 1)
+2026-03-02T16:44:35.479Z [DEBUG] MCP server "framer": SSE reconnection successful after 706038ms (attempt 1)
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": SSE connection dropped after 703s uptime
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": SSE connection dropped after 703s uptime
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": SSE connection dropped after 703s uptime
+2026-03-02T16:44:35.480Z [DEBUG] MCP server "framer": Connection error: This operation was aborted
+2026-03-02T16:44:35.530Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T16:44:35.556Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T16:44:35.582Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T16:44:35.613Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T17:02:36.453Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-02T17:27:29.457Z [DEBUG] MCP server "paper": HTTP transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.460Z [DEBUG] MCP server "granola": HTTP transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.460Z [DEBUG] MCP server "granola-mcp": HTTP transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Google Calendar": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Gmail": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Figma": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Stripe": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Canva": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Granola": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.801Z [DEBUG] MCP server "claude.ai Notion": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.803Z [DEBUG] MCP server "framer": SSE transport closed/disconnected, attempting automatic reconnection
+2026-03-02T17:27:29.804Z [DEBUG] LSP server manager shut down successfully
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "paper": Initializing HTTP transport to http://127.0.0.1:29979/mcp
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "paper": Node version: v22.12.0, Platform: darwin
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "paper": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola": Node version: v22.12.0, Platform: darwin
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola-mcp": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola-mcp": Node version: v22.12.0, Platform: darwin
+2026-03-02T17:27:29.805Z [DEBUG] MCP server "granola-mcp": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-02T17:27:29.806Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Figma": Initializing claude.ai proxy transport for server mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Figma": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Figma": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Figma": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Stripe": Initializing claude.ai proxy transport for server mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Stripe": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-02T17:27:29.807Z [DEBUG] MCP server "claude.ai Stripe": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Stripe": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Canva": Initializing claude.ai proxy transport for server mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Canva": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Canva": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Canva": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Granola": Initializing claude.ai proxy transport for server mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Granola": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Granola": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Granola": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Notion": Initializing claude.ai proxy transport for server mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Notion": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Notion": claude.ai proxy transport created successfully
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "claude.ai Notion": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.808Z [DEBUG] MCP server "paper": Proxy options: default
+2026-03-02T17:27:29.809Z [DEBUG] MCP server "paper": HTTP transport options: {"url":"http://127.0.0.1:29979/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": HTTP transport created successfully
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": Client created, setting up request handler
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": Testing basic HTTP connectivity to http://127.0.0.1:29979/mcp
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": Parsed URL: host=127.0.0.1, port=29979, protocol=http:
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "paper": Using loopback address: 127.0.0.1
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": Proxy options: default
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": HTTP transport created successfully
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": Client created, setting up request handler
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": Proxy options: default
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": HTTP transport created successfully
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": Client created, setting up request handler
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "granola-mcp": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-02T17:27:29.810Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-02T17:27:29.859Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T17:27:29.886Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T17:27:29.918Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T17:27:29.950Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T17:27:29.978Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T17:27:29.991Z [DEBUG] MCP server "paper": HTTP Connection failed after 186ms: fetch failed (code: none, errno: none)
+2026-03-02T17:27:29.991Z [ERROR] MCP server "paper" TypeError: fetch failed
+2026-03-02T17:27:29.992Z [DEBUG] MCP server "paper": Connection failed after 187ms: fetch failed
+2026-03-02T17:27:29.992Z [ERROR] MCP server "paper" Connection failed: fetch failed
+2026-03-02T17:27:29.992Z [DEBUG] MCP server "paper": HTTP reconnection attempt 1 completed with status: failed
+2026-03-02T17:27:29.993Z [DEBUG] MCP server "paper": Scheduling reconnection attempt 2 in 1000ms
+2026-03-02T17:27:30.021Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T17:27:30.048Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T17:27:30.077Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T17:27:30.105Z [DEBUG] MCP server "paper": No token data found
+2026-03-02T17:27:30.114Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-03-02T17:27:30.114Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T17:27:30.114Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)
+2026-03-02T17:27:30.192Z [DEBUG] MCP server "framer": No token data found
+2026-03-02T17:27:30.224Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-02T17:27:30.252Z [DEBUG] MCP server "granola-mcp": Token expired without refresh token
+2026-03-02T17:27:30.280Z [DEBUG] MCP server "paper": No token data found

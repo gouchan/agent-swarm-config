@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Understand git-guard agent requirements",
+    "status": "in_progress",
+    "activeForm": "Understanding git-guard agent requirements"
+  },
+  {
+    "content": "Design git-guard agent architecture",
+    "status": "pending",
+    "activeForm": "Designing git-guard agent architecture"
+  },
+  {
+    "content": "Implement git-guard agent",
+    "status": "pending",
+    "activeForm": "Implementing git-guard agent"
+  },
+  {
+    "content": "Test git-guard agent functionality",
+    "status": "pending",
+    "activeForm": "Testing git-guard agent functionality"
+  }
+]

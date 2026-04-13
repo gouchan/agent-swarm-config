@@ -1,0 +1,100 @@
+2026-03-20T17:04:22.517Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.518Z [DEBUG] MDM settings load completed in 16ms
+2026-03-20T17:04:22.526Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.526Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-20T17:04:22.555Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.555Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.555Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.555Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.556Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-20T17:04:22.556Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-20T17:04:22.556Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-20T17:04:22.556Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-20T17:04:22.560Z [DEBUG] clearPluginCache: invalidating loadAllPlugins cache (main: --plugin-dir inline plugins)
+2026-03-20T17:04:22.562Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.562Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.562Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.562Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-20T17:04:22.563Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.563Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.563Z [DEBUG] Applying permission update: Adding 4 allow rule(s) to destination 'localSettings': ["WebSearch","Bash(git push -u origin claude/affectionate-swanson)","Bash(gh repo create pnw-camp-scout --public --description \"AI agent swarm for discovering bucket-list PNW campsites — gem scoring, live availability, Reddit/YouTube intelligence\")","Bash(git commit:*)"]
+2026-03-20T17:04:22.563Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-20T17:04:22.565Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=auto, result=true
+2026-03-20T17:04:22.565Z [DEBUG] [STARTUP] Running setup()...
+2026-03-20T17:04:22.566Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.566Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.567Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/robinsonchan/.claude/skills, project=[]
+2026-03-20T17:04:22.567Z [DEBUG] Error log sink initialized
+2026-03-20T17:04:22.573Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-03-20T17:04:22.575Z [DEBUG] [STARTUP] setup() completed in 10ms
+2026-03-20T17:04:22.575Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/security-review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultraqa.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ecomode.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/pipeline.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/hud.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/mcp-setup.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/explain-changes-mental-model.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/deepinit.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/sync-skills-readme.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/note.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/doctor.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/explain-pr-changes.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/learner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/analyze.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/codex-plan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/build-fix.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/sync-branch.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/help.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralph.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/tdd.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/release.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralph-init.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultrapilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/research.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ultrawork.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/swarm.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/compose-email.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ralph.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/deepsearch.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/autopilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/code-review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/plan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/planner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/omc-setup.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-autopilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralplan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/viral-tweet.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ultraqa.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultrawork.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ecomode.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-20T17:04:22.585Z [DEBUG] Deduplicated 42 files in commands (same inode via symlinks or hard links)
+2026-03-20T17:04:22.587Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-20T17:04:22.587Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-20T17:04:22.589Z [DEBUG] Loaded inline plugin from path: anthropic-skills
+2026-03-20T17:04:22.589Z [DEBUG] Loaded 1 session-only plugins from --plugin-dir
+2026-03-20T17:04:22.589Z [DEBUG] Found 1 plugins (1 enabled, 0 disabled)
+2026-03-20T17:04:22.589Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-03-20T17:04:22.589Z [DEBUG] Checking plugin anthropic-skills: skillsPath=exists, skillsPaths=0 paths
+2026-03-20T17:04:22.589Z [DEBUG] Attempting to load skills from plugin anthropic-skills default skillsPath: /Users/robinsonchan/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/1775bf94-4c88-4aa3-90d4-64c89548174a/b7a77a52-f07c-4cb1-a125-f581180d9ce0/skills
+2026-03-20T17:04:22.589Z [DEBUG] Registered 0 hooks from 1 plugins
+2026-03-20T17:04:22.589Z [DEBUG] Total plugin commands loaded: 0
+2026-03-20T17:04:22.589Z [DEBUG] Loaded 128 unique skills (128 unconditional, 0 conditional, managed: 0, user: 86, project: 0, additional: 0, legacy commands: 42)
+2026-03-20T17:04:22.589Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.589Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-20T17:04:22.590Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.590Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.590Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.590Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.591Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.591Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.591Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.591Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.591Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.591Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.591Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.591Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-20T17:04:22.591Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-20T17:04:22.591Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json

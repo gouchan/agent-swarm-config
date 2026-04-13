@@ -1,0 +1,52 @@
+[
+  {
+    "content": "Clear old mansion and build mega-mansion foundation",
+    "status": "in_progress",
+    "activeForm": "Building foundation"
+  },
+  {
+    "content": "Build Ground Floor structure (9 rooms)",
+    "status": "pending",
+    "activeForm": "Building Ground Floor"
+  },
+  {
+    "content": "Build Second Floor structure (7 rooms)",
+    "status": "pending",
+    "activeForm": "Building Second Floor"
+  },
+  {
+    "content": "Build Third Floor and Attic",
+    "status": "pending",
+    "activeForm": "Building Third Floor"
+  },
+  {
+    "content": "Build Basement with ritual chamber",
+    "status": "pending",
+    "activeForm": "Building Basement"
+  },
+  {
+    "content": "Add grand staircases connecting all floors",
+    "status": "pending",
+    "activeForm": "Adding staircases"
+  },
+  {
+    "content": "Add windows, doors, and architectural details",
+    "status": "pending",
+    "activeForm": "Adding details"
+  },
+  {
+    "content": "Add secret passages and trap doors",
+    "status": "pending",
+    "activeForm": "Adding secrets"
+  },
+  {
+    "content": "Apply dark weathered aesthetic",
+    "status": "pending",
+    "activeForm": "Applying aesthetic"
+  },
+  {
+    "content": "Add lighting throughout mansion",
+    "status": "pending",
+    "activeForm": "Adding lighting"
+  }
+]

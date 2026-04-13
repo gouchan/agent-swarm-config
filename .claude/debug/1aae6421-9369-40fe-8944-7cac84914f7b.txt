@@ -1,0 +1,576 @@
+2026-03-01T17:26:47.050Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T17:26:47.050Z [DEBUG] MDM settings load completed in 3ms
+2026-03-01T17:26:47.112Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-01T17:26:47.113Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-01T17:26:47.113Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-01T17:26:47.113Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-01T17:26:47.118Z [DEBUG] Applying permission update: Adding 56 allow rule(s) to destination 'localSettings': ["Bash(chmod:*)","Bash(gh:*)","Bash(brew install:*)","Bash(git init:*)","Bash(git add .)","mcp__robloxstudio-mcp__mass_create_objects","mcp__robloxstudio-mcp__create_object_with_properties","mcp__robloxstudio-mcp__set_script_source","mcp__robloxstudio-mcp__mass_create_objects_with_properties","mcp__robloxstudio-mcp__get_project_structure","mcp__robloxstudio-mcp__get_services","mcp__robloxstudio-mcp__get_script_source","mcp__robloxstudio-mcp__edit_script_lines","mcp__robloxstudio-mcp__get_instance_children","mcp__robloxstudio-mcp__get_instance_properties","mcp__robloxstudio-mcp__set_property","mcp__robloxstudio-mcp__delete_object","Bash(find:*)","Bash(ls:*)","Bash(grep:*)","Bash(git -C /Users/robinsonchan log --oneline --all)","Bash(git -C /Users/robinsonchan log --all --grep=\"roblox\\\\|mansion\\\\|building\" -i --oneline)","Bash(npm install:*)","Bash(node test-roblox-mcp.js:*)","Bash(lsof:*)","Bash(kill:*)","Bash(node:*)","Bash(xargs kill:*)","mcp__robloxstudio-mcp__get_place_info","mcp__robloxstudio-mcp__mass_get_property","mcp__robloxstudio-mcp__search_files","mcp__robloxstudio-mcp__search_objects","mcp__robloxstudio-mcp__add_tag","mcp__robloxstudio-mcp__insert_script_lines","mcp__robloxstudio-mcp__get_tags","mcp__robloxstudio-mcp__delete_script_lines","WebSearch","Bash(unzip:*)","Bash(fold:*)","Bash(npm --version:*)","WebFetch(domain:github.com)","WebFetch(domain:raw.githubusercontent.com)","Bash(npm run build:*)","WebFetch(domain:ticketsdata.com)","WebFetch(domain:developer.ticketmaster.com)","Bash(git add:*)","Bash(git commit:*)","Bash(git push)","Bash(git clone:*)","Bash(pip3 install:*)","Bash(python3:*)","Bash(source:*)","Bash(pip install:*)","mcp__claude_ai_Granola__list_meetings","mcp__granola-mcp__get_recent_meetings","mcp__claude_ai_Granola__get_meetings"]
+2026-03-01T17:26:47.119Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-01T17:26:47.125Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-01T17:26:47.125Z [DEBUG] [STARTUP] Running setup()...
+2026-03-01T17:26:47.148Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/robinsonchan/.claude/skills, project=[]
+2026-03-01T17:26:47.148Z [DEBUG] Error log sink initialized
+2026-03-01T17:26:47.152Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default, Profile 1, Profile 10, Profile 11, Profile 2, Profile 3, Profile 4, Profile 5, Profile 6, Profile 7, Profile 8
+2026-03-01T17:26:47.159Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-03-01T17:26:47.159Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-01T17:26:47.160Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-01T17:26:47.160Z [DEBUG] Total plugin skills loaded: 0
+2026-03-01T17:26:47.160Z [DEBUG] Total plugin commands loaded: 0
+2026-03-01T17:26:47.160Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-01T17:26:47.166Z [DEBUG] [STARTUP] setup() completed in 41ms
+2026-03-01T17:26:47.166Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-01T17:26:47.175Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-01T17:26:47.175Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-01T17:26:47.187Z [DEBUG] [Claude in Chrome] Found arc profiles: Default, Profile 1, Profile 2
+2026-03-01T17:26:47.188Z [DEBUG] [Claude in Chrome] Extension not found in any browser
+2026-03-01T17:26:47.263Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386007263
+2026-03-01T17:26:47.263Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:47.263Z [DEBUG] Temp file written successfully, size: 11350 bytes
+2026-03-01T17:26:47.263Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:47.263Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386007263 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:47.263Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:47.447Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/robinsonchan/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-03-01T17:26:47.475Z [DEBUG] Agent file /Users/robinsonchan/.claude/agents/general-purpose.md has invalid model 'default'. Valid options: sonnet, opus, haiku, best, sonnet[1m], opus[1m], opusplan, inherit
+2026-03-01T17:26:47.476Z [DEBUG] Total plugin agents loaded: 0
+2026-03-01T17:26:47.482Z [DEBUG] Loaded 127 unique skills (127 unconditional, 0 conditional, managed: 0, user: 85, project: 0, additional: 0, legacy commands: 42)
+2026-03-01T17:26:47.482Z [DEBUG] getSkills returning: 127 skill dir commands, 0 plugin skills, 5 bundled skills
+2026-03-01T17:26:47.482Z [DEBUG] [STARTUP] Commands and agents loaded in 316ms
+2026-03-01T17:26:47.487Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-01T17:26:47.506Z [DEBUG] Grove: Using fresh cached config
+2026-03-01T17:26:47.517Z [DEBUG] Path /Users/robinsonchan already tracked for repo gouchan/agent-swarm-config
+2026-03-01T17:26:47.517Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-01T17:26:47.517Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-01T17:26:47.521Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T17:26:47.528Z [DEBUG] [keybindings] Watching for changes to /Users/robinsonchan/.claude/keybindings.json
+2026-03-01T17:26:47.751Z [DEBUG] [STARTUP] showSetupScreens() completed in 264ms
+2026-03-01T17:26:47.751Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-01T17:26:47.752Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-01T17:26:47.752Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-01T17:26:47.753Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:26:47.753Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:26:47.754Z [DEBUG] Total LSP servers loaded: 0
+2026-03-01T17:26:47.756Z [DEBUG] [STARTUP] MCP configs loaded in 637ms
+2026-03-01T17:26:47.758Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-01T17:26:47.763Z [DEBUG] MCP server "robloxstudio-mcp": Starting connection with timeout of 30000ms
+2026-03-01T17:26:47.766Z [DEBUG] MCP server "granola-mcp": Starting connection with timeout of 30000ms
+2026-03-01T17:26:47.770Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-01T17:26:47.770Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-01T17:26:47.771Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-03-01T17:26:47.771Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:26:47.771Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-03-01T17:26:47.771Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-03-01T17:26:47.771Z [DEBUG] LSP server manager initialized successfully
+2026-03-01T17:26:47.771Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-01T17:26:47.772Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-01T17:26:47.773Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386007773
+2026-03-01T17:26:47.773Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:47.773Z [DEBUG] Temp file written successfully, size: 11350 bytes
+2026-03-01T17:26:47.773Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:47.773Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386007773 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:47.773Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:47.774Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:26:47.802Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T17:26:47.846Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386007846
+2026-03-01T17:26:47.846Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:47.846Z [DEBUG] Temp file written successfully, size: 11350 bytes
+2026-03-01T17:26:47.846Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:47.846Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386007846 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:47.847Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:47.850Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-01T17:26:47.851Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-01T17:26:47.852Z [DEBUG] performStartupChecks called
+2026-03-01T17:26:47.852Z [DEBUG] Starting background plugin installations
+2026-03-01T17:26:47.854Z [DEBUG] Loaded 1 CLAUDE.md/rules files:
+  [Project] /Users/robinsonchan/CLAUDE.md (1924 chars)
+2026-03-01T17:26:47.856Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-01T17:26:47.856Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-01T17:26:47.856Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-01T17:26:47.856Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": Initializing HTTP transport to http://127.0.0.1:29979/mcp
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": Node version: v22.12.0, Platform: darwin
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": Proxy options: default
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": HTTP transport options: {"url":"http://127.0.0.1:29979/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-01T17:26:47.874Z [DEBUG] MCP server "paper": HTTP transport created successfully
+2026-03-01T17:26:47.875Z [DEBUG] MCP server "paper": Client created, setting up request handler
+2026-03-01T17:26:47.875Z [DEBUG] MCP server "paper": Starting connection with timeout of 30000ms
+2026-03-01T17:26:47.875Z [DEBUG] MCP server "paper": Testing basic HTTP connectivity to http://127.0.0.1:29979/mcp
+2026-03-01T17:26:47.875Z [DEBUG] MCP server "paper": Parsed URL: host=127.0.0.1, port=29979, protocol=http:
+2026-03-01T17:26:47.875Z [DEBUG] MCP server "paper": Using loopback address: 127.0.0.1
+2026-03-01T17:26:47.918Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:26:47.919Z [DEBUG] MCP server "framer": SSE transport initialized, awaiting connection
+2026-03-01T17:26:47.920Z [DEBUG] MCP server "framer": Starting connection with timeout of 30000ms
+2026-03-01T17:26:47.956Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:48.016Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Node version: v22.12.0, Platform: darwin
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Proxy options: default
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.63 (cli)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": HTTP transport created successfully
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Client created, setting up request handler
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-01T17:26:48.017Z [DEBUG] MCP server "granola": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-01T17:26:48.033Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:48.037Z [DEBUG] MCP server "granola-mcp": Connection failed after 272ms: MCP error -32603: Failed to initialize server: Invalid cache file structure
+2026-03-01T17:26:48.037Z [ERROR] MCP server "granola-mcp" Connection failed: MCP error -32603: Failed to initialize server: Invalid cache file structure
+2026-03-01T17:26:48.040Z [DEBUG] Fetching plugin security messages from https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/security/security.json
+2026-03-01T17:26:48.045Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:26:48.049Z [DEBUG] Watching for changes in setting files /Users/robinsonchan/.claude/settings.json, /Users/robinsonchan/.claude/settings.local.json...
+2026-03-01T17:26:48.049Z [DEBUG] Watching for changes in skill/command directories: /Users/robinsonchan/.claude/skills, /Users/robinsonchan/.claude/commands, /Users/robinsonchan/.claude/skills, /Users/robinsonchan/.claude/commands...
+2026-03-01T17:26:48.049Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-01T17:26:48.078Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:26:48.087Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T17:26:48.088Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.307; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:26:48.089Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:26:48.089Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:26:48.089Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:26:48.093Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008093
+2026-03-01T17:26:48.093Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.093Z [DEBUG] Temp file written successfully, size: 11382 bytes
+2026-03-01T17:26:48.093Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.093Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008093 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.094Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.094Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008094
+2026-03-01T17:26:48.094Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.094Z [DEBUG] Temp file written successfully, size: 11415 bytes
+2026-03-01T17:26:48.094Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.094Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008094 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.095Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.096Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008096
+2026-03-01T17:26:48.096Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.096Z [DEBUG] Temp file written successfully, size: 11452 bytes
+2026-03-01T17:26:48.096Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.096Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008096 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.096Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.097Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008097
+2026-03-01T17:26:48.097Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.097Z [DEBUG] Temp file written successfully, size: 11487 bytes
+2026-03-01T17:26:48.097Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.097Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008097 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.097Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.098Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008098
+2026-03-01T17:26:48.098Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.098Z [DEBUG] Temp file written successfully, size: 11517 bytes
+2026-03-01T17:26:48.098Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.098Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008098 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.098Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.099Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008099
+2026-03-01T17:26:48.099Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.100Z [DEBUG] Temp file written successfully, size: 11555 bytes
+2026-03-01T17:26:48.100Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.100Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008099 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.100Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.127Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:26:48.127Z [DEBUG] MCP server "paper": Successfully connected to http server in 253ms
+2026-03-01T17:26:48.127Z [DEBUG] MCP server "paper": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"paper-desktop","version":"0.1.4"}}
+2026-03-01T17:26:48.127Z [DEBUG] [MCP] Server "paper" connected with subscribe=false
+2026-03-01T17:26:48.157Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:26:48.167Z [DEBUG] Org fast mode: disabled (extra_usage_disabled)
+2026-03-01T17:26:48.167Z [DEBUG] [claudeai-mcp] Fetched 7 servers
+2026-03-01T17:26:48.173Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-01T17:26:48.173Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015yMYTJ5sKo28VSN2axkciA
+2026-03-01T17:26:48.173Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.173Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.174Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-01T17:26:48.174Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01FeR6btDSmLhCshL6GUyGVQ
+2026-03-01T17:26:48.174Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.174Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.175Z [DEBUG] MCP server "claude.ai Granola": Initializing claude.ai proxy transport for server mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-01T17:26:48.175Z [DEBUG] MCP server "claude.ai Granola": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01XTg8baFJ1jAXyydeMEyT1K
+2026-03-01T17:26:48.175Z [DEBUG] MCP server "claude.ai Granola": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.176Z [DEBUG] MCP server "claude.ai Granola": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.176Z [DEBUG] MCP server "claude.ai Notion": Initializing claude.ai proxy transport for server mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-01T17:26:48.176Z [DEBUG] MCP server "claude.ai Notion": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Qy3cJpJeMZbKEERSUzAUwW
+2026-03-01T17:26:48.176Z [DEBUG] MCP server "claude.ai Notion": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.177Z [DEBUG] MCP server "claude.ai Notion": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Stripe": Initializing claude.ai proxy transport for server mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Stripe": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01P3Uhta4Shqx4CJzxnDqXMh
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Stripe": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Stripe": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Figma": Initializing claude.ai proxy transport for server mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Figma": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_019EPCPD2sjrgJhg98CsAMYm
+2026-03-01T17:26:48.178Z [DEBUG] MCP server "claude.ai Figma": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.179Z [DEBUG] MCP server "claude.ai Figma": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.179Z [DEBUG] MCP server "claude.ai Canva": Initializing claude.ai proxy transport for server mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-01T17:26:48.179Z [DEBUG] MCP server "claude.ai Canva": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01W4P848cb3386sZhEg19QFe
+2026-03-01T17:26:48.179Z [DEBUG] MCP server "claude.ai Canva": claude.ai proxy transport created successfully
+2026-03-01T17:26:48.179Z [DEBUG] MCP server "claude.ai Canva": Starting connection with timeout of 30000ms
+2026-03-01T17:26:48.217Z [DEBUG] Security messages saved successfully
+2026-03-01T17:26:48.239Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-01T17:26:48.479Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:48.505Z [DEBUG] MCP server "claude.ai Notion": claude.ai proxy connection failed after 329ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3Q4V6GK9EYVamK9L"}
+2026-03-01T17:26:48.505Z [ERROR] MCP server "claude.ai Notion" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3Q4V6GK9EYVamK9L"}
+2026-03-01T17:26:48.516Z [DEBUG] MCP server "claude.ai Notion": Authentication required for claude.ai proxy server
+2026-03-01T17:26:48.517Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy connection failed after 343ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3QZD62HsV2XrxyCi"}
+2026-03-01T17:26:48.517Z [ERROR] MCP server "claude.ai Gmail" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3QZD62HsV2XrxyCi"}
+2026-03-01T17:26:48.517Z [DEBUG] MCP server "claude.ai Gmail": Authentication required for claude.ai proxy server
+2026-03-01T17:26:48.615Z [DEBUG] MCP server "claude.ai Stripe": claude.ai proxy connection failed after 437ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3SnpXZHJzxYjcuqd"}
+2026-03-01T17:26:48.615Z [ERROR] MCP server "claude.ai Stripe" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3SnpXZHJzxYjcuqd"}
+2026-03-01T17:26:48.615Z [DEBUG] MCP server "claude.ai Stripe": Authentication required for claude.ai proxy server
+2026-03-01T17:26:48.615Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy connection failed after 442ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3aDxvTXLTJsq6zSp"}
+2026-03-01T17:26:48.615Z [ERROR] MCP server "claude.ai Google Calendar" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3aDxvTXLTJsq6zSp"}
+2026-03-01T17:26:48.616Z [DEBUG] MCP server "claude.ai Google Calendar": Authentication required for claude.ai proxy server
+2026-03-01T17:26:48.616Z [DEBUG] MCP server "claude.ai Canva": claude.ai proxy connection failed after 437ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3UmsfppN4zihPDge"}
+2026-03-01T17:26:48.616Z [ERROR] MCP server "claude.ai Canva" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYckc3UmsfppN4zihPDge"}
+2026-03-01T17:26:48.616Z [DEBUG] MCP server "claude.ai Canva": Authentication required for claude.ai proxy server
+2026-03-01T17:26:48.654Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:26:48.712Z [ERROR] MCP server "robloxstudio-mcp" Server stderr: HTTP server listening on 0.0.0.0:58741 for Studio plugin (primary mode)
+Legacy HTTP server also listening on 0.0.0.0:3002 for old plugins
+robloxstudio-mcp v2.4.0 running on stdio
+MCP server marked as active (primary mode)
+Waiting for Studio plugin to connect...
+2026-03-01T17:26:48.713Z [DEBUG] MCP server "robloxstudio-mcp": Successfully connected to undefined server in 955ms
+2026-03-01T17:26:48.713Z [DEBUG] MCP server "robloxstudio-mcp": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"robloxstudio-mcp","version":"2.4.0"}}
+2026-03-01T17:26:48.713Z [DEBUG] [MCP] Server "robloxstudio-mcp" connected with subscribe=false
+2026-03-01T17:26:48.834Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:48.837Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386008837
+2026-03-01T17:26:48.837Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:48.837Z [DEBUG] Temp file written successfully, size: 11613 bytes
+2026-03-01T17:26:48.837Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:48.837Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386008837 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:48.837Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:48.876Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:48.876Z [DEBUG] MCP server "granola": Successfully connected to http server in 859ms
+2026-03-01T17:26:48.876Z [DEBUG] MCP server "granola": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"granola-mcp","version":"1.0.0"}}
+2026-03-01T17:26:48.876Z [DEBUG] [MCP] Server "granola" connected with subscribe=false
+2026-03-01T17:26:48.900Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:49.040Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:49.179Z [DEBUG] MCP server "claude.ai Granola": Successfully connected to claudeai-proxy server in 1004ms
+2026-03-01T17:26:49.179Z [DEBUG] MCP server "claude.ai Granola": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"granola-mcp","version":"1.0.0"}}
+2026-03-01T17:26:49.179Z [DEBUG] [MCP] Server "claude.ai Granola" connected with subscribe=false
+2026-03-01T17:26:49.242Z [DEBUG] MCP server "framer": Successfully connected to sse server in 1323ms
+2026-03-01T17:26:49.243Z [DEBUG] MCP server "framer": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Framer MCP","title":"Framer MCP, created by https://unframer.co","version":"1.8.0"}}
+2026-03-01T17:26:49.243Z [DEBUG] [MCP] Server "framer" connected with subscribe=false
+2026-03-01T17:26:49.289Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:49.324Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:49.355Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:49.469Z [DEBUG] MCP server "claude.ai Figma": Successfully connected to claudeai-proxy server in 1291ms
+2026-03-01T17:26:49.469Z [DEBUG] MCP server "claude.ai Figma": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Figma MCP Server","icons":[{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"}],"version":"1.0.0","websiteUrl":"https://developers.figma.com/docs/figma-mcp-server/"}}
+2026-03-01T17:26:49.470Z [DEBUG] [MCP] Server "claude.ai Figma" connected with subscribe=false
+2026-03-01T17:26:49.729Z [DEBUG] MCP server "granola": Saving discovery state (authServer: https://mcp-auth.granola.ai)
+2026-03-01T17:26:49.809Z [DEBUG] MCP server "granola": Found client info
+2026-03-01T17:26:49.849Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:49.849Z [DEBUG] MCP server "granola": Generated new OAuth state
+2026-03-01T17:26:49.855Z [DEBUG] MCP server "granola": Saving code verifier
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": Authorization URL: https://mcp-auth.granola.ai/oauth2/authorize?response_type=code&client_id=client_01KH9E3RJW3Z42AK7RYGN7XGSX&code_challenge=%5BREDACTED%5D&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A3118%2Fcallback&state=%5BREDACTED%5D&resource=https%3A%2F%2Fmcp.granola.ai%2F
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": Scopes in URL: NOT FOUND
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": No scopes available from URL or metadata
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": Redirection handling is disabled, skipping redirect
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": HTTP connection dropped after 0s uptime
+2026-03-01T17:26:49.856Z [DEBUG] MCP server "granola": Connection error: Unauthorized
+2026-03-01T17:26:49.856Z [ERROR] MCP server "granola" Failed to fetch tools: Unauthorized
+2026-03-01T17:26:49.867Z [DEBUG] High write ratio: blit=322, write=682 (67.9% writes), screen=15x80
+2026-03-01T17:26:49.883Z [DEBUG] High write ratio: blit=560, write=562 (50.1% writes), screen=16x80
+2026-03-01T17:26:49.971Z [WARN] [3P telemetry] Event dropped (no event logger initialized): api_request
+2026-03-01T17:26:50.234Z [DEBUG] High write ratio: blit=322, write=725 (69.2% writes), screen=16x80
+2026-03-01T17:26:50.254Z [DEBUG] High write ratio: blit=560, write=562 (50.1% writes), screen=16x80
+2026-03-01T17:26:50.314Z [DEBUG] High write ratio: blit=322, write=726 (69.3% writes), screen=16x80
+2026-03-01T17:26:50.331Z [DEBUG] High write ratio: blit=560, write=582 (51.0% writes), screen=16x80
+2026-03-01T17:26:50.437Z [DEBUG] High write ratio: blit=322, write=747 (69.9% writes), screen=16x80
+2026-03-01T17:26:55.834Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386015834
+2026-03-01T17:26:55.834Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:26:55.834Z [DEBUG] Temp file written successfully, size: 11657 bytes
+2026-03-01T17:26:55.834Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:26:55.834Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386015834 to /Users/robinsonchan/.claude.json
+2026-03-01T17:26:55.834Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:26:55.873Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:26:55.903Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:26:55.929Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:26:55.940Z [DEBUG] High write ratio: blit=396, write=820 (67.4% writes), screen=34x80
+2026-03-01T17:26:56.641Z [DEBUG] SSH config check: code=255 configured=false
+2026-03-01T17:26:56.650Z [DEBUG] git pull: cwd=/Users/robinsonchan/.claude/plugins/marketplaces/claude-plugins-official ref=default
+2026-03-01T17:26:57.068Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-01T17:26:57.068Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-01T17:27:17.186Z [DEBUG] Full reset (shrink->below): prevHeight=34, nextHeight=19, viewport=24
+2026-03-01T17:27:20.352Z [DEBUG] MCP server "granola-mcp": Starting connection with timeout of 30000ms
+2026-03-01T17:27:20.444Z [ERROR] MCP server "granola-mcp" Server stderr: Initialization error: Invalid cache file structure
+2026-03-01T17:27:20.444Z [DEBUG] MCP server "granola-mcp": Connection failed after 93ms: MCP error -32603: Failed to initialize server: Invalid cache file structure
+2026-03-01T17:27:20.444Z [ERROR] MCP server "granola-mcp" Connection failed: MCP error -32603: Failed to initialize server: Invalid cache file structure
+2026-03-01T17:27:20.445Z [DEBUG] FileHistory: Added snapshot for 47fe9946-4f28-482d-9dfc-f60973026b27, tracking 0 files
+2026-03-01T17:27:20.445Z [DEBUG] [useDeferredValue] Messages deferred by 3 (0→3)
+2026-03-01T17:27:20.457Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T17:27:20.459Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386040459
+2026-03-01T17:27:20.459Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:27:20.460Z [DEBUG] Temp file written successfully, size: 11658 bytes
+2026-03-01T17:27:20.460Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:27:20.460Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386040459 to /Users/robinsonchan/.claude.json
+2026-03-01T17:27:20.460Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:27:20.461Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386040461
+2026-03-01T17:27:20.461Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:27:20.461Z [DEBUG] Temp file written successfully, size: 11659 bytes
+2026-03-01T17:27:20.461Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:27:20.461Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386040461 to /Users/robinsonchan/.claude.json
+2026-03-01T17:27:20.461Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:27:20.462Z [DEBUG] [useDeferredValue] Messages deferred by 3 (0→3)
+2026-03-01T17:27:20.470Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T17:27:20.471Z [DEBUG] [useDeferredValue] Messages deferred by 3 (0→3)
+2026-03-01T17:27:20.473Z [DEBUG] [useDeferredValue] Messages deferred by 3 (0→3)
+2026-03-01T17:27:20.595Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:28:11.770Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T17:28:11.770Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T17:28:11.771Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T17:28:11.771Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T17:28:11.772Z [DEBUG] Sending 129 skills via attachment (initial, 94 total sent)
+2026-03-01T17:28:11.779Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-01T17:28:11.779Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:11.779Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:28:11.779Z [DEBUG] FileHistory: Making snapshot for message 93655148-3a4f-4f23-a362-a44b2774cc94
+2026-03-01T17:28:11.779Z [DEBUG] FileHistory: Added snapshot for 93655148-3a4f-4f23-a362-a44b2774cc94, tracking 0 files
+2026-03-01T17:28:11.781Z [DEBUG] [useDeferredValue] Messages deferred by 2 (3→5)
+2026-03-01T17:28:11.795Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T17:28:11.801Z [DEBUG] Total plugin output styles loaded: 0
+2026-03-01T17:28:11.810Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386091810
+2026-03-01T17:28:11.810Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:11.810Z [DEBUG] Temp file written successfully, size: 11702 bytes
+2026-03-01T17:28:11.810Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:11.810Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386091810 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:11.810Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:11.812Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386091812
+2026-03-01T17:28:11.812Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:11.812Z [DEBUG] Temp file written successfully, size: 11740 bytes
+2026-03-01T17:28:11.812Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:11.812Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386091812 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:11.812Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:11.815Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386091815
+2026-03-01T17:28:11.815Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:11.815Z [DEBUG] Temp file written successfully, size: 11771 bytes
+2026-03-01T17:28:11.815Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:11.815Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386091815 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:11.816Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:11.817Z [DEBUG] autocompact: tokens=3069 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:11.819Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386091819
+2026-03-01T17:28:11.819Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:11.819Z [DEBUG] Temp file written successfully, size: 11805 bytes
+2026-03-01T17:28:11.819Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:11.819Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386091819 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:11.819Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:11.820Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:11.820Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:11.820Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:12.328Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:12.338Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:12.338Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:12.339Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:12.339Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:12.340Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:14.074Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:28:15.465Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-03-01T17:28:15.863Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386095863
+2026-03-01T17:28:15.863Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:15.863Z [DEBUG] Temp file written successfully, size: 11845 bytes
+2026-03-01T17:28:15.863Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:15.863Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386095863 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:15.864Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:15.864Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-01T17:28:15.865Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-01T17:28:15.865Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:15.865Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-01T17:28:15.870Z [DEBUG] [useDeferredValue] Messages deferred by 1 (6→7)
+2026-03-01T17:28:15.884Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-01T17:28:15.884Z [DEBUG] Found 5 hook matchers in settings
+2026-03-01T17:28:15.884Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-01T17:28:15.887Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T17:28:15.887Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T17:28:15.887Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T17:28:15.887Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T17:28:15.888Z [DEBUG] autocompact: tokens=38153 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:15.888Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:15.890Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:15.890Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:15.891Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:15.891Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:15.891Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:15.894Z [DEBUG] [useDeferredValue] Messages deferred by 3 (7→10)
+2026-03-01T17:28:18.486Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:28:20.890Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-01T17:28:20.893Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-01T17:28:21.279Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-01T17:28:21.282Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-01T17:28:21.287Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-01T17:28:23.013Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T17:28:23.016Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T17:28:23.017Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T17:28:23.023Z [DEBUG] executePreToolHooks called for tool: Edit
+2026-03-01T17:28:23.024Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2026-03-01T17:28:23.024Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:23.024Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2026-03-01T17:28:23.025Z [DEBUG] Permission suggestions for Edit: [
+  {
+    "type": "setMode",
+    "mode": "acceptEdits",
+    "destination": "session"
+  }
+]
+2026-03-01T17:28:23.025Z [DEBUG] executePermissionRequestHooks called for tool: Edit
+2026-03-01T17:28:23.025Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Edit
+2026-03-01T17:28:23.025Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:23.025Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2026-03-01T17:28:23.038Z [DEBUG] High write ratio: blit=0, write=1996 (100.0% writes), screen=44x80
+2026-03-01T17:28:23.040Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T17:28:26.708Z [DEBUG] Applying permission update: Setting mode to 'acceptEdits'
+2026-03-01T17:28:26.721Z [DEBUG] FileHistory: Tracked file modification for /Users/robinsonchan/.mcp.json
+2026-03-01T17:28:26.722Z [DEBUG] Writing to temp file: /Users/robinsonchan/.mcp.json.tmp.18665.1772386106722
+2026-03-01T17:28:26.722Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:26.723Z [DEBUG] Temp file written successfully, size: 410 bytes
+2026-03-01T17:28:26.723Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:26.723Z [DEBUG] Renaming /Users/robinsonchan/.mcp.json.tmp.18665.1772386106722 to /Users/robinsonchan/.mcp.json
+2026-03-01T17:28:26.724Z [DEBUG] File /Users/robinsonchan/.mcp.json written atomically
+2026-03-01T17:28:26.726Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2026-03-01T17:28:26.726Z [DEBUG] Found 5 hook matchers in settings
+2026-03-01T17:28:26.726Z [DEBUG] Matched 1 unique hooks for query "Edit" (1 before deduplication)
+2026-03-01T17:28:26.727Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T17:28:26.727Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T17:28:26.727Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T17:28:26.727Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T17:28:26.728Z [DEBUG] autocompact: tokens=38718 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:26.729Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:26.732Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:26.732Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:26.733Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:26.733Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:26.733Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:26.739Z [DEBUG] [useDeferredValue] Messages deferred by 3 (13→16)
+2026-03-01T17:28:26.745Z [DEBUG] Full reset (shrink->below): prevHeight=44, nextHeight=24, viewport=24
+2026-03-01T17:28:26.750Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .json
+2026-03-01T17:28:26.752Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T17:28:26.752Z [DEBUG] [useDeferredValue] Messages deferred by 3 (13→16)
+2026-03-01T17:28:26.754Z [DEBUG] [useDeferredValue] Messages deferred by 3 (13→16)
+2026-03-01T17:28:26.763Z [DEBUG] High write ratio: blit=1120, write=1569 (58.3% writes), screen=43x80
+2026-03-01T17:28:26.920Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:28:27.894Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:28:28.805Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-01T17:28:28.879Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-01T17:28:28.879Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:28.879Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:28:28.879Z [DEBUG] autocompact: tokens=39082 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:28.879Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:28.882Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:28.882Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:28.882Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:28.882Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:28.883Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:28.888Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T17:28:28.890Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386108890
+2026-03-01T17:28:28.890Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:28.890Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:28:28.890Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:28.890Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386108890 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:28.890Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:28.892Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386108892
+2026-03-01T17:28:28.892Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:28.892Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:28:28.892Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:28.892Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386108892 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:28.892Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:30.149Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:28:30.200Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T17:28:30.230Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-01T17:28:30.230Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:30.230Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:28:30.231Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[assistant], totalUsage: input=295 output=6 cacheRead=38748 cacheCreate=56
+2026-03-01T17:28:30.232Z [DEBUG] [Speculation] enabled=false
+2026-03-01T17:28:50.891Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T17:28:50.891Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T17:28:50.891Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T17:28:50.891Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T17:28:50.893Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-01T17:28:50.893Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:50.893Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:28:50.893Z [DEBUG] FileHistory: Making snapshot for message 3403c780-86c7-4ae6-b80f-7cc28bcca817
+2026-03-01T17:28:50.902Z [DEBUG] FileHistory: Added snapshot for 3403c780-86c7-4ae6-b80f-7cc28bcca817, tracking 1 files
+2026-03-01T17:28:50.904Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-01T17:28:50.919Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T17:28:50.920Z [DEBUG] autocompact: tokens=38810 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:50.921Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:50.923Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:50.924Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:50.924Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:50.924Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:50.924Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:50.928Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-01T17:28:52.168Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:28:56.872Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-01T17:28:58.427Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-01T17:28:58.462Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-01T17:28:58.462Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:28:58.462Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:28:58.462Z [DEBUG] autocompact: tokens=39396 threshold=167000 effectiveWindow=180000
+2026-03-01T17:28:58.462Z [DEBUG] Auto tool search enabled: 29378 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T17:28:58.465Z [DEBUG] Dynamic tool loading: 0/111 deferred tools included
+2026-03-01T17:28:58.465Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.a43; cc_entrypoint=cli; cch=00000;
+2026-03-01T17:28:58.465Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T17:28:58.465Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T17:28:58.466Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T17:28:58.471Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T17:28:58.472Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386138472
+2026-03-01T17:28:58.472Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:58.473Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:28:58.473Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:58.473Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386138472 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:58.473Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:58.474Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386138474
+2026-03-01T17:28:58.474Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:28:58.475Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:28:58.475Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:28:58.475Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386138474 to /Users/robinsonchan/.claude.json
+2026-03-01T17:28:58.475Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:28:59.864Z [DEBUG] Stream started - received first chunk
+2026-03-01T17:29:00.076Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T17:29:00.105Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-01T17:29:00.105Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T17:29:00.105Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T17:29:00.105Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[assistant], totalUsage: input=295 output=7 cacheRead=38810 cacheCreate=305
+2026-03-01T17:29:00.106Z [DEBUG] [Speculation] enabled=false
+2026-03-01T17:29:05.003Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:29:07.714Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:29:07.741Z [DEBUG] MCP server "granola": Token expired without refresh token
+2026-03-01T17:29:07.765Z [DEBUG] MCP server "paper": No token data found
+2026-03-01T17:29:32.220Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:29:44.135Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:30:18.693Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:30:53.069Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:31:22.408Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:31:42.931Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "╭──────────────────────────────────────────────────────────────────────────────╮"
+2026-03-01T17:31:50.390Z [DEBUG] MCP server "framer": SSE connection dropped after 301s uptime
+2026-03-01T17:31:50.390Z [DEBUG] MCP server "framer": Connection error: SSE error: TypeError: terminated: Body Timeout Error
+2026-03-01T17:31:50.390Z [DEBUG] MCP server "framer": Terminal connection error 1/3
+2026-03-01T17:31:53.445Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:31:53.472Z [DEBUG] MCP server "framer": No token data found
+2026-03-01T17:32:30.038Z [DEBUG] [useDeferredValue] Messages deferred by 2 (20→22)
+2026-03-01T17:32:30.054Z [DEBUG] High write ratio: blit=0, write=2474 (100.0% writes), screen=61x80
+2026-03-01T17:32:30.054Z [DEBUG] Full reset (scrollback changes): scrollbackRows=58, firstChangeY=53
+  prev: "────────────────────────────────────────────────────────────────────────────────"
+  next: "                                                                                "
+2026-03-01T17:32:30.064Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T17:32:30.068Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386350068
+2026-03-01T17:32:30.068Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:32:30.068Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:32:30.069Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:32:30.069Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386350068 to /Users/robinsonchan/.claude.json
+2026-03-01T17:32:30.069Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:32:30.070Z [DEBUG] Writing to temp file: /Users/robinsonchan/.claude.json.tmp.18665.1772386350070
+2026-03-01T17:32:30.070Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T17:32:30.071Z [DEBUG] Temp file written successfully, size: 11846 bytes
+2026-03-01T17:32:30.071Z [DEBUG] Applied original permissions to temp file
+2026-03-01T17:32:30.071Z [DEBUG] Renaming /Users/robinsonchan/.claude.json.tmp.18665.1772386350070 to /Users/robinsonchan/.claude.json
+2026-03-01T17:32:30.071Z [DEBUG] File /Users/robinsonchan/.claude.json written atomically
+2026-03-01T17:32:30.074Z [DEBUG] [useDeferredValue] Messages deferred by 2 (20→22)
+2026-03-01T17:32:30.077Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T17:32:30.086Z [DEBUG] High write ratio: blit=0, write=2390 (100.0% writes), screen=59x80
+2026-03-01T17:32:30.220Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2026-03-01T17:32:30.550Z [DEBUG] High write ratio: blit=0, write=2390 (100.0% writes), screen=59x80
+2026-03-01T17:32:30.677Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global

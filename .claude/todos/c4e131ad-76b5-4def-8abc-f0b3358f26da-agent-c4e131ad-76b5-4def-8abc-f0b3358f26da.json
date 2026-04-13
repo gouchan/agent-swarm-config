@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Fix scraper.js: dedupeBy null keys, extractBgImages relative URLs, parseFontFaces nested braces, extractHeadings order, crawl queue O(n²), merge CSS fetching",
+    "status": "completed",
+    "activeForm": "Fixing scraper.js bugs"
+  },
+  {
+    "content": "Fix server.js: SSRF in download endpoint, stream error after headers sent",
+    "status": "completed",
+    "activeForm": "Fixing server.js bugs"
+  },
+  {
+    "content": "Fix index.html: openCrawlPage crash, Enter busy guard, XSS in JSON panel, revokeObjectURL timing, remember active tab",
+    "status": "in_progress",
+    "activeForm": "Fixing index.html bugs"
+  }
+]

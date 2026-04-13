@@ -1,0 +1,200 @@
+2026-03-18T01:41:11.029Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.029Z [DEBUG] MDM settings load completed in 16ms
+2026-03-18T01:41:11.038Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.038Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-18T01:41:11.076Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.077Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.077Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.077Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.077Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-18T01:41:11.077Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-18T01:41:11.077Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-18T01:41:11.077Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-18T01:41:11.093Z [DEBUG] clearPluginCache: invalidating loadAllPlugins cache (main: --plugin-dir inline plugins)
+2026-03-18T01:41:11.095Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.095Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.096Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.096Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-18T01:41:11.096Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.096Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.096Z [DEBUG] Applying permission update: Adding 4 allow rule(s) to destination 'localSettings': ["WebSearch","Bash(git push -u origin claude/affectionate-swanson)","Bash(gh repo create pnw-camp-scout --public --description \"AI agent swarm for discovering bucket-list PNW campsites — gem scoring, live availability, Reddit/YouTube intelligence\")","Bash(git commit:*)"]
+2026-03-18T01:41:11.097Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-18T01:41:11.103Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=auto, result=true
+2026-03-18T01:41:11.103Z [DEBUG] [STARTUP] Running setup()...
+2026-03-18T01:41:11.104Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.104Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.105Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/robinsonchan/.claude/skills, project=[]
+2026-03-18T01:41:11.105Z [DEBUG] Error log sink initialized
+2026-03-18T01:41:11.116Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-03-18T01:41:11.120Z [DEBUG] [STARTUP] setup() completed in 17ms
+2026-03-18T01:41:11.120Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/security-review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultraqa.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ecomode.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/pipeline.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/hud.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/mcp-setup.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/explain-changes-mental-model.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/deepinit.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/sync-skills-readme.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/note.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/doctor.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/explain-pr-changes.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/learner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/analyze.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/codex-plan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/build-fix.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/sync-branch.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/help.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralph.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/tdd.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/release.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralph-init.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultrapilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/research.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ultrawork.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/swarm.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/compose-email.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ralph.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/deepsearch.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/autopilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/code-review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/plan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/planner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/omc-setup.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-autopilot.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ralplan.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/review.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/viral-tweet.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ultraqa.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/ultrawork.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/commands/cancel-ecomode.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.129Z [DEBUG] Deduplicated 42 files in commands (same inode via symlinks or hard links)
+2026-03-18T01:41:11.132Z [DEBUG] Loaded inline plugin from path: anthropic-skills
+2026-03-18T01:41:11.132Z [DEBUG] Loaded 1 session-only plugins from --plugin-dir
+2026-03-18T01:41:11.132Z [DEBUG] Found 1 plugins (1 enabled, 0 disabled)
+2026-03-18T01:41:11.133Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-03-18T01:41:11.133Z [DEBUG] Checking plugin anthropic-skills: skillsPath=exists, skillsPaths=0 paths
+2026-03-18T01:41:11.133Z [DEBUG] Attempting to load skills from plugin anthropic-skills default skillsPath: /Users/robinsonchan/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/1775bf94-4c88-4aa3-90d4-64c89548174a/b7a77a52-f07c-4cb1-a125-f581180d9ce0/skills
+2026-03-18T01:41:11.133Z [DEBUG] Registered 0 hooks from 1 plugins
+2026-03-18T01:41:11.133Z [DEBUG] Total plugin commands loaded: 0
+2026-03-18T01:41:11.133Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-18T01:41:11.133Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-18T01:41:11.134Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.134Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/worktrees/affectionate-swanson/.claude/settings.json
+2026-03-18T01:41:11.135Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.135Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.135Z [DEBUG] Loaded 128 unique skills (128 unconditional, 0 conditional, managed: 0, user: 86, project: 0, additional: 0, legacy commands: 42)
+2026-03-18T01:41:11.136Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.136Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.136Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.136Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.137Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.137Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-18T01:41:11.137Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-18T01:41:11.137Z [DEBUG] [claudeai-mcp] Missing user:mcp_servers scope (scopes=user:inference)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/codebase-pattern-finder.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/prd-writer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/code-reviewer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/scientist.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/qa-tester.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/git-guru.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/writer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/explore.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/build-fixer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/scientist-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/security-reviewer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/researcher-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/architect.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/ascii-ui-mockup-generator.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/designer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/perf-profiler.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/security-reviewer-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/analyst.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/frontend-designer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/explore-medium.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/tdd-guide-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/executor-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/mermaid-diagram-specialist.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/build-fixer-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/qa-tester-high.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/executor.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/architect-medium.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/researcher.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/communication-excellence-coach.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/test-time-travel.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/critic.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/scientist-high.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/explore-high.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/executor-high.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/vision.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/security-auditor.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/code-reviewer-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/tdd-guide.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/general-purpose.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/planner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/architect-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/ui-ux-designer.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/project-task-planner.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/dependency-detective.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/designer-high.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Skipping duplicate file '/Users/robinsonchan/.claude/agents/designer-low.md' from projectSettings (same inode already loaded from userSettings)
+2026-03-18T01:41:11.137Z [DEBUG] Deduplicated 46 files in agents (same inode via symlinks or hard links)
+2026-03-18T01:41:11.138Z [DEBUG] Agent file /Users/robinsonchan/.claude/agents/general-purpose.md has invalid model 'default'. Valid options: sonnet, opus, haiku, best, sonnet[1m], opus[1m], opusplan, inherit
+2026-03-18T01:41:11.138Z [DEBUG] Total plugin agents loaded: 0
+2026-03-18T01:41:11.146Z [DEBUG] Loaded 16 skills from plugin anthropic-skills default directory
+2026-03-18T01:41:11.146Z [DEBUG] Total plugin skills loaded: 16
+2026-03-18T01:41:11.146Z [DEBUG] getSkills returning: 128 skill dir commands, 16 plugin skills, 5 bundled skills, 0 builtin plugin skills
+2026-03-18T01:41:11.146Z [DEBUG] [STARTUP] Commands and agents loaded in 26ms
+2026-03-18T01:41:11.146Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-18T01:41:11.146Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-18T01:41:11.146Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-18T01:41:11.147Z [DEBUG] [STARTUP] MCP configs resolved in 40ms (awaited at +50ms)
+2026-03-18T01:41:11.148Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-18T01:41:11.149Z [DEBUG] MCP server "robloxstudio-mcp": Starting connection with timeout of 30000ms
+2026-03-18T01:41:11.166Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T01:41:11.166Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-18T01:41:11.169Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-03-18T01:41:11.170Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-03-18T01:41:11.196Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-18T01:41:11.196Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-18T01:41:11.197Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-03-18T01:41:11.200Z [DEBUG] Total LSP servers loaded: 0
+2026-03-18T01:41:11.200Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-18T01:41:11.200Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-18T01:41:11.200Z [DEBUG] LSP server manager initialized successfully
+2026-03-18T01:41:11.200Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": Initializing HTTP transport to http://127.0.0.1:29979/mcp
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": Node version: v24.3.0, Platform: darwin
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": Proxy options: default
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": HTTP transport options: {"url":"http://127.0.0.1:29979/mcp","headers":{"User-Agent":"claude-code/2.1.64 (claude-desktop, agent-sdk/0.2.64)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-18T01:41:11.200Z [DEBUG] MCP server "paper": HTTP transport created successfully
+2026-03-18T01:41:11.201Z [DEBUG] MCP server "paper": Client created, setting up request handler
+2026-03-18T01:41:11.201Z [DEBUG] MCP server "paper": Starting connection with timeout of 30000ms
+2026-03-18T01:41:11.201Z [DEBUG] MCP server "paper": Testing basic HTTP connectivity to http://127.0.0.1:29979/mcp
+2026-03-18T01:41:11.201Z [DEBUG] MCP server "paper": Parsed URL: host=127.0.0.1, port=29979, protocol=http:
+2026-03-18T01:41:11.201Z [DEBUG] MCP server "paper": Using loopback address: 127.0.0.1
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": Initializing HTTP transport to https://mcp.granola.ai/mcp
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": Node version: v24.3.0, Platform: darwin
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": Environment: {"NODE_OPTIONS":"not set","UV_THREADPOOL_SIZE":"default","HTTP_PROXY":"not set","HTTPS_PROXY":"not set","NO_PROXY":"not set"}
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": Proxy options: default
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": HTTP transport options: {"url":"https://mcp.granola.ai/mcp","headers":{"User-Agent":"claude-code/2.1.64 (claude-desktop, agent-sdk/0.2.64)"},"hasAuthProvider":true,"timeoutMs":60000}
+2026-03-18T01:41:11.203Z [DEBUG] MCP server "granola": HTTP transport created successfully
+2026-03-18T01:41:11.204Z [DEBUG] MCP server "granola": Client created, setting up request handler
+2026-03-18T01:41:11.204Z [DEBUG] MCP server "granola": Starting connection with timeout of 30000ms
+2026-03-18T01:41:11.204Z [DEBUG] MCP server "granola": Testing basic HTTP connectivity to https://mcp.granola.ai/mcp
+2026-03-18T01:41:11.204Z [DEBUG] MCP server "granola": Parsed URL: host=mcp.granola.ai, port=default, protocol=https:
+2026-03-18T01:41:11.204Z [DEBUG] MCP server "granola-mcp": Initializing HTTP transport to https://mcp.granola.ai/mcp

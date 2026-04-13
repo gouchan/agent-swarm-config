@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "robloxstudio-mcp": {
+      "command": "npx",
+      "args": ["-y", "robloxstudio-mcp"]
+    },
+    "framer": {
+      "type": "sse",
+      "url": "https://mcp.unframer.co/sse?id=05f22df5adccedccd2bd9b53750cf44de0dea2f882fd4621da2c74a126ab1ba4&secret=yNIobHFVYzizttP9RL9MVwvayIhMwYXc"
+    },
+    "granola-mcp": {
+      "command": "/Users/robinsonchan/GranolaMCP/.venv/bin/python3",
+      "args": ["-m", "granola_mcp.mcp"],
+      "env": {
+        "GRANOLA_CACHE_PATH": "/Users/robinsonchan/Library/Application Support/Granola/cache-v3.json"
+      }
+    }
+  }
+}

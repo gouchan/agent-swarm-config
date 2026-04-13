@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Fix CRITICAL: SSRF on /api/scrape and /api/crawl + DNS-aware isPrivateHost",
+    "status": "in_progress",
+    "activeForm": "Fixing CRITICAL: SSRF on /api/scrape and /api/crawl + DNS-aware isPrivateHost"
+  },
+  {
+    "content": "Fix CRITICAL: ReDoS via user-supplied pathFilter regex",
+    "status": "pending",
+    "activeForm": "Fixing CRITICAL: ReDoS via user-supplied pathFilter regex"
+  },
+  {
+    "content": "Fix CRITICAL: maxContentLength cap on /api/download + scraper fetches",
+    "status": "pending",
+    "activeForm": "Fixing CRITICAL: maxContentLength cap"
+  },
+  {
+    "content": "Fix HIGH: axios redirect SSRF (beforeRedirect validation)",
+    "status": "pending",
+    "activeForm": "Fixing HIGH: axios redirect SSRF"
+  },
+  {
+    "content": "Fix HIGH: .env quote stripping",
+    "status": "pending",
+    "activeForm": "Fixing HIGH: .env quote stripping"
+  },
+  {
+    "content": "Fix MEDIUM: raw err.message to client, security headers",
+    "status": "pending",
+    "activeForm": "Fixing MEDIUM: raw err.message + security headers"
+  }
+]

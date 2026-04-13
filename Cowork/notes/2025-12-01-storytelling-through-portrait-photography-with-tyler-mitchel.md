@@ -1,0 +1,523 @@
+# Storytelling Through Portrait Photography with Tyler Mitchell
+
+**Date:** Dec 1, 2025 5:31 PM
+
+**Granola ID:** `54b51fcb-bdd2-495c-a447-80db0c18aeec`
+
+**Participants:**
+Robinsonlchan (note creator) <robinsonlchan@gmail.com>
+
+---
+
+## Summary
+
+### Tyler Mitchell’s Journey to Photography
+
+- Started as skateboarder in Atlanta, Georgia
+  - Friend got camera, became obsessed with borrowing/using it
+  - Kept filming other skateboarding friends, couldn’t keep hands off camera
+  - Natural transition from skateboarding community to photography community
+- Early inspiration from online platforms and magazines
+  - Fascinated with Tumblr and Pinterest websites for visual discovery
+  - Read Complex Days magazine and various online publications regularly
+  - Key photographer influences: Petra Collins, Ryan McGinley, Larry Clark
+  - Websites and magazines shaped his visual language and aesthetic preferences
+- Wanted to create images that reflected protagonists who looked like him
+  - Inspired by existing images but noticed lack of representation
+  - Goal to make images reflecting his own experience and identity
+  - Desired to see Black protagonists in contexts he found inspiring
+  - Work becomes extension of being inspired by others while wanting representation
+
+### Creating Self-Contained Utopia for Black Representation
+
+- Core mission: create optimistic vision of Black life in public space
+  - Challenge how Blackness is typically represented in society/culture
+  - Focus on freedom, enjoyment, pleasure that historically could be taken away
+  - Psychic awareness that freedom/pleasure could be denied at any moment
+  - Opening up space of representation existing in public space for Black folks
+- Historic breakthrough: Beyoncé Vogue cover achievement
+  - September Vogue issue - youngest photographer to shoot Vogue cover
+  - First Black photographer to shoot Vogue cover in magazine’s history
+  - Milestone opened gates for significantly more representation
+  - Shifted culture and thinking about photography industry
+  - Changed who gets to shoot images professionally across publications
+  - Helped establish new generation of young image makers
+- Vision centers on Black folks enjoying seemingly mundane pleasures
+  - Examples: hula hooping, having picnics, embracing one another, reclining, relaxing
+  - Both at play in motion and peacefully laying in grass
+  - Represents freedom he wishes for young Black men and women around him
+  - Self-contained world where Black protagonists experience joy without external threat
+
+### “I Can Make You Feel Good” Book Project
+
+- 4-year body of work spanning 2015-2019
+  - Started around 2015-2016 thinking about Black identity, Black male identity
+  - Flows freely between commissioned and personal work
+  - Autobiographical experiences in the South/Georgia as foundation
+  - Unifying element: aesthetic vision of Black life as intimate, effortless, free
+- Aesthetic approach: rich color fields using mainly natural light
+  - Speaks to vision of optimism for Black folks personally and instinctively
+  - Natural light creates specific mood and emotional resonance
+  - Color palette chosen to support uplifting narrative
+- Key imagery themes: Black life enjoying public space
+  - Activities: picnics, embracing, reclining, relaxing both in motion and at rest
+  - Public space enjoyment as political and personal statement
+  - Unifying visual text of hope for Black life in America
+- Notable photographs and their stories:
+  - All American Family Portrait: Tyra Mitchell with twin daughters and boyfriend Naeem
+    - Met Tyra through NYC art scene, people confused them due to similar names
+    - First photographed her 6 months pregnant, returned year later when babies were 6 months old
+    - Contains both hopeful and challenging sides of being Black family in America today
+    - Contextual element: always having relationship with people in images
+  - Group hula hoop: kids in Bay Ridge, Brooklyn
+    - Shot from above in grid-like manner showing kids in unison
+    - Captured moment of pure freedom in expressions and body postures
+    - Grid composition emphasizes unity and shared joy
+- Butterfly transformation photo: turning Tony literally into butterfly
+  - Dream-like concept brought to life through collaboration with team
+  - Used real butterfly mouthpiece as prop
+  - Falls within umbrella of optimistic vision for young Black men and women
+- Book cover shoot: five friends at Walthamstow marshes, East London
+  - Simple concept: five young men enjoying marshes/outdoor space together
+  - Boys’ shapes becoming one with landscape - connection to nature
+  - Complex historical references: Louisiana chain gangs, complicated history of Black men shirtless outdoors
+  - Image bound up with positive feelings but also historically complicated/negative associations
+- Book design philosophy: more meaningful than gallery exhibitions
+  - Books are tactile, permanent vs shows that come and go
+  - Important as beautiful, well-designed object for bookstores and homes
+  - Books show how photographer sees their work, how they want interaction
+  - Can reach broader audience and stand test of time
+
+### Lighting Philosophy and Natural Light Techniques
+
+- Best light principle: simplest light that replicates natural sunlight
+  - Personal preference for light closest to the sun’s quality
+  - Extension of personal creative sensibility - lighting reflects artistic vision
+  - Darker rooms require fewer lights, brighter setups near windows
+- Optimal outdoor shooting times and characteristics:
+  - Sunrise/before 10-11am: lower sun position, sunrise feel, more flattering light
+  - 10am-2pm: sun highest in sky, creates eyeshadows and eyelash shadows on faces
+  - Light becomes more contrasty, hot, high in sky - less appealing for portraits
+  - Sunset hours: lower sun again, familiar warm sunset feel
+  - Important to observe and decide what look you want
+- Majority of “I Can Make You Feel Good” images shot in daytime outdoors
+  - Ensured sun was hitting and illuminating subjects properly
+  - Focus subject first, everything else secondary
+  - Brightest/darkest spots guide where viewer’s eyes should travel in composition
+- Low budget lighting solutions:
+  - Sun is free, most accessible lighting source
+  - Use windows for natural light setup indoors
+  - House lamps, floor lamps, table lamps all work as light sources
+  - Any source of light counts, doesn’t need professional equipment
+  - Accessibility principle: use what’s around you
+- Light modification techniques using everyday materials:
+  - White materials (bed sheets, shower curtains, diffusion flags) cut and soften harsh sun
+  - Playing with textures of white and dark to control light quality
+  - Black materials create shadows and shade, cut light completely
+  - Silver/gold reflectors bounce light from one direction to subject’s face
+  - Reflectors take light from one place and redirect to another location
+- Shadows as storytelling elements:
+  - Simply what light casts behind subject or object
+  - Can be used within images as desired storytelling component
+  - Blue laundry line photo utilized backlight with sun behind subjects
+  - Backlight creates shadows/silhouettes, throws shadows into image
+- Lighting Black skin approach and philosophy:
+  - Goal: render as accurately as it looks in real life
+  - Personal preference vs other photographers who render darker or brighter than reality
+  - Aware that dark/brown skin exists in shadow region of image exposure
+  - Manipulate shadow regions of image to achieve desired look and accuracy
+
+### Natural Light Demonstration and Practical Setup
+
+- Gallery space with balcony demonstration using model Jess Cole
+  - Used smartphone camera on factory settings to show accessibility
+  - Main objective: show cutting, bouncing, manipulating natural light for portraits
+  - Emphasis on subject connection and what light is doing
+- Indoor window lighting setup and techniques:
+  - Two windows used to light subject against wall background
+  - Strong shadows when very close to window - high contrast look
+  - Diffusion material softens harsh shadows, rounds out facial features
+  - Distance from window affects shadow intensity on shadow side of face
+  - Wall shadows change based on proximity - close creates strong wall shadow
+- Light shaping tools and household alternatives:
+  - White bounce cards send return light to fill shadow areas
+  - Can use any white material available in house
+  - Black flags (professional) or trash bags cut light from specific areas
+  - Position materials to shape natural light direction and quality
+  - Think about what direction light comes from, how to soften or cut it
+- Outdoor balcony lighting considerations:
+  - Sun as key light source creating shadows on wall behind subject
+  - Wall acts as fill light bouncing light back onto subject
+  - Partly cloudy day demonstrates difference: clouds create softer overall look
+  - Full sun creates harsh shadows vs soft diffused light when cloud covers
+  - Weather conditions workable - adapt to what you have
+- Lighting positions and their effects:
+  - Front light: sun hitting subject from front, illuminates fully, shows more of person
+  - Side light: more dramatic, focuses on silhouette and body shape rather than portrait
+  - Backlight: sun directly behind subject, creates rim lighting on hair, face in darkness
+  - Subject essentially cut out from background with backlight
+  - Each position serves different storytelling purposes
+- Environmental color temperature considerations:
+  - Yellowy walls bounce warm light back to model’s skin
+  - Creates glowy, warmer feel to photographs overall
+  - Blue walls would create opposite cooler effect
+  - Environmental surfaces affect overall color temperature and mood
+- Adaptability principle: work with light, not against it
+  - Consider what you have, follow that direction
+  - Any weather condition workable for good pictures
+  - Cloudy day: softer, darker look, less glowy but nicer facial shadows
+  - Learning through observation: watch sun, make more pictures
+
+### Composition Techniques and Artistic Decisions
+
+- Core philosophy: make all framing decisions in camera
+  - Can crop closer in post but can’t expand frame once shot
+  - Get composition as accurate as possible during shooting
+  - Decisions about full body, close-up, medium shot made in moment
+- No rules principle: image should contain exactly desired information amount
+  - Close-up when focusing on face, wide shot for head-to-toe/wardrobe display
+  - Should not contain information you want to leave out of frame
+  - Every element must work to support story being told
+- Personal approach: stripped back presentation vs maximum information
+  - Every single element in frame should support story
+  - Nothing extraneous or extra allowed in personal work
+  - Some photographers include lots of information - also valid approach
+  - Personal preference for minimal, focused composition
+- Specific composition examples and techniques:
+  - Topanga double portrait: boys sharing suit jacket, each arm in armhole
+    - Suit cuts composition in half, one boy each side of frame
+    - Different expressions: one hopeful looking, other eyes closed appearing in pain
+    - Tells two different stories within single image using composition
+    - Double portrait technique using fashion prop as dividing element
+  - Hula hoop framing technique: waiting for spinning hoop to perfectly frame girl’s face
+    - Patience required - waiting for exact moment hoop circles other girl’s face
+    - Highlights both girls, makes viewer’s eye travel through hoop to background subject
+    - One framing device among many possibilities for directing eye movement
+- Instinctive and organic approach to composition:
+  - React instinctively to what’s in front of you during shoot
+  - Suit jacket idea developed on-the-fly with gut feeling
+  - Important to trust instinct when composing images
+  - Go with gut reaction, think organically about elements present
+- Eye movement and visual hierarchy principles:
+  - Make viewer’s eye travel where you want in photograph
+  - Use framing devices to highlight specific subjects
+  - Consider how composition elements direct attention through image
+
+### Model Direction and Wardrobe Styling Process
+
+- Model selection crucial to overall vision and story
+  - Casting decisions really important whether friend, professional model, or someone else
+  - Important to have relationship/connection with people in images
+  - Contextual element always present - closeness to subjects
+- Subject comfort and confidence approach:
+  - Make subjects feel important, valuable, comfortable, beautiful in presentation
+  - Ensure they’re okay with wardrobe choices and how they’re being presented
+  - Talk through kind of image you’re trying to achieve - clear objectives crucial
+  - Wouldn’t be desired picture if subject was uncomfortable during process
+- Wardrobe decision collaborative process:
+  - Conversation-based approach: “what do we think for hair?”
+  - Work with subject on decisions down to hair and makeup details
+  - Select outfits subjects feel confident and good wearing
+  - Personal example: Jess with hair slicked back decision made together
+  - Repeating collaboration builds rapport and better results over time
+- Color and contrast considerations in styling:
+  - Red skirt and shirt chosen for color pop against environment
+  - Background and wardrobe should have contrast and visual interest
+  - Red clothing against pale bluish-gray background creates desired pop
+  - Black dress against yellowy/golden environment for dramatic contrast
+  - Aesthetic decisions based on instinct and visual preference
+- Posing and direction techniques during shoot:
+  - Walk models through series of desired poses step by step
+  - Communicate adjustments: “sitting taller so shirt looks better”
+  - Natural model advantage: already creates good shapes instinctively
+  - Direction examples: hands in pockets vs out, looking at camera vs away
+  - Conversation throughout shoot about what feels good and looks good
+- Composition considerations with model positioning:
+  - How model is posed becomes part of composition decisions
+  - Different poses create different shapes and focal points
+  - Foot positioning can become focus if desired, or redirect attention
+  - Arm positioning creates different visual shapes and emphasis
+
+### Studio Lighting Setup and Equipment Mastery
+
+- Traditional three-light setup demonstration with models Matthew and Toby
+  - Studio as blank space for building whatever set/environment desired
+  - Color story: different tones of blues for walls, floors, fabrics and flats
+  - Wardrobe: black and navy suits against blue set for aesthetic contrast
+- Equipment used: HMI lighting and medium format analog camera
+  - HMI lighting balanced for daylight, meant to replicate sun indoors
+  - Alternative lighting: tungsten (warmer, like house lamps), LED (warm or cool)
+  - Medium format Mamiya analog camera vs earlier smartphone demonstration
+  - Same image-making principles apply across all camera types
+- Three main lighting elements and their functions:
+  - Key light: most powerful source, main illumination on subjects
+    - Creates eye light (small glow visible in subject’s eyes)
+    - Shadow side of face opposite key light direction
+    - Can be harsh (strong shadows, texture on clothes) or soft (diffused, rounded shadows)
+    - Diffusion softens shadow lines under chin, reduces texture appearance
+    - Position determines whether more front-facing or side-lighting effect
+  - Fill light: lights up room overall, illuminates shadow side of face
+    - Second most powerful after key light
+    - Cancels out or softens shadows cast by subjects’ bodies
+    - Without fill light, shadow side becomes much more pronounced and moody
+    - Creates more even lighting when properly balanced with key
+  - Rim light: separates subjects from background
+    - Hits edge of shoulders and side of faces
+    - Highlights silhouettes when subjects look away from camera
+    - Creates separation between subject and background elements
+- Black floppy flags (floppies) block light bouncing off white walls
+  - Professional black flags or any black material works
+  - Prevents unwanted light reflections that soften intended lighting setup
+  - More complicated variations possible but demonstrates simple approach
+- Metering and camera settings process:
+  - Light meter takes reading of illumination, tells camera settings needed
+  - Meter at multiple points: face (primary), waist, feet for even exposure
+  - Example reading: 1/125 second at f/5.6 aperture
+  - Re-meter whenever lighting changes (adding diffusion, moving lights)
+  - Transfer meter readings to camera settings before shooting
+- Polaroid test process and alternatives:
+  - Polaroid back attachment gives preview of shot before shooting film
+  - Wait for Polaroid to develop, check composition and lighting
+  - Alternative: use phone or digital camera for test shots
+  - Allows adjustment before committing to expensive film
+- Film photography approach and mindset:
+  - Patient process, not rapid-fire shooting like digital
+  - Really compose and think about each individual frame
+  - Can’t see results immediately - more humanistic approach with subjects
+  - Creates more direct connection, less concerned with immediate results
+  - Very different process and feeling compared to digital shooting
+- Model direction in controlled studio environment:
+  - Start with casual poses, hands in/out of pockets variations
+  - Communication-based: try different looks, see what feels good for both parties
+  - Direct eye contact with lens vs looking off-camera creates different moods
+  - Full body shots and closer cropped variations for variety
+  - Back-to-back poses, angled toward each other for relationship dynamics
+  - Trying things, communicating, seeing how models feel about directions
+
+### Creative Process and Career Development Philosophy
+
+- Location philosophy: no location is boring principle
+  - Depends entirely on how you look at and photograph location
+  - Boring to you from your perspective, not boring to others
+  - Mundane locations (living room, backyard) can be interesting through new perspective
+  - Think about how you’re framing locations for other people to see
+  - Best location is always whatever you can access - accessibility over perfection
+  - Choose location that helps tell your story best with available resources
+- Personal preference: location over studio 9 times out of 10
+  - Special, real elements about locations that studio can’t replicate
+  - Studio good for weather issues or when concept requires controlled environment
+  - Locations have inherent stories and character that enhance narrative
+- Props as storytelling tools and political statements:
+  - Props should be storytelling tools that heighten narratives
+  - Find prop language that works for you as photographer
+  - “In My Pink Polo” series (2016) response to police violence against Black bodies
+    - Created during 2015-2016: Michael Brown, Eric Garner, Pulse Club shootings
+    - Visualizing young Black men in different light through fashion
+    - Dress, symbols, hair, makeup to depict dignity, intimacy, beauty
+    - Flowery, feminine fashion as counter-narrative to imposed stereotypes
+  - Political props: plastic resin chains, water guns as imposed symbols
+    - Weaving in symbols imposed on Black body, politicizing Black body
+    - Playing with, subverting what those symbols could mean
+    - Questioning: what’s there, what’s not there when we look at Black man?
+    - Arms suggested to be held by Black men - freedom of movement questions
+  - Shot in banal Brooklyn neighborhoods where he lived for authenticity
+- Mood boarding process for concept development:
+  - Pull together inspirational pictures illustrating shoot ideas
+  - Finding images with props/elements you like, going in that direction
+  - Thinking deeply about new props to bring that tell story
+  - Part of pre-production planning and creative development
+- Commission work example: Teen Vogue Emma González shoot
+  - Photographed Parkland shooting survivors and gun reform activists
+  - Important assignment due to political weight and social relevance
+  - Naturally interested in sensitively depicting people like this
+  - Orange background connected to protection/caution around bullets/guns
+  - Color choice woven in with rights and beliefs of subjects
+  - Collaborative approach: Emma tearing target sheet was her idea
+  - Making decisions based on who these people were and are
+  - Treatment approach: treat them like anyone else, make comfortable
+  - Young person relating to other young people’s experiences
+- Social media and sharing work in modern era:
+  - Raised in age of people sharing imagery online - crucial for artistic journey
+  - Important to take inspiration from platforms like Tumblr
+  - Share through social media platforms for critique and feedback
+  - Online posting allows seeing how people respond, what they like/dislike
+  - Especially important for artists without formal artistic programs
+  - Instagram ubiquitous and pervasive - amazing forum for photographer feedback
+- Instagram as essential portfolio platform:
+  - Showcase voice, vision, portfolio in accessible format
+  - Essential way to communicate as photographer currently
+  - Most efficient way to communicate photographic vision
+  - People see all work uploaded, get idea of who you are as artist
+  - Not end-all-be-all but really helps photographers get exposure
+- Website importance and getting published:
+  - Website critical for photographers - more touchpoints for viewing work
+  - Getting published about reaching out, cold emailing respected people
+  - Share work consistently - can’t be published if you don’t share
+  - Keep people updated with what you’re doing, reach out more
+- Building audience and community:
+  - Comes through stories you’re telling and people who connect with them
+  - People who like your subject matter naturally draw toward work
+  - Start connecting with people who orbit around things you like discussing
+  - Working with different artists exposes work to their audiences
+  - Examples: Solange, Dev Hynes collaborations brought new audience attention
+- Cuba project and film photography approach:
+  - NYU film school exchange trip to Havana, Cuba
+  - Went with intention of learning about new place and culture
+  - Serendipitous discovery of skateboarding community in Havana
+  - Aesthetically drawn to colors of buildings, reactive to environment
+  - No analog labs in Cuba - didn’t see images for 6 weeks while living there
+  - Felt need to make book immediately upon seeing developed images
+  - Led to “El Paquete” (The Package) - first contribution to photo book world
+  - Film camera made entire project different - more in-the-moment shooting
+  - Digital would have made him more timid, talking himself out of shots
+  - Film prevented immediate second-guessing, encouraged instinctive photography
+
+### Technical Camera Knowledge and Equipment Philosophy
+
+- Camera exposure: three main technical principles working together
+  - Aperture: opening of lens, open or close to accept more/less light
+  - Shutter speed: amount of time shutter stays open for exposure
+  - ISO: light sensitivity of sensor or film
+  - Use all three in conjunction to form proper exposure
+  - Adjust in reaction to one another depending on shooting conditions
+- Exposure philosophy and stylistic choices:
+  - Personal goal: expose image way it looks in real life
+  - Stylistic choice - can expose darker or brighter than reality if desired
+  - Three categories: brighter, darker, well-exposed (healthy/realistic)
+  - Well-exposed means how it looks to you in real life
+  - Playing with exposure helps discover personal preference
+- Learning approach: feeling over technical knowledge:
+  - Don’t need to know ins and outs of camera settings completely
+  - Main focus should be what feels best and works for you
+  - Play and experiment, see what you like and react to best
+  - Whether analog, digital, or phone - test, see what works
+  - Most important: figure out what you personally like
+- Rule-breaking through technical understanding:
+  - Knowing rules allows you to break them creatively
+  - Choose how to render subject (still life or person)
+  - Options: brighter, darker, slower, faster depending on desired effect
+- Specific technical examples from his work:
+  - Lil Uzi Vert diving into pool in Hawaii: adjusted shutter speed for motion
+    - Fast shutter speed to catch mid-motion and render still
+    - Used flash in low light to freeze frame him mid-dive
+  - Model Binks walking photo: intentionally slowed shutter speed
+    - Created motion blur effect while she was walking
+    - When enough light available, can slow shutter for blurry subject effect
+    - Intentional creative choice, not technical mistake
+- Lens types as artistic paintbrushes:
+  - Different lenses deliver different stylistic results
+  - Wide lenses: show wider field of view, more environmental context
+  - Normal lenses: closer to human eye perspective, more realistic appearance
+  - Telephoto: flatten perspective, good for zooming from long distances
+  - Choose based on subject matter and desired artistic direction
+  - Experiment with all types, including zoom function on phone
+- Camera philosophy: cameras as paintbrushes analogy
+  - Every camera/lens has different texture, different quality
+  - Don’t need expensive gear to make beautiful photography
+  - Whatever you can get hands on, try it and experiment
+  - Early work made with borrowed friend’s digital SLR camera
+  - Most accessible camera (even phone) often most fun to work with
+- Film vs digital camera advantages:
+  - Film camera benefits: humanistic, round colors, less immediate response
+  - Process creates more human, direct connection with subject
+  - Surprise element when getting pictures back from lab
+  - Not bogged down with wires, cables, screens, settings confusion
+  - Digital advantages: immediate results, can see what you’re shooting
+  - Analog easier in many ways - simpler, more intuitive process
+  - Film recommended if accessible - shows instinctive photography preferences
+- Phone camera advantages for portraits:
+  - Subject more relaxed, at ease - familiar with phone photography
+  - People tense up with big cameras due to preconceived notions
+  - Freeing when subject doesn’t think you’re being serious
+  - Can lean into casual approach without pressure
+
+### Editing Process and Post-Production Philosophy
+
+- Editing principles: decisive selection over inclusion
+  - Usually one photo per setup, location, or look maximum
+  - Choose photo that’s most concise or sums up emotion you’re capturing
+  - Most people tend to over-include photos in final selections
+  - Unfortunately means getting rid of photos you might personally like
+- Bridge and Photoshop workflow demonstration:
+  - Bridge for selection, Photoshop for color correction and retouching
+  - Sort by file name, group similar looks together for comparison
+  - Delete behind-scenes shots immediately to clean up folder
+  - Star rating system for narrowing down to selects
+- Selection criteria and decision-making process:
+  - Looking for nice expressions, good connection with camera
+  - Eliminate unusable shots: half-blinking, unflattering clothing angles
+  - Personal response most important - what you instinctively like
+  - Variety important: full body and close-up combinations
+  - Avoid five full body shots with no close-ups or vice versa
+- Specific selection examples from Jess shoot:
+  - Red look: chose elegant sitting pose with bold, graceful confidence
+  - Loved contrast between clothing, wall, environment
+  - Direct gaze into camera, broad shoulders, direct lens connection
+  - Black look outside: back-turned dress shape showing golden columns connection
+  - Front-facing with beautiful pose, graceful camera look, arm shaping
+  - Perspective looking down building patios in London
+- Post-production philosophy: solve problems, don’t over-process
+  - Focus on solving image’s problems rather than over-correcting
+  - Personal approach: minimal color correction, enhance what’s already there
+  - No rules - up to individual photographer’s style and preference
+- Specific correction examples:
+  - Crop out distracting elements (brightly lit column edge)
+  - Ensure image is straight and properly centered
+  - Curves adjustment layer: small S-curve for contrast (darks darker, highlights higher)
+  - Check color accuracy: does red/blue/skin tone look true to real life?
+  - Focus viewer on subject’s face as primary element
+- Skin retouching approach:
+  - Mainly leave natural, just remove bigger blemishes
+  - Keep natural marks like freckles intact
+  - Use spot heal tool for minor cleanup only
+  - Don’t go crazy - matter of personal taste and restraint
+- Color correction tools and techniques:
+  - Primarily uses curves adjustment for contrast enhancement
+  - Light touch approach - can see difference when toggling on/off
+  - Can adjust skin warmer/cooler but prefers natural accuracy
+  - Gut feeling most important guide for editing decisions
+
+### Philosophy on Overcoming Creative Challenges
+
+- Doubt and creative blocks: push through by making more pictures
+  - Take picture of ceiling every morning if necessary - serious advice
+  - If not ceiling, photograph floor, tree outside house daily
+  - Taking more pictures makes you better at pictures - fundamental truth
+  - If not taking pictures, daydream about taking pictures constantly
+- Personal creative process when not shooting:
+  - Works in filmmaking format - fixates on idea first
+  - Gathers crews, develops concept, secures location
+  - Goes out and makes idea happen through planned execution
+  - When not making pictures, focusing on ideas for new pictures
+- Feedback and criticism: remember your core identity
+  - No rules for accepting praise or criticism
+  - Remember core beliefs and spine of who you are
+  - If feedback deviates from personal spine, might not be relevant
+  - Listen with open mind if real insights for improvement offered
+  - Take all feedback with grain of salt while considering source
+  - Consider who you are, remember identity, move accordingly
+- No rules philosophy: fundamental creative freedom
+  - No rules to photography, creativity, being artist, being photographer
+  - Learning principles and hearing others’ stories provides insight
+  - What works for him might not work for you and vice versa
+  - Personal choice and individual approach most important
+- Sharing knowledge and democratizing information:
+  - Teaching part of his art practice - sharing story and process
+  - History of mentoring kids across New York and globally
+  - Lecturing at NYU, Harvard - making pathways accessible
+  - Showing young people and artists that success is possible
+  - Democratizing and opening up access to information crucial now
+- Images increasingly crucial in modern culture:
+  - Living through images daily: online, news, Instagram
+  - Especially during isolation periods, images portal to outdoors
+  - Storytelling through images main way people get information
+  - Knowing how to use imagery highly important as photographer or person
+- Final advice: continue making and sharing pictures
+  - Make more pictures, share them, see what hits and what doesn’t
+  - People react intuitively to impactful images and stories
+  - Democratized sharing allows reaching millions or just few people
+  - Important to share work and continue making more pictures
+  - Follow personal inclinations, follow those breadcrumbs instinctively
+  - Suppress self-doubt feelings about “right way” to work
+  - Relevant to personal taste and visual inclinations
+  - Transfer what excites and inspires you into photography and images

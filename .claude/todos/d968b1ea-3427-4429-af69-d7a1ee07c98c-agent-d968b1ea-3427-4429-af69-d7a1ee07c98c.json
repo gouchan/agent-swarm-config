@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Install MCP SDK dependencies",
+    "status": "completed",
+    "activeForm": "Installing MCP SDK dependencies"
+  },
+  {
+    "content": "Create MCP connection test script",
+    "status": "completed",
+    "activeForm": "Creating MCP connection test script"
+  },
+  {
+    "content": "Test MCP connection to Roblox Studio",
+    "status": "completed",
+    "activeForm": "Testing MCP connection to Roblox Studio"
+  },
+  {
+    "content": "Run mega mansion builder",
+    "status": "in_progress",
+    "activeForm": "Running mega mansion builder"
+  }
+]

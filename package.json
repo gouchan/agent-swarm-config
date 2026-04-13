@@ -1,5 +1,12 @@
 {
+  "name": "robinsonchan-dev",
+  "version": "1.0.0",
+  "description": "Development environment for AI agents, trading bots, and automation",
+  "scripts": {
+    "build-mansion": "node roblox-mega-mansion-builder.js"
+  },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.2",
     "openai": "^4.82.0",
     "solana-agent-kit": "^1.4.0"
   },

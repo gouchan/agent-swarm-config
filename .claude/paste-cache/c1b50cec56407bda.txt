@@ -1,0 +1,22 @@
+⚠️  API call failed (attempt 1/3): NotFoundError
+   ⏱️  Time elapsed before failure: 0.62s
+   📝 Error: Error code: 404 - {'status': 404, 'message': "Model 'Hermes-3-Llama-3.1-70B-Instruct' not found. The requested model does not exist in our configuration or OpenRouter catalog."}
+   📊 Request context: 2 messages, ~3,647 tokens, 30 tools
+🔄 Primary model failed — switching to fallback: Hermes-3-Llama-3.1-405B-Instruct via nous
+⚠️  API call failed (attempt 1/3): NotFoundError
+   ⏱️  Time elapsed before failure: 0.97s
+   📝 Error: Error code: 404 - {'status': 404, 'message': "Model 'Hermes-3-Llama-3.1-405B-Instruct' not found. The requested model does not exist in our configuration or OpenRouter catalog."}
+   📊 Request context: 2 messages, ~3,647 tokens, 30 tools
+🧾 Request debug dump written to: /Users/robinsonchan/.hermes/sessions/request_dump_20260330_182510_12ec6e_20260330_182515_495968.json
+❌ Non-retryable client error detected. Aborting immediately.
+   💡 This type of error won't be fixed by retrying.
+ ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
+                                                                                
+   Error: Error code: 404 - {'status': 404, 'message': "Model                   
+   'Hermes-3-Llama-3.1-405B-Instruct' not found. The requested model does not   
+   exist in our configuration or OpenRouter catalog."}                          
+                                                                                
+ ────────────────────────────────────────────────────────────────────────────── 
+────────────────────────────────────────────────────────────────────────────────
+❯                                                                               
+────────────────────────────────────────────────────────────────────────────────

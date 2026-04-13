@@ -1,0 +1,3 @@
+Robinson Chan — Visual designer at Robinhood, aspiring solo founder/creative consultant. GitHub: gouchan. Interests: crypto/markets, AI agents, image/video gen, TikTok content. Prefers Telegram as primary communication channel with Hermes. Self-described "puppy chasing cars" — wants to systematize and tighten workflows. New to cronjobs.
+§
+MODEL ROUTING PREFERENCE: Robinson wants Hermes to default to the cheapest capable chat model (e.g. DeepSeek small/chat, lightweight MiniMax) for casual conversation, light brainstorming, explanations, and low-stakes tasks. Premium/frontier models (Opus, large Sonnet) should ONLY be used when explicitly requested or clearly needed (complex reasoning, high-stakes decisions, nuanced creative work). Goal: minimize unnecessary token spend.

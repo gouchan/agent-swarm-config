@@ -1,0 +1,269 @@
+/Users/robinsonchan/.hermes/config.yaml:#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+/Users/robinsonchan/.hermes/.env:OPENROUTER_API_KEY=[B[B
+/Users/robinsonchan/.hermes/hermes-agent/hermes_constants.py:OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+/Users/robinsonchan/.hermes/hermes-agent/hermes_constants.py:OPENROUTER_MODELS_URL = f"{OPENROUTER_BASE_URL}/models"
+/Users/robinsonchan/.hermes/hermes-agent/hermes_constants.py:OPENROUTER_CHAT_URL = f"{OPENROUTER_BASE_URL}/chat/completions"
+/Users/robinsonchan/.hermes/hermes-agent/tools/vision_tools.py:                            "Set OPENROUTER_API_KEY or configure Nous Portal to enable vision tools."
+/Users/robinsonchan/.hermes/hermes-agent/tools/vision_tools.py:        print("Set OPENROUTER_API_KEY or configure Nous Portal to enable vision tools.")
+/Users/robinsonchan/.hermes/hermes-agent/tools/web_tools.py:        print("Set OPENROUTER_API_KEY, configure Nous Portal, or set OPENAI_BASE_URL + OPENAI_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:    Raises ValueError if OPENROUTER_API_KEY is not set.
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:        api_key = os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:            raise ValueError("OPENROUTER_API_KEY environment variable not set")
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:            base_url=OPENROUTER_BASE_URL,
+/Users/robinsonchan/.hermes/hermes-agent/tools/openrouter_client.py:    return bool(os.getenv("OPENROUTER_API_KEY"))
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/vision_tools.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/mixture_of_agents_tool.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/skills_guard.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/openrouter_client.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/web_tools.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/rl_training_tool.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/tools/__pycache__/browser_tool.cpython-311.pyc matches
+/Users/robinsonchan/.hermes/hermes-agent/tools/mixture_of_agents_tool.py:        if not os.getenv("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/tools/mixture_of_agents_tool.py:            raise ValueError("OPENROUTER_API_KEY environment variable not set")
+/Users/robinsonchan/.hermes/hermes-agent/tools/mixture_of_agents_tool.py:        print("❌ OPENROUTER_API_KEY environment variable not set")
+/Users/robinsonchan/.hermes/hermes-agent/tools/mixture_of_agents_tool.py:        print("Please set your API key: export OPENROUTER_API_KEY='your-key-here'")
+/Users/robinsonchan/.hermes/hermes-agent/tools/mixture_of_agents_tool.py:    requires_env=["OPENROUTER_API_KEY"],
+/Users/robinsonchan/.hermes/hermes-agent/tools/browser_tool.py:                     "Set OPENROUTER_API_KEY or configure Nous Portal to enable browser vision."
+/Users/robinsonchan/.hermes/hermes-agent/tools/skills_guard.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/tools/skills_guard.py:        api_key = os.getenv("OPENROUTER_API_KEY", "")
+/Users/robinsonchan/.hermes/hermes-agent/tools/skills_guard.py:            base_url=OPENROUTER_BASE_URL,
+/Users/robinsonchan/.hermes/hermes-agent/tools/rl_training_tool.py:    api_key = os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/tools/rl_training_tool.py:            "error": "OPENROUTER_API_KEY not set. Required for inference testing.",
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/auth.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/auth.py:    3. OPENAI_API_KEY or OPENROUTER_API_KEY env vars -> "openrouter"
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/auth.py:    if os.getenv("OPENAI_API_KEY") or os.getenv("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/auth.py:            model["base_url"] = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/auth.py:        if os.getenv("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/config.py:    "OPENROUTER_API_KEY": {
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/config.py:#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/config.py:        ("OPENROUTER_API_KEY", "OpenRouter"),
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/config.py:        'OPENROUTER_API_KEY', 'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'VOICE_TOOLS_OPENAI_KEY',
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/config.py:            print("  hermes config set OPENROUTER_API_KEY sk-or-...")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/models.py:OPENROUTER_MODELS: list[tuple[str, str]] = [
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/models.py:    return [mid for mid, _ in OPENROUTER_MODELS]
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/models.py:    for mid, desc in OPENROUTER_MODELS:
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/models.py:        return list(OPENROUTER_MODELS)
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/main.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/config.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/tools_config.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/setup.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/models.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/runtime_provider.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/hermes_cli/__pycache__/auth.cpython-311.pyc matches
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:    if get_env_value("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:        tool_status.append(("Vision (image analysis)", False, "OPENROUTER_API_KEY"))
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:        tool_status.append(("Mixture of Agents", False, "OPENROUTER_API_KEY"))
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:    existing_or = get_env_value("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:                    save_env_value("OPENROUTER_API_KEY", api_key)
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:                save_env_value("OPENROUTER_API_KEY", api_key)
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:    ) and not get_env_value("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:            save_env_value("OPENROUTER_API_KEY", api_key)
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/setup.py:        bool(get_env_value("OPENROUTER_API_KEY"))
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:    env_openrouter_base_url = os.getenv("OPENROUTER_BASE_URL", "").strip()
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:        or OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:    # When hitting OpenRouter, prefer OPENROUTER_API_KEY (issue #289).
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:            or os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/runtime_provider.py:            or os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/tools_config.py:    "vision":     [("OPENROUTER_API_KEY",   "https://openrouter.ai/keys")],
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/tools_config.py:    "moa":        [("OPENROUTER_API_KEY",   "https://openrouter.ai/keys")],
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/main.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/main.py:    provider_env_vars = {"OPENROUTER_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_BASE_URL"}
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/main.py:    api_key = get_env_value("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/main.py:        save_env_value("OPENROUTER_API_KEY", key)
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/main.py:        model["base_url"] = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/doctor.py:from hermes_constants import OPENROUTER_MODELS_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/doctor.py:    "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/doctor.py:    openrouter_key = os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/doctor.py:                OPENROUTER_MODELS_URL,
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/doctor.py:                issues.append("Check OPENROUTER_API_KEY in .env")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/status.py:from hermes_constants import OPENROUTER_MODELS_URL
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/status.py:        "OpenRouter": "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/status.py:        openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
+/Users/robinsonchan/.hermes/hermes-agent/hermes_cli/status.py:                    OPENROUTER_MODELS_URL,
+/Users/robinsonchan/.hermes/hermes-agent/optional-skills/migration/openclaw-migration/scripts/openclaw_to_hermes.py:    "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/optional-skills/migration/openclaw-migration/scripts/openclaw_to_hermes.py:                        env_var = "OPENROUTER_API_KEY"
+/Users/robinsonchan/.hermes/hermes-agent/optional-skills/migration/openclaw-migration/scripts/openclaw_to_hermes.py:                        env_var = "OPENROUTER_API_KEY"
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:from hermes_constants import OPENROUTER_BASE_URL, OPENROUTER_MODELS_URL
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:        self.base_url = base_url or OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:            client_kwargs["base_url"] = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:            # Primary: OPENROUTER_API_KEY, fallback to direct provider keys
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:            client_kwargs["api_key"] = os.getenv("OPENROUTER_API_KEY", "")
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:        "openrouter": (OPENROUTER_BASE_URL, ["OPENROUTER_API_KEY"]),
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:            fb_base_url = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/run_agent.py:        api_key (str): API key for authentication. Uses OPENROUTER_API_KEY env var if not provided.
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:    OPENROUTER_API_KEY: API key for OpenRouter (required for agent)
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:DEFAULT_BASE_URL = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:    if not os.getenv("OPENROUTER_API_KEY"):
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:        errors.append("OPENROUTER_API_KEY not set - required for agent")
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:        api_key: OpenRouter API key (uses OPENROUTER_API_KEY env var if not provided)
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:    api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/rl_cli.py:        print("❌ No API key provided. Set OPENROUTER_API_KEY or pass --api-key")
+/Users/robinsonchan/.hermes/hermes-agent/environments/terminal_test_env/terminal_test_env.py:        # OpenRouter with Claude -- API key loaded from .env (OPENROUTER_API_KEY)
+/Users/robinsonchan/.hermes/hermes-agent/environments/terminal_test_env/terminal_test_env.py:                api_key=os.getenv("OPENROUTER_API_KEY", ""),
+/Users/robinsonchan/.hermes/hermes-agent/environments/terminal_test_env/default.yaml:  # api_key loaded from OPENROUTER_API_KEY in .env
+/Users/robinsonchan/.hermes/hermes-agent/environments/web_research_env.py:                api_key=os.getenv("OPENROUTER_API_KEY", ""),
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/yc_bench/yc_bench_env.py:                api_key=os.getenv("OPENROUTER_API_KEY", ""),
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/yc_bench/default.yaml:  # api_key loaded from OPENROUTER_API_KEY in .env
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/tblite/tblite_env.py:                api_key=os.getenv("OPENROUTER_API_KEY", ""),
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/tblite/local.yaml:  # api_key loaded from OPENROUTER_API_KEY in .env
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/tblite/default.yaml:  # api_key loaded from OPENROUTER_API_KEY in .env
+/Users/robinsonchan/.hermes/hermes-agent/environments/benchmarks/terminalbench_2/default.yaml:  # api_key loaded from OPENROUTER_API_KEY in .env
+/Users/robinsonchan/.hermes/hermes-agent/cli-config.yaml.example:  #   "openrouter" - Always use OpenRouter API key from OPENROUTER_API_KEY
+/Users/robinsonchan/.hermes/hermes-agent/cli-config.yaml.example:  # API configuration (falls back to OPENROUTER_API_KEY env var)
+/Users/robinsonchan/.hermes/hermes-agent/cli-config.yaml.example:#   "openrouter" - Force OpenRouter (requires OPENROUTER_API_KEY)
+/Users/robinsonchan/.hermes/hermes-agent/cli-config.yaml.example:#   vision       - vision_analyze  (requires OPENROUTER_API_KEY)
+/Users/robinsonchan/.hermes/hermes-agent/cli-config.yaml.example:#   moa          - mixture_of_agents  (requires OPENROUTER_API_KEY)
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/user-guide/features/rl-training.md:Before committing to a full training run, you can test if an environment works correctly using `rl_test_inference`. This runs a few steps of inference and scoring using OpenRouter — no Tinker API needed, just an `OPENROUTER_API_KEY`.
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/user-guide/configuration.md:hermes config set OPENROUTER_API_KEY sk-or-...  # Saves to .env
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/user-guide/configuration.md:| **OpenRouter** | `OPENROUTER_API_KEY` in `~/.hermes/.env` |
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/user-guide/configuration.md:Even when using Nous Portal, Codex, or a custom endpoint, some tools (vision, web summarization, MoA) use a separate "auxiliary" model — by default Gemini Flash via OpenRouter. An `OPENROUTER_API_KEY` enables these tools automatically. You can also configure which model and provider these tools use — see [Auxiliary Models](#auxiliary-models) below.
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/user-guide/configuration.md:| `"openrouter"` | Force OpenRouter — routes to any model (Gemini, GPT-4o, Claude, etc.) | `OPENROUTER_API_KEY` |
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/getting-started/installation.md:OPENROUTER_API_KEY=sk-or-v1-your-key-here
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/getting-started/installation.md:hermes config set OPENROUTER_API_KEY sk-or-v1-your-key-here
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/getting-started/installation.md:echo 'OPENROUTER_API_KEY=sk-or-v1-your-key' >> ~/.hermes/.env
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/getting-started/installation.md:| `API key not set` | Run `hermes model` to configure your provider, or `hermes config set OPENROUTER_API_KEY your_key` |
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/guides/python-library.md:The same environment variables used by the CLI are required when using Hermes as a library. At minimum, set `OPENROUTER_API_KEY` (or `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` if using direct provider access).
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/developer-guide/contributing.md:echo 'OPENROUTER_API_KEY=sk-or-v1-your-key' >> ~/.hermes/.env
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/reference/environment-variables.md:| `OPENROUTER_API_KEY` | OpenRouter API key (recommended for flexibility) |
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/reference/faq.md:hermes config get OPENROUTER_API_KEY
+/Users/robinsonchan/.hermes/hermes-agent/website/docs/reference/faq.md:hermes config set OPENROUTER_API_KEY sk-or-v1-xxxxxxxxxxxx
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_auth_codex_provider.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    assert resolved["base_url"] == rp.OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    """OPENROUTER_API_KEY should be used over OPENAI_API_KEY when both are set.
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    sent to OpenRouter instead of their OPENROUTER_API_KEY.
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-should-win")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    """OPENAI_API_KEY is used as fallback when OPENROUTER_API_KEY is not set."""
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    """Custom endpoint should use OPENAI_API_KEY, not OPENROUTER_API_KEY.
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    OPENROUTER_API_KEY was being sent as the auth header instead of OPENAI_API_KEY.
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-wrong-key-for-zai")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-should-not-leak")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.setenv("OPENROUTER_API_KEY", "or-test-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_runtime_provider_resolution.py:    monkeypatch.delenv("OPENROUTER_BASE_URL", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/tools/test_delegate.py:        mock_resolve.side_effect = RuntimeError("OPENROUTER_API_KEY not set")
+/Users/robinsonchan/.hermes/hermes-agent/tests/tools/test_clipboard.py:            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_setup.py:        "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_set_config_value.py:        "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_models.py:from hermes_cli.models import OPENROUTER_MODELS, menu_labels, model_ids
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_models.py:        expected = [mid for mid, _ in OPENROUTER_MODELS]
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_models.py:        for entry in OPENROUTER_MODELS:
+/Users/robinsonchan/.hermes/hermes-agent/tests/hermes_cli/test_models.py:        assert len(OPENROUTER_MODELS) >= 5
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_provider_parity.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_provider_parity.py:        monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_provider_parity.py:        monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_provider_parity.py:        monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+/Users/robinsonchan/.hermes/hermes-agent/tests/integration/test_web_tools.py:    - An auxiliary LLM provider (OPENROUTER_API_KEY or Nous Portal auth) (optional, for LLM tests)
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_api_key_providers.py:    "OPENROUTER_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_api_key_providers.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_redact.py:        text = "OPENROUTER_API_KEY=sk-or-v1-abcdefghijklmnopqrstuvwxyz1234567890"
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_redact.py:OPENROUTER_API_KEY=sk-or-v1-reallyLongSecretKeyValue12345678
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        "OPENROUTER_API_KEY", "OPENAI_BASE_URL", "OPENAI_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")  # would win in auto
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/agent/test_auxiliary_client.py:        monkeypatch.setenv("OPENROUTER_API_KEY", "or-key")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_fallback_model.py:            patch.dict("os.environ", {"OPENROUTER_API_KEY": "sk-or-fallback-key"}),
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_fallback_model.py:            patch.dict("os.environ", {"OPENROUTER_API_KEY": "sk-or-key"}),
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_fallback_model.py:            patch.dict("os.environ", {"OPENROUTER_API_KEY": "sk-or-key"}),
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_fallback_model.py:            patch.dict("os.environ", {"OPENROUTER_API_KEY": "sk-or-key"}),
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_fallback_model.py:        ("openrouter", "OPENROUTER_API_KEY", "openrouter"),
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_agent_loop_tool_calling.py:    key = os.getenv("OPENROUTER_API_KEY", "")
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_agent_loop_tool_calling.py:        pytest.skip("OPENROUTER_API_KEY not set")
+/Users/robinsonchan/.hermes/hermes-agent/tests/skills/test_openclaw_migration.py:    assert "OPENROUTER_API_KEY=sk-or-test-key" in env_text
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_860_dedup.py:        with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_860_dedup.py:        with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_860_dedup.py:        with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/tests/test_model_provider_persistence.py:    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+Binary file /Users/robinsonchan/.hermes/hermes-agent/agent/__pycache__/model_metadata.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/agent/__pycache__/context_compressor.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/agent/__pycache__/auxiliary_client.cpython-311.pyc matches
+/Users/robinsonchan/.hermes/hermes-agent/agent/context_compressor.py:        from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/agent/context_compressor.py:        if custom_base.rstrip("/") == OPENROUTER_BASE_URL.rstrip("/"):
+/Users/robinsonchan/.hermes/hermes-agent/agent/model_metadata.py:from hermes_constants import OPENROUTER_MODELS_URL
+/Users/robinsonchan/.hermes/hermes-agent/agent/model_metadata.py:        response = requests.get(OPENROUTER_MODELS_URL, timeout=10)
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:  1. OpenRouter  (OPENROUTER_API_KEY)
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:_OPENROUTER_MODEL = "google/gemini-3-flash-preview"
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:    or_key = os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:    return OpenAI(api_key=or_key, base_url=OPENROUTER_BASE_URL,
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:                   default_headers=_OR_HEADERS), _OPENROUTER_MODEL
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:            logger.warning("auxiliary.provider=openrouter but OPENROUTER_API_KEY not set")
+/Users/robinsonchan/.hermes/hermes-agent/agent/auxiliary_client.py:    or_key = os.getenv("OPENROUTER_API_KEY")
+Binary file /Users/robinsonchan/.hermes/hermes-agent/__pycache__/run_agent.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/__pycache__/cli.cpython-311.pyc matches
+Binary file /Users/robinsonchan/.hermes/hermes-agent/__pycache__/hermes_constants.cpython-311.pyc matches
+/Users/robinsonchan/.hermes/hermes-agent/mini_swe_runner.py:                "OPENROUTER_API_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:            "base_url": OPENROUTER_BASE_URL,
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:            or os.getenv("OPENROUTER_BASE_URL", CLI_CONFIG["model"]["base_url"])
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:        # Match key to resolved base_url: OpenRouter URL → prefer OPENROUTER_API_KEY,
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:            self.api_key = api_key or os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/cli.py:            self.api_key = api_key or os.getenv("OPENAI_API_KEY") or os.getenv("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/CONTRIBUTING.md:echo 'OPENROUTER_API_KEY=sk-or-v1-your-key' >> ~/.hermes/.env
+/Users/robinsonchan/.hermes/hermes-agent/trajectory_compressor.py:from hermes_constants import OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/trajectory_compressor.py:    base_url: str = OPENROUTER_BASE_URL
+/Users/robinsonchan/.hermes/hermes-agent/trajectory_compressor.py:    api_key_env: str = "OPENROUTER_API_KEY"
+/Users/robinsonchan/.hermes/hermes-agent/.github/workflows/tests.yml:          OPENROUTER_API_KEY: ""
+/Users/robinsonchan/.hermes/hermes-agent/.github/ISSUE_TEMPLATE/setup_help.yml:        - Checked that OPENROUTER_API_KEY is set in ~/.hermes/.env
+/Users/robinsonchan/.hermes/hermes-agent/skills/mlops/training/hermes-atropos-environments/SKILL.md:1. **OpenRouter** — Ask which model they want to use (e.g., `anthropic/claude-sonnet-4.5`, `google/gemini-2.5-pro`, `meta-llama/llama-3.3-70b-instruct`, etc.). Requires `OPENROUTER_API_KEY` in environment.
+/Users/robinsonchan/.hermes/hermes-agent/skills/mlops/training/hermes-atropos-environments/SKILL.md:| OpenRouter | `openai` | `false` | `$OPENROUTER_API_KEY` |
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/types/utils.py:    OPENROUTER = "openrouter"
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/images/main.py:            litellm.LlmProviders.OPENROUTER
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/constants.py:    "OPENROUTER_KEY",
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:            if "OPENROUTER_API_KEY" in os.environ:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:                missing_keys.append("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:            if "OPENROUTER_API_KEY" in os.environ:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:                missing_keys.append("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:            LlmProviders.OPENROUTER: (lambda: litellm.OpenrouterConfig(), False),
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:        elif litellm.LlmProviders.OPENROUTER == provider:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:        elif litellm.LlmProviders.OPENROUTER == provider:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:        elif LlmProviders.OPENROUTER == provider:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/utils.py:        elif LlmProviders.OPENROUTER == provider:
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/image_generation/transformation.py:            or get_secret_str("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/responses/transformation.py:    - Uses OPENROUTER_API_KEY for authentication
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/responses/transformation.py:        return LlmProviders.OPENROUTER
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/responses/transformation.py:            or get_secret_str("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/responses/transformation.py:                "OpenRouter API key is required. Set OPENROUTER_API_KEY "
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/responses/transformation.py:            or get_secret_str("OPENROUTER_API_BASE")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/image_edit/transformation.py:            or get_secret_str("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/image_edit/transformation.py:            raise ValueError("OPENROUTER_API_KEY is not set")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/llms/openrouter/image_edit/transformation.py:        base_url = api_base or get_secret_str("OPENROUTER_API_BASE") or "https://openrouter.ai/api/v1"
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/main.py:                or get_secret_str("OPENROUTER_API_BASE")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/main.py:                or get_secret_str("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/main.py:                or get_secret_str("OPENROUTER_API_BASE")
+/Users/robinsonchan/.hermes/hermes-agent/venv/lib/python3.11/site-packages/litellm/main.py:                or get_secret_str("OPENROUTER_API_KEY")
+/Users/robinsonchan/.hermes/hermes-agent/.env.example:OPENROUTER_API_KEY=
+/Users/robinsonchan/.hermes/hermes-agent/datagen-config-examples/trajectory_compression.yaml:  api_key_env: "OPENROUTER_API_KEY"
+/Users/robinsonchan/.hermes/hermes-agent/datagen-config-examples/run_browser_tasks.sh:#   - OPENROUTER_API_KEY in ~/.hermes/.env
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "invalid-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:                assert "mini-extra config set OPENROUTER_API_KEY" in str(exc_info.value)
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/tests/models/test_openrouter_model.py:    with patch.dict(os.environ, {"OPENROUTER_API_KEY": "test-key"}):
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/docs/models/quickstart.md:    OPENROUTER_API_KEY
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/src/minisweagent/models/openrouter_model.py:        self._api_key = os.getenv("OPENROUTER_API_KEY", "")
+/Users/robinsonchan/.hermes/hermes-agent/mini-swe-agent/src/minisweagent/models/openrouter_model.py:                error_msg = "Authentication failed. You can permanently set your API key with `mini-extra config set OPENROUTER_API_KEY YOUR_KEY`."
+/Users/robinsonchan/.hermes/hermes-agent/gateway/run.py:        api_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY") or ""
+Binary file /Users/robinsonchan/.hermes/hermes-agent/gateway/__pycache__/run.cpython-311.pyc matches
+/Users/robinsonchan/.hermes/skills/mlops/training/hermes-atropos-environments/SKILL.md:1. **OpenRouter** — Ask which model they want to use (e.g., `anthropic/claude-sonnet-4.5`, `google/gemini-2.5-pro`, `meta-llama/llama-3.3-70b-instruct`, etc.). Requires `OPENROUTER_API_KEY` in environment.
+/Users/robinsonchan/.hermes/skills/mlops/training/hermes-atropos-environments/SKILL.md:| OpenRouter | `openai` | `false` | `$OPENROUTER_API_KEY` |

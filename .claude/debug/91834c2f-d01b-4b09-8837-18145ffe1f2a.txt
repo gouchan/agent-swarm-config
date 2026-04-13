@@ -1,0 +1,81 @@
+2026-03-17T16:23:54.595Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.595Z [DEBUG] MDM settings load completed in 13ms
+2026-03-17T16:23:54.602Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.602Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.json
+2026-03-17T16:23:54.602Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.602Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.local.json
+2026-03-17T16:23:54.621Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.621Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.621Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.621Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.622Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-17T16:23:54.622Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-17T16:23:54.622Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-17T16:23:54.622Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-17T16:23:54.626Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.626Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.626Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.626Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.json
+2026-03-17T16:23:54.626Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.626Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.local.json
+2026-03-17T16:23:54.626Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.626Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.627Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-17T16:23:54.628Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=auto, result=true
+2026-03-17T16:23:54.628Z [DEBUG] [STARTUP] Running setup()...
+2026-03-17T16:23:54.629Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.629Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.629Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/robinsonchan/.claude/skills, project=[]
+2026-03-17T16:23:54.630Z [DEBUG] Error log sink initialized
+2026-03-17T16:23:54.636Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-03-17T16:23:54.636Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-17T16:23:54.636Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-17T16:23:54.636Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-17T16:23:54.636Z [DEBUG] Total plugin skills loaded: 0
+2026-03-17T16:23:54.636Z [DEBUG] Total plugin commands loaded: 0
+2026-03-17T16:23:54.639Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.639Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.json
+2026-03-17T16:23:54.639Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.639Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Users/robinsonchan/Library/CloudStorage/Dropbox/.claude/settings.local.json
+2026-03-17T16:23:54.639Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.639Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.639Z [DEBUG] [STARTUP] setup() completed in 11ms
+2026-03-17T16:23:54.639Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-17T16:23:54.646Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-17T16:23:54.646Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-17T16:23:54.648Z [DEBUG] Loaded 128 unique skills (128 unconditional, 0 conditional, managed: 0, user: 86, project: 0, additional: 0, legacy commands: 42)
+2026-03-17T16:23:54.649Z [DEBUG] getSkills returning: 128 skill dir commands, 0 plugin skills, 5 bundled skills, 0 builtin plugin skills
+2026-03-17T16:23:54.649Z [DEBUG] Agent file /Users/robinsonchan/.claude/agents/general-purpose.md has invalid model 'default'. Valid options: sonnet, opus, haiku, best, sonnet[1m], opus[1m], opusplan, inherit
+2026-03-17T16:23:54.650Z [DEBUG] Total plugin agents loaded: 0
+2026-03-17T16:23:54.650Z [DEBUG] [STARTUP] Commands and agents loaded in 11ms
+2026-03-17T16:23:54.650Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-17T16:23:54.650Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-17T16:23:54.650Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-17T16:23:54.650Z [DEBUG] [STARTUP] MCP configs resolved in 0ms (awaited at +23ms)
+2026-03-17T16:23:54.662Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.662Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.662Z [DEBUG] Total LSP servers loaded: 0
+2026-03-17T16:23:54.664Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-03-17T16:23:54.664Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-17T16:23:54.664Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-17T16:23:54.665Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-03-17T16:23:54.666Z [DEBUG] LSP server manager initialized successfully
+2026-03-17T16:23:54.666Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-17T16:23:54.691Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-17T16:23:54.691Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-17T16:23:54.692Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-03-17T16:23:54.694Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.694Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.695Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.695Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.695Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T16:23:54.695Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /Library/Application Support/ClaudeCode/managed-settings.json
+2026-03-17T16:23:54.695Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-03-17T16:23:54.695Z [DEBUG] Found 0 hook matchers in settings
+2026-03-17T16:23:54.695Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-03-17T16:23:54.699Z [DEBUG] installPluginsForHeadless: starting
+2026-03-17T16:23:54.699Z [DEBUG] Found 0 installed plugins
+2026-03-17T16:23:54.699Z [DEBUG] installPluginsForHeadless: no missing plugins or marketplaces configured
+2026-03-17T16:23:54.700Z [DEBUG] Fetching plugin security messages from https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/security/security.json
+2026-03-17T16:23:54.709Z [DEBUG] Total plugin output styles loaded: 0
+2026-03-17T16:23:54.709Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK

@@ -1,0 +1,8 @@
+2026-03-17T19:11:53.346Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-17T19:11:53.346Z [DEBUG] MDM settings load completed in 3ms
+2026-03-17T19:11:53.429Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-17T19:11:53.429Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-17T19:11:53.429Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-17T19:11:53.430Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-17T19:11:53.443Z [DEBUG] Git remote URL: https://github.com/gouchan/agent-swarm-config.git
+2026-03-17T19:11:53.443Z [DEBUG] Parsed repository: github.com/gouchan/agent-swarm-config from URL: https://github.com/gouchan/agent-swarm-config.git

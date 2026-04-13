@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "85d9b69e-0340-4c21-98e3-a31fe27ec884",
+      "fullPath": "/Users/robinsonchan/.claude/projects/-Users-robinsonchan--claude-worktrees-robinsonchan-epic-kalam/85d9b69e-0340-4c21-98e3-a31fe27ec884.jsonl",
+      "fileMtime": 1769396045760,
+      "firstPrompt": "can you find my claude.md or skills.md and tell me what is inside the doc? i think we need to update and revamp it",
+      "summary": "AI agent swarm deployment setup complete",
+      "messageCount": 51,
+      "created": "2026-01-25T07:03:16.521Z",
+      "modified": "2026-01-26T02:49:48.821Z",
+      "gitBranch": "epic-kalam",
+      "projectPath": "/Users/robinsonchan/.claude-worktrees/robinsonchan/epic-kalam",
+      "isSidechain": false
+    }
+  ],
+  "originalPath": "/Users/robinsonchan/.claude-worktrees/robinsonchan/epic-kalam"
+}
